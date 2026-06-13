@@ -1,0 +1,59 @@
+{
+  "advisory_committee": {
+    "AN": 0,
+    "CH": 1,
+    "CV": 2,
+    "DE": 3,
+    "EN": 4,
+    "GU": 5,
+    "HO": 6,
+    "IM": 7,
+    "MI": 8,
+    "NE": 9,
+    "OB": 10,
+    "OP": 11,
+    "OR": 12,
+    "PA": 13,
+    "PM": 14,
+    "RA": 15,
+    "SU": 16,
+    "TX": 17,
+    "UNKNOWN": 18
+  },
+  "medical_specialty": {
+    "AN": 0,
+    "CH": 1,
+    "CV": 2,
+    "DE": 3,
+    "EN": 4,
+    "GU": 5,
+    "HO": 6,
+    "IM": 7,
+    "MI": 8,
+    "NE": 9,
+    "OB": 10,
+    "OP": 11,
+    "OR": 12,
+    "PA": 13,
+    "PM": 14,
+    "RA": 15,
+    "SU": 16,
+    "TX": 17
+  },
+  "pathway": {
+    "510k": 0,
+    "De_Novo": 1,
+    "PMA": 2
+  },
+  "pathway_inverse": {
+    "0": "510k",
+    "1": "De_Novo",
+    "2": "PMA"
+  },
+  "clearance_type": {
+    "Abbreviated": 0,
+    "Special": 1,
+    "Traditional": 2,
+    "UNKNOWN": 3
+  }
+}

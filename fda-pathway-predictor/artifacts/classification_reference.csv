@@ -1,0 +1,1001 @@
+product_code,device_name,device_class,medical_specialty,medical_specialty_description,regulation_number,definition,gmp_exempt_flag,submission_type_id
+HOA,"Compressor, Orbital",1,OP,Ophthalmic,886.4350,,N,4
+QGN,Lateral Flow Immunochromatography Assay For Host Infection Biomarkers,2,MI,Microbiology,866.3230,"A device to detect and measure non-microbial analytes to aid in the detection and identification of localized human infections is identified as an in vitro device intended for the detection and qualitative measurement, quantitative measurement, or both of one or more non-microbial analytes in human clinical specimens to aid in the assessment, identification, or both of a localized microbial infection when used in conjunction with clinical signs and symptoms and other clinical and laboratory findings.",N,1
+POZ,Biopsy Needle Kit,2,GU,"Gastroenterology, Urology",876.1075,"This product code has been established in accordance with the may 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm080217.pdf.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+KQP,"Fluorescent Proc. (Qual.), Galactose-1-Phosphate Uridyl Transferase",2,CH,Clinical Chemistry,862.1315,,N,1
+QAB,Pacing System Analyzer,2,CV,Cardiovascular,870.3605,"The device is intended to supply an accurately calibrated, variable pacing pulse for measuring the patients pacing threshold and intracardiac R-wave potential. A pacing system analyzer (PSA) may be a single, dual, or triple chamber system and can simultaneously deliver pacing therapy while testing one or more implanted pacing leads.",N,1
+RBB,"Television Receiver, General Purpose, Color",N,,Unknown,,"An electronic product designed to receive and, using a color cathode ray tube, to display a television picture in colors from broadcast, cable, video disk player, video recorder, computer or closed circuit television signals.",Y,
+OLL,Septal Stapler/Absorbable Staples,2,SU,"General, Plastic Surgery",878.4750,"To approximate soft tissues by means of absorbable staples delivered via a pre-loaded stapler delivery system for use during nasal septal surgery, with or without cartilage reinserted.  To connect internal nasal tissues to aid healing during nasal septum reconstruction.",N,1
+KNN,"Components, Wheelchair",1,PM,Physical Medicine,890.3920,,N,4
+JSB,"Culture Media, Vitamin Assay",1,MI,Microbiology,866.2350,,N,4
+IRA,"Hand, External Limb Component, Mechanical",1,PM,Physical Medicine,890.3420,,Y,4
+QCZ,"Mechanical And Enzymatic Autologous Skin Processor For Cell Suspension, With Applicator",3,,Unknown,,Intended to enable clinicians to prepare an autologous skin cell suspension for application to burn injuries for use when autografting is indicated for definitive wound closure.,N,2
+SCJ,"Ldt, Not Under A Targeted Enforcement Discretion Policy Described In Preamble To Ldt Final Rule",N,,Unknown,,Laboratory developed tests (LDTs) within the scope of the phaseout policy and not subject to a targeted enforcement discretion policy described in section V.B of the preamble to the LDT Final Rule (89 FR 37286).,N,7
+PCM,Portable Liquid Oxygen Unit Stand,1,PM,Physical Medicine,890.5050,To assist the user with refilling a portable liquid oxygen tank from a reservoir unit by holding the portable liquid oxygen tank in an upright position.,N,4
+KEY,"Stainer, Tissue, Automated",1,PA,Pathology,864.3800,,N,4
+GNH,"Antigen, Fluorescent Antibody Test, Schistosoma Mansoni",1,MI,Microbiology,866.3600,,N,4
+QWA,Cardiovascular Delivery Catheter System Positioning And Stabilization Device,1,CV,Cardiovascular,870.3955,"A cardiovascular delivery catheter system positioning and stabilization device is a platform device or a part of a platform device that aids the positioning and stabilization of delivery catheter systems during cardiovascular interventional procedures (e.g., transcatheter valvular interventions). The device only provides mechanical support and does not include any electrical or robotic components. The device may be for single use or reusable.",N,4
+NAF,"Antigen(Complexed),Prostate Specific,(Cpsa)",3,,Unknown,,,N,2
+JYY,"Rasp, Ear",1,EN,"Ear, Nose, Throat",874.4420,,N,4
+CFJ,"Nad Reduction/Nadh Oxidation, Lactate Dehydrogenase",2,CH,Clinical Chemistry,862.1440,,N,4
+JSF,"Culture Media, Single Biochemical Test",1,MI,Microbiology,866.2320,,N,4
+KJB,"Apparatus, Roller",1,HE,Hematology,864.2240,,Y,4
+NKF,"Immunohistochemistry Antibody Assay, C-Kit",3,HE,Hematology,864.1860,"Identification/Intended Use - The anti-c-KIT primary antibody is intended for laboratory use, via light microscopy, for the qualitative detection of KIT protein in formalin-fixed, paraffin-embedded gastrointestinal stromal tumors (GISTs) using either an automated immunohistochemistry staining system or manual assay. It is indicated as an aid in the selection of GIST patients who may qualify for imatinib mesylate therapy within the context of the patient's clinical history, tumor morphology, and other diagnostic tests evaluated by a qualified pathologist. The test is not intended as the sole basis for making the diagnosis of GIST and is not intended as the sole basis for selecting imatinib mesylate therapy.  A negative result would not necessarily exclude the diagnosis of GIST",N,2
+GCP,"Endoscope, Ac-Powered And Accessories",2,GU,"Gastroenterology, Urology",876.1500,,N,1
+LCQ,Fluorescent Immunoassay Gentamicin,2,TX,Clinical Toxicology,862.3450,,N,1
+NUD,"Vertebroplasty Compound, Calcium Based",2,OR,Orthopedic,888.3027,THIS DEVICE IS INDICATED FOR THE FIXATION OF PATHOLOGICAL FRACTURES OF THE VERTEBRAL BODY USING VERTEBROPLASTY OR KYPHOPLASTY PROCEDURES.   THE DEVICE RESORBS (TIME FRAME MAY BE INDICATED) AND IS REPLACED WITH BONE DURING THE HEALING PROCESS.,N,1
+LRY,"Punch, Surgical",1,SU,"General, Plastic Surgery",878.4800,,N,4
+HGZ,"Heater, Perineal, Direct Contact",2,OB,Obstetrics/Gynecology,884.5390,,N,4
+DAP,"Fibrinogen And Fibrin Split Products, Antigen, Antiserum, Control",2,HE,Hematology,864.7320,,N,1
+KYD,"Strip, Schirmer",1,OP,Ophthalmic,886.1800,,N,4
+NDP,"Accessories, Implant, Dental, Endosseous",1,DE,Dental,872.3980,,N,4
+QXM,Implanted Tibial Electrical Urinary Continence Device,2,GU,"Gastroenterology, Urology",876.5305,"An implanted tibial electrical urinary continence device is an implanted prescription device that receives power from a non-implanted external power source to provide electrical stimulation of the tibial nerve in proximity to the ankle. The device is intended for the treatment of overactive bladder related symptoms of urge urinary incontinence, urinary urgency, urinary frequency and nocturia.",N,1
+PZI,Prescription Use Blood Glucose Meter For Near-Patient Testing,2,CH,Clinical Chemistry,862.1345,"Intended for use in near-patient testing settings for in vitro diagnostic, multiple-patient use for the quantitative determination of glucose throughout all hospital and all professional healthcare settings for use in determining dysglycemia.",N,1
+MAF,"Stent, Coronary",3,,Unknown,,"The formerly known device, Cardiovascular Stent, coded as ""MAF"" has been modified and is currently known and classified as a ""Coronary Stent"".  This device is a metal scaffold placed via a delivery catheter into the coronary artery or saphenous vein graft to maintain the lumen.",N,2
+REJ,Laser Children'S Toy/Novelty Product,N,,Unknown,,"Product, laser, children's toy/novelty",Y,
+EZN,"Dilator, Catheter, Ureteral",2,GU,"Gastroenterology, Urology",876.5470,,N,1
+MOC,"Cushion, Flotation, Therapeutic",2,PM,Physical Medicine,890.5170,,N,4
+LHW,"Erythrocyte Suspension, Multi Species, Serological Reagent And Equipment",1,MI,Microbiology,866.3720,,N,4
+PKS,"Exerciser, Non-Measuring For Stroke Rehabilitation",1,PM,Physical Medicine,890.5370,Non-measuring exercise equipment intended for medical purposes of facilitating stroke rehabilitation and maintaining or increasing range of motion.,N,4
+FOD,"Device, Occlusion, Umbilical",1,HO,General Hospital,880.5950,,N,4
+DTZ,"Oxygenator, Cardiopulmonary Bypass",2,CV,Cardiovascular,870.4350,,N,1
+QIS,"Esophageal, Mucosal, Electrical Characterization",2,GU,"Gastroenterology, Urology",876.1450,The esophageal tissue characterization system is intended for obtaining measurements of electrical properties within esophageal tissue.,N,1
+ILJ,"Bath, Hydro-Massage",2,PM,Physical Medicine,890.5100,,N,4
+GQY,"Antigen, Ha (Including Ha Control), Mumps Virus",1,MI,Microbiology,866.3380,,N,4
+NIV,Coronary Covered Stent,f,,Unknown,,"Stent, coronary, covered -- a metal scaffold covered with material placed via a delivery catheter into the coronary artery artery or saphenous vein graft for the treatment of free perforations and/or to prevent dislodgement into the circulation of biological material from the vascular wall during or following placement of the device.",N,6
+QUE,Spinal Muscular Atrophy Newborn Screening Test System,2,IM,Immunology,866.5980,A Spinal Muscular Atrophy (SMA) newborn screening test system is a prescription device intended to detect homozygous deletion of exon 7 or other similar mutations in the SMN1 (Survival Motor Neuron 1) gene of DNA obtained from dried blood spot specimens on filter paper using a polymerase chain reaction-based test as an aid in screening newborns for SMA. Presumptive positive results are intended to be followed up by diagnostic confirmatory testing.,N,1
+KTR,"Tube, Aspirating, Bronchoscope, Rigid",2,EN,"Ear, Nose, Throat",874.4680,"If the device is reusable, validated reprocessing instructions and reprocessing validation data for this device type must be included in a 510(k) submission (82 FR 26807, available at https://www.gpo.gov/fdsys/pkg/FR-2017-06-09/pdf/2017-12007.pdf).",N,1
+DFJ,"Albumin, Rhodamine, Antigen, Antiserum, Control",2,IM,Immunology,866.5040,,N,4
+LIE,"Reagent/Device, Inoculum Calibration",2,MI,Microbiology,866.1640,,N,1
+KJS,Ethyl Eosin,1,HE,Hematology,864.1850,,Y,4
+IEO,"Processor, Tissue, Automated",1,PA,Pathology,864.3875,,N,4
+MQS,"System, Hemodialysis, Access Recirculation Monitoring",2,GU,"Gastroenterology, Urology",876.5820,,N,1
+QXT,Infliximab Test System,2,TX,Clinical Toxicology,862.3115,An infliximab test system intended for the measurement of an infliximab as an aid in the management of patients with Crohns disease or ulcerative colitis.,N,1
+OLC,"Scaffold, Partial Medial Meniscal Defects Extending Into The Red/White Zone, Resorbable Bovine Collagen",2,SU,"General, Plastic Surgery",878.3300,"Intended for use in surgical procedures for the repair and reinforcement of soft tissue injuries of the medial meniscus.  In repairing and reinforcing medial meniscal defects, the patient must have an intact meniscal rim and anterior and posterior horns for attachment of the mesh.  In addition, the surgically prepared site must extend at least into the red/white zone of the meniscus to provide sufficient vascularization.    The device reinforces soft tissue and provides a resorbable scaffold that is replaced by the patients own soft tissue.  The device is not a prosthetic device and is not intended to replace normal body structure.",N,1
+OJW,Shave Prep Kit,2,SU,"General, Plastic Surgery",878.4370,"This product code has been established in accordance with the May 20, 1997, Guidance entitled, Convenience Kits Interim Regulatory Guidance, found at www.fda.gov/cdrh/ode/convkit.html.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+NMG,"Forceps, Biopsy, Gynecological, Reprocessed",2,OB,Obstetrics/Gynecology,884.4530,"Reprocessing validation data for this device type must be included in a 510(k) submission. (70 FR 56911, available at https://www.govinfo.gov/content/pkg/FR-2005-09-29/pdf/05-19510.pdf).",N,1
+GLG,"Platelet Counting, Manual",1,HE,Hematology,864.6160,,N,4
+NVB,"Intraocular, Pressure Measuring Device",3,OP,Ophthalmic,886.4280,Manual or ac powered device intended to measure intraocular pressure. Intended for use in the diagnosis of glaucoma.,N,2
+CKC,"Vanillin Pyruvate, Alt/Sgpt",1,CH,Clinical Chemistry,862.1030,,N,4
+BSD,"Analyzer, Gas, Nitrogen, Partial Pressure, Blood-Phase, Non-Indwelling",3,,Unknown,,,N,2
+PHK,"Test, Cell Mediated Immune Response, Liver And Small Bowel Transplant/Transplantation",N,,Unknown,,"The test is a qualitative prognostic test intended to be used in patients less than 21 years old with liver or small bowel transplantation. The test is an aid in the evaluation of the risk of acute cellular rejection (ACR) and must be used in conjunction with biopsy, standard clinical assessment and other laboratory information.",N,6
+QBI,Acute Coronary Syndrome Event Detector,3,,Unknown,,Detect Acute Coronary Syndrome events and prompt the patient to seek medical attention.,N,2
+RGA,Product Incorporating Certified Class 1 Data Utility/Peripheral Laser Product,N,,Unknown,,A utility/peripheral laser product that incorporates a certified class 1 laser.,Y,
+FEO,"Lithotriptor, Ultrasonic",2,GU,"Gastroenterology, Urology",876.4480,,N,1
+IWF,"Needle, Isotope, Gold, Titanium, Platinum",2,RA,Radiology,892.5730,,N,1
+MDT,"Elisa, Trichinella Spiralis",1,MI,Microbiology,866.3850,,N,4
+IXC,"Illuminator, Radiographic-Film",1,RA,Radiology,892.1890,,N,4
+FQA,"Scale, Surgical Sponge",1,HO,General Hospital,880.2740,,Y,4
+MLO,"Electrocardiograph, Ambulatory, With Analysis Algorithm",2,CV,Cardiovascular,870.2800,,N,1
+NAZ,"Stimulator, Bladder",f,,Unknown,,,N,6
+IQM,"Splint, Temporary Training",1,PM,Physical Medicine,890.3025,,Y,4
+JSM,"Culture Media, Non-Propagating Transport",1,MI,Microbiology,866.2390,,N,1
+DZK,"Wire, Fixation, Intraosseous",2,DE,Dental,872.4880,,N,1
+GOC,"Antisera, Hai, Adenovirus 1-33",1,MI,Microbiology,866.3020,,N,4
+OFZ,Blood Specimen Collection Kit (Excludes Hiv Testing),1,AN,Anesthesiology,868.1100,"This product code has been established in accordance with the may 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at www.Fda.Gov/cdrh/ode/convkit.Html.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+MVJ,"Devices, Measure, Antibodies To Glomerular Basement Membrane (Gbm)",2,IM,Immunology,866.5660,,N,1
+MHJ,Cryptosporidium Spp.,2,MI,Microbiology,866.3220,,N,4
+NUA,"System, Cystic Fibrosis Transmembrane Conductance Regulator, Gene Mutation Detection",2,IM,Immunology,866.5900,"The cftr gene mutation detection system is a device used to simultaneously detect and identify a panel of mutations and variants in the cftr gene.  It is intended as an aid in confirmatory diagnostic testing of individuals with suspected cystic fibrosis (cf), carrier identification, and newborn screening.  This device is not intended for stand-alone diagnostic purposes, prenatal diagnostic, pre-implantation or population screening.",N,1
+PSY,Whole Slide Imaging System,2,PA,Pathology,864.3700,"The whole slide imaging system is an automated digital slide creation, viewing, and management system intended as an aid to the pathologist to review and interpret digital images of surgical pathology slides prepared from formalin-fixed, paraffin-embedded (FFPE) tissue. The system generates digital images that would otherwise be appropriate for manual visualization by conventional brightfield microscopy. The whole slide imaging system is not intended for use with slides prepared from frozen tissue, cytology, and non-FFPE hematopathology specimens (e.g., peripheral blood smear).",N,1
+PEA,"Endoscope, Accessories, Image Post-Processing For Color Enhancement",2,GU,"Gastroenterology, Urology",876.1500,Alternative mode of visualization using image post-processing algorithms of the received white light image for color enhancement.,N,1
+RCK,Veterinary X-Ray Therapy System,N,,Unknown,,Equipment using x-rays to provide therapy in veterinary applications.,Y,
+HYS,Light Green,1,HE,Hematology,864.1850,,Y,4
+PSN,Light Based Imaging,2,SU,"General, Plastic Surgery",878.4580,Emission and collection of light to create an image for medical purposes,N,1
+QRZ,External Condom For Anal Intercourse Or Vaginal Intercourse,2,OB,Obstetrics/Gynecology,884.5305,An external condom for anal intercourse or vaginal intercourse is a barrier device which covers the penis and is used to prevent the transmission of sexually transmitted infections (when used for anal intercourse or vaginal intercourse) and for contraception (when used for vaginal intercourse). This classification does not include condoms intended for vaginal intercourse only.,N,1
+KSR,"Container, Empty, For Collection & Processing Of Blood & Blood Components",2,HE,Hematology,864.9100,,N,1
+QIT,Daily Wear Soft Contact Lens To Reduce The Progression Of Myopia,3,,Unknown,,"Intended to be worn on the surface of the eye in children who have myopia to:  	Reduce the rate of progression of myopia, and  	Optically correct myopic refractive error.",N,2
+KBD,"Scissors, Nasal",1,EN,"Ear, Nose, Throat",874.4420,,N,4
+PMH,Mechanical Compression Device Fecal Incontinence (Non-Manually Operated),f,,Unknown,,For treatment of fecal incontinence in patients who have failed conservative therapies,N,6
+DTL,"Adaptor, Stopcock, Manifold, Fitting, Cardiopulmonary Bypass",2,CV,Cardiovascular,870.4290,,N,4
+QOD,Extracorporeal Circuit And Accessories For Long Term Respiratory Cariodpulmonary Failure,N,,Unknown,,Extracorporeal circuit and accessories for long-term respiratory/cardiopulmonary failure for patient having cardiopulmonary failure during the declared public health emergency.,N,8
+LZF,"Pump, Infusion, Analytical Sampling",2,HO,General Hospital,880.5725,,N,1
+FGX,"Snare, Non-Electrical",1,GU,"Gastroenterology, Urology",876.4730,,N,4
+JAQ,"System, Applicator, Radionuclide, Remote-Controlled",2,RA,Radiology,892.5700,,N,1
+OZY,Chlamydophila Pneumoniae Dna Assay System,2,MI,Microbiology,866.3980,A qualitative in vitro diagnostic assay intended to detect Chlamydophila pneumoniae DNA extracted from human respiratory specimens. Detection of Chlamydophila pneumoniae DNA aids in the diagnosis of Chlamydophila pneumoniae respiratory infection in conjunction with other clinical and laboratory testing in patients exhibiting signs and symptoms of upper respiratory tract infection.,N,1
+IXY,"Holder, Radiographic Cassette, Wall-Mounted",1,RA,Radiology,892.1880,,N,4
+LHF,"Warmer, Microwave, Infusion Fluid",2,HO,General Hospital,880.5725,,N,1
+QDA,Electrocardiograph Software For Over-The-Counter Use,2,CV,Cardiovascular,870.2345,"An electrocardiograph software device for over-the-counter use creates, analyzes, and displays electrocardiograph data, and can provide information for identifying cardiac arrhythmias. This device is not intended to provide a diagnosis.",N,1
+GHR,"Reagent, Platelet Aggregation",2,HE,Hematology,864.5700,,N,1
+OMW,Adhesive Backed Thermal Skin Patches,1,PM,Physical Medicine,890.5710,"Pain relief heat patches for temporary relief of muscular and joint pian assoiciated with arthritis, simple backache, muscle strains and sprains.External use only. Not on damaged skin or open sores.  Do no use under the age of 12.  Do use on people who are not able to feel pain.  Patch is applied directly to site of pain over intact skin for up to 8 hours but not more than once in a 24 hour period.  Do not use more than 7 days. Over the counter device. No prescription. Do not sleep on or put pressure on heat patch for extended period of time. Do not use with any creams or oils. Can remove body hair upon patch removal due to adhesive.  Can cause burns.",N,4
+LJC,"Enzyme Linked Immunoabsorbent Assay, (Chlamydiae Group)",1,MI,Microbiology,866.3120,,N,1
+EIG,"Retractor, All Types",1,DE,Dental,872.4565,,N,4
+GRX,"Antisera, All Leptospira Spp.",2,MI,Microbiology,866.3350,,N,4
+EWE,"Protector, Hearing (Circumaural)",U,,Unknown,,,N,7
+GRE,"Antiserum, Fluorescent, Rubeola",1,MI,Microbiology,866.3520,,N,4
+PBK,Non-Variola Orthopoxvirus Real-Time Pcr Primer And Probe Set,2,MI,Microbiology,866.3315,In vitro qualitative detection of non-variola Orthopoxvirus nucleic acids extracted from human specimens or viral culture.,N,1
+JMJ,"Microbiological, Histidine",1,CH,Clinical Chemistry,862.1375,,N,4
+MTI,"Kit, Cell Screening, Fetal",N,,Unknown,,,N,3
+LLO,"Laser, Neodymium:Yag, Pulmonary Surgery",2,EN,"Ear, Nose, Throat",874.4500,,N,1
+RFD,Laser Weapon (Military Or Police),N,,Unknown,,"Product, laser, weapon (military/police)",Y,
+KIY,"Chamber, Slide Culture",1,HE,Hematology,864.2240,,Y,4
+LMI,"Implant, Collagen For Non-Aesthetic Use",3,,Unknown,,,N,2
+MCI,"Graft, Vascular, Hemodialysis Access, Synthetic/Biological Composite",3,,Unknown,,,N,2
+MVS,"Kit, Typing, Hla-Dqb",2,IM,Immunology,866.5660,,N,1
+NFB,"Conserver, Oxygen",2,AN,Anesthesiology,868.5905,,N,1
+PRX,Gastrostomy Guide Wire Placement Kit,2,GU,"Gastroenterology, Urology",876.5980,"This product code has been established in accordance with the May 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm080217.pdf.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+IYZ,"Bed, Scanning, Nuclear",1,RA,Radiology,892.1350,,N,4
+HDF,"Speculum, Vaginal, Metal",1,OB,Obstetrics/Gynecology,884.4520,,N,4
+CCY,"Zimmerman (Spectrophotometric), 17-Ketosteroids",1,CH,Clinical Chemistry,862.1430,,N,4
+KIG,"Prosthesis, Wrist, Constrained, Polymer",2,OR,Orthopedic,888.3780,,N,1
+GCF,Proctoscope,2,GU,"Gastroenterology, Urology",876.1500,,N,1
+DNO,"Hemagglutination Inhibition, Gentamicin",2,TX,Clinical Toxicology,862.3450,,N,1
+PQH,Iodinated Contrast Media Transfer Tubing Set,2,HO,General Hospital,880.5440,The iodinated contrast media transfer set is intended to transfer iodinated contrast media from imaging bulk package contrast media in a controlled ambient environment.  The transfer set is intended to be used to directly fill multiple sterile single use syringes from an imaging bulk package contrast media bulk package under controlled ambient filling conditions such as a CT suite.,N,1
+MOT,"Irradiator, Blood To Prevent Graft Versus Host Disease",U,,Unknown,,,N,1
+NNP,"Die, Wire Bending, Ent, Non-Sterile",1,EN,"Ear, Nose, Throat",874.3540,Prosthesis modification instrument for ossicular replacement surgery; see product code JXW.,Y,4
+IRD,"Joint, Elbow, External Limb Component, Mechanical",1,PM,Physical Medicine,890.3420,,Y,4
+PXK,Vascular Access Port Kit,2,HO,General Hospital,880.5965,"This product code has been established in accordance with the May 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm080217.pdf.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+LAO,"Enzyme Immunoassay, Methotrexate",U,,Unknown,,,N,1
+GTB,"Antisera, Fluorescent, All Types, Klebsiella Spp.",1,MI,Microbiology,866.3340,,N,4
+DPG,"Radioimmunoassay, Digitoxin (125-I), Rabbit Antibody, Coated Tube Sep.",2,TX,Clinical Toxicology,862.3300,,N,1
+KDW,"Container, Specimen Mailer And Storage, Temperature Controlled, Sterile",1,PA,Pathology,864.3250,,N,4
+DKW,Test Reagents For Sulphanimide Derivatives,1,TX,Clinical Toxicology,862.3850,,N,1
+EHK,"Cup, Prophylaxis",1,DE,Dental,872.6290,,Y,4
+FTQ,"Prosthesis, Penis, Rigid Rod",2,GU,"Gastroenterology, Urology",876.3630,,N,1
+KSE,"Refrigerator, Freezer, Blood Storage",2,HE,Hematology,864.9700,,N,4
+IQO,"Device, Prosthesis Alignment",1,PM,Physical Medicine,890.3025,,Y,4
+FRZ,"Device, Patient Transfer, Powered",2,HO,General Hospital,880.6775,,N,4
+ODG,"Endoscopic Ultrasound System, Gastroenterology-Urology",2,GU,"Gastroenterology, Urology",876.1500,"To provide ultrasonic visualization of body cavities that can be accessed by endoscope.    For reusable, flexible endoscopes in this product code, validated reprocessing instructions and reprocessing validation data must be included in a 510(k) submission (82 FR 26807, available at https://www.gpo.gov/fdsys/pkg/FR-2017-06-09/pdf/2017-12007.pdf).",N,1
+GSW,"Antiserum, Flavobacterium Meningosepticum, All Groups",1,MI,Microbiology,866.3270,,N,4
+KAH,"Microrule, Ent",1,EN,"Ear, Nose, Throat",874.4420,,N,4
+IZX,"Collimator, Manual, Radiographic",2,RA,Radiology,892.1610,,N,4
+NWA,"Prosthesis, Tracheal, Preformed/Molded",2,SU,"General, Plastic Surgery",878.3720,The device is intended to provide support to weakened or constricting airway walls.,N,1
+CJL,"Beta Glycerophosphate, Alkaline Phosphatase Or Isoenzymes",2,CH,Clinical Chemistry,862.1050,,N,1
+NZT,"Dosimeter, Ionizing Radiation, Implanted",2,RA,Radiology,892.5050,Verify radiation dose to organs from external radiation therapy.,N,1
+HHE,"Cup, Menstrual",2,OB,Obstetrics/Gynecology,884.5400,A menstrual cup is a receptacle placed in the vagina to collect menstrual flow.,N,4
+MYS,"Device, Ahf, Automated Cryoprecipitation",N,,Unknown,,,N,3
+NQP,"Posterior Metal/Polymer Spinal System, Fusion",2,OR,Orthopedic,888.3070,"This device is a posterior spinal system that contains polymer and metal components.  This spinal system is to be used with bone graft and is an adjunct to fusion in the treatment of acute and chronic instabilities or deformities of the thoracic, lumbar, and sacral spine.",N,1
+QEF,Pressure Ulcer Management Tool,1,GU,"Gastroenterology, Urology",876.2100,A pressure ulcer management tool is a prescription device intended for patients at risk of developing pressure ulcers. The device provides output that supports a users decision to increase intervention. The device is an adjunct tool for pressure ulcer management that is not intended for detection or diagnostic purposes.,N,4
+LAW,Theophylline Control Materials,1,TX,Clinical Toxicology,862.3280,,N,4
+QDO,Fentanyl And Other Opioid  Protection Glove,1,HO,General Hospital,880.6250,"A patient examination glove is a disposable device intended for medical purposes that is worn on the examiner's hand to prevent contamination between patient and examiner.      Fentanyl and other opioid protection gloves are tested for use with  chemotherapy drugs, Fentanyl Citrate, and possibly other opioids per ASTM D6978-05 (Reapproved 2013) Standard Practice for Assessment of Medical Gloves to Permeation by Chemotherapy Drugs.",N,1
+FWD,"Camera, Television, Microsurgical, Without Audio",1,SU,"General, Plastic Surgery",878.4160,,N,4
+EXH,"Bag, Urinary, Ileostomy",1,GU,"Gastroenterology, Urology",876.5900,,N,4
+PMV,"Orthosis, Limb, For Back Pain",1,PM,Physical Medicine,890.3475,Intended to provide pressure to the soleus muscle for the purpose of temporarily reducing lower back pain that radiates down the leg associated with normal household or work activities.,Y,4
+FYH,"Splint, Extremity, Noninflatable, External, Sterile",1,SU,"General, Plastic Surgery",878.3910,,N,4
+RCM,"Microscope (Electron Beam), Non-Medical",N,,Unknown,,a particle beam system used to view objects or details too small to view with an optical microscope.,Y,
+LFY,"Enzyme Linked Immunoabsorbent Assay, Varicella-Zoster",2,MI,Microbiology,866.3900,,N,1
+JKT,"Gas Chromatograph, Carbon-Monoxide",1,TX,Clinical Toxicology,862.3220,,N,4
+HSS,"Halter, Head, Traction",1,OR,Orthopedic,888.5890,,Y,4
+DPQ,"Liquid Chromatography, Primidone",2,TX,Clinical Toxicology,862.3680,,N,1
+PZS,Dual Lumen Ecmo Cannula,2,CV,Cardiovascular,870.4100,"Long term support greater than 6 hours for acute respiratory or acute cardiopulmonary failure, where other available treatment options have failed, and continued clinical deterioration is expected or the risk of death is imminent.",N,1
+MSE,"Hemodialyzer, Re-Use, Low Flux",2,GU,"Gastroenterology, Urology",876.5820,,N,1
+SES,Non-Factor Replacement Product Test System,2,HE,Hematology,864.7298,"A non-factor replacement product test system is a prescription in vitro diagnostic device intended to measure non-factor replacement therapeutic products that are indicated for routine prophylaxis to prevent or reduce the frequency of bleeding episodes in patients with bleeding disorders, including hemophilia, in human blood specimens to ensure appropriate therapy in accordance with the approved non-factor replacement product labeling.",N,1
+OSD,"Massager, Therapeutic, To Internally Massage Trigger Points In The Pelvic Floor Musculature",2,PM,Physical Medicine,890.5670,"Rectal or vaginal use manual therapeutic massager device to massage irritable, sore trigger points (trps) in the pelvic floor musculature in order to reduce internal pelvic floor trigger point sensitivity",N,1
+MEB,"Pump, Infusion, Elastomeric",2,HO,General Hospital,880.5725,,N,1
+PTT,"Biliary Catheter For Irrigation And Contrast Injection, Exempt",2,GU,"Gastroenterology, Urology",876.5010,"This product code is the class II exempt counterpart of GCA, and was exempted, subject to the limitations of exemption, under the procedures established by the 21st Century Cures Act. This device type does not require premarket notification (510(k)) to market if it does not exceed the general limitations of exemption found in 21 CFR 876.9 and the specific limitations of exemption as stated in the Physical State field of this product code description.",N,4
+KZC,Manual Colony Counter,1,MI,Microbiology,866.2180,,Y,4
+LYA,"Splint, Intranasal Septal",1,EN,"Ear, Nose, Throat",874.4780,,N,4
+QHX,Fluoroscopic X-Ray Image Intensifier,1,RA,Radiology,892.1960,To instantaneously convert an x-ray pattern from a fluoroscopic x-ray system into a corresponding light image of higher energy density.,N,4
+OCW,Endoscopic Tissue Approximation Device,2,GU,"Gastroenterology, Urology",876.1500,"To aid in endoscopically placing sutures, staples, clips, and other fastening tools through tissue.",N,1
+HIR,Perineometer,2,OB,Obstetrics/Gynecology,884.1425,,N,1
+OUO,Tomographic Imager Combining Emission Computed Tomography With Nuclear Magnetic Resonance,2,RA,Radiology,892.1200,Imager that generates both both magnetic resonance (mr)  and positron emission tomography (pet) images and provides registration and fusion of these images.  Pet and mr images can be acquired either simultaneously or sequentially.  Anatomical mr images are used for pet attenuation correction.,N,1
+NNB,"Needle, Reproduction, Assisted, Reprocessed",2,OB,Obstetrics/Gynecology,884.6100,"Reprocessing validation data for this device type must be included in a 510(k) submission. (70 FR 56911, available at https://www.govinfo.gov/content/pkg/FR-2005-09-29/pdf/05-19510.pdf).",N,1
+DEH,"Lambda, Antigen, Antiserum, Control",2,IM,Immunology,866.5550,,N,1
+LZN,Cement Obturator,2,SU,"General, Plastic Surgery",878.3300,,N,1
+LRL,"Cushion, Hemorrhoid",U,,Unknown,,,N,7
+PVG,"Test, Morphine, Employment And Insurance Testing, Exempt",2,TX,Clinical Toxicology,862.3640,"The morphine test is an in vitro diagnostic test for the qualitative analysis of morphine for employment and insurance testing.    FDA has exempted these devices from the premarket notification requirement by publishing in the Federal Register of July 11, 2017 (82 FR 31976) available at https://www.federalregister.gov/documents/2017/07/11/2017-14453/medical-devices-exemptions-from-premarket-notification-class-ii-devices subject to the limitations under 21 CFR XXX.9, where XXX refers to Parts 862-892, and any limitations on the exemption described in (82 FR 31976).  Any device that exceeds the limitations found in 21 CFR sections 862.9 to 892.9 or identified in the Federal Register  (82 FR 31976) available at https://www.federalregister.gov/documents/2017/07/11/2017-14453/medical-devices-exemptions-from-premarket-notification-class-ii-devices is required to submit a premarket notification submission (510(k)) to FDA before introducing a device into interstate commerce.  If a manufacturers device is exempt from the premarket notification requirement, then a premarket notification submission and FDA clearance is not required before marketing the device in the U.S. however, manufacturers are required to meet all other requirements under the Federal Food Drug & Cosmetic and implementing regulations including (but not limited to) registration and listing requirements. Please see the Device Registration and Listing website for additional information on registration and listing.",N,4
+DAL,"Fraction Iv-5, Antigen, Antiserum, Control",1,IM,Immunology,866.5360,,N,4
+GCB,"Needle, Catheter",1,SU,"General, Plastic Surgery",878.4200,,N,4
+FCX,"Insufflator, Automatic Carbon-Dioxide For Endoscope",2,GU,"Gastroenterology, Urology",876.1500,,N,1
+IXD,"Source, Calibration, Sealed, Nuclear",1,RA,Radiology,892.1400,,N,4
+DAC,"Complement C3b Activator, Antigen, Antiserum, Control",2,IM,Immunology,866.5260,,N,1
+RFF,Laser Welder,N,,Unknown,,A high power laser intended to weld (join) materials in an industrial or commercial environment.,Y,
+MCE,Respiratory Syncytial Virus - Elisa,1,MI,Microbiology,866.3480,,N,4
+LFH,"U.V. Spectrometry, Tricyclic Antidepressant Drugs",2,TX,Clinical Toxicology,862.3910,,N,1
+IPG,"Shoe, Cast",1,PM,Physical Medicine,890.3025,,Y,4
+RDA,"Dielectric Heaters, Induction Heaters, Rf Sealers",N,,Unknown,,A machine that utilizes industrial radiofrequency (rf) induction heating with rf fields in frequency range from 2-500 mhz for industrial heating.,Y,
+MAE,"Occluder, Patent Ductus, Arteriosus",3,,Unknown,,,N,2
+PEW,Implantable Transprostatic Tissue Retractor System,2,GU,"Gastroenterology, Urology",876.5530,The treatment of symptoms due to urinary outflow obstruction secondary to benign prostatic hyperplasia (BPH) in men age 50 and above.,N,1
+BYY,"Tube, Aspirating, Flexible, Connecting",2,HO,General Hospital,880.6740,,N,4
+IWT,"Shield, Gonadal",1,RA,Radiology,892.6500,,N,4
+MRZ,"Accessories, Pump, Infusion",2,HO,General Hospital,880.5725,,N,1
+PZP,Fluid Jet Removal System,2,SU,"General, Plastic Surgery",876.4350,The system is used for removal of prostate tissue with a fluid jet.,N,1
+LYR,Helicobacter Pylori,1,MI,Microbiology,866.3110,,N,1
+PGQ,Cochlear Implant With Combined Electrical Stimulation And Acoustic Amplification,3,,Unknown,,"Intended to provide electric stimulation to the mid to high frequency region of the cochlea and acoustic amplification to the low frequency regions, for patients with residual low frequency hearing sensitivity.",N,2
+KMF,"Bandage, Liquid",1,HO,General Hospital,880.5090,,N,1
+PSF,Non-Balloon Replacement Gastrostomy System,2,GU,"Gastroenterology, Urology",876.5980,"This product code has been established in accordance with the May 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm080217.pdf.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+QBV,Centrifuge For Preparation Of Cell Concentrate And/Or Plasma Concentrate,1,CH,Clinical Chemistry,862.2050,To prepare cell concentrate and/or plasma concentrate by separating cells through centrifugation.     Contraindications - Labeling Warnings and Precautions: The safety and effectiveness of this device for in vivo indications for use has not been established.,N,4
+NEQ,"Device, Telemedicine, Robotic",2,GU,"Gastroenterology, Urology",876.1500,,N,1
+NPB,"System, Monitoring, For Progress Of Labor",2,OP,Ophthalmic,884.2800,"This monitoring system for progress of labor provides intrapartum measurement of cervical dilation, fetal head station, and/or other sentinel anatomical markers.  This device is intended to be used adjunctively with other diagnostic information in order to clinically follow the progress of labor.",N,1
+CHL,"Electrode Measurement, Blood-Gases (Pco2, Po2) And Blood Ph",2,CH,Clinical Chemistry,862.1120,,N,1
+HYQ,Iron Chloride-Weigert,1,HE,Hematology,864.1850,,Y,4
+SDA,Electrical Tumor Treatment Fields For Non-Small Cell Lung Cancer,3,,Unknown,,Optune Lua concurrent with PD-1/PD-L1 inhibitors or docetaxel is indicated for adult patients with metastatic non-small cell lung cancer who have progressed on or after a platinum-based regimen.,N,2
+RBM,"Microtron, Non-Medical",N,,Unknown,,A microtron used for non-medical applications.,Y,
+CGE,"Orthotoluidine, Glucose",2,CH,Clinical Chemistry,862.1345,,N,1
+KAN,"Chisel, Nasal",1,SU,"General, Plastic Surgery",878.4800,,N,4
+FJB,"Detector, Dialysate Level",2,GU,"Gastroenterology, Urology",876.5820,,N,1
+IYB,"Tube Mount, X-Ray, Diagnostic",1,RA,Radiology,892.1770,,N,4
+DFL,"Igm, Ferritin, Antigen, Antiserum, Control",2,IM,Immunology,866.5550,,N,1
+RGZ,Ir Security,N,,Unknown,,A noncoherent infrared light source used for security.,Y,
+OUZ,Nucleic Amplification Assays For The Detection Of Leishmania Nucleic Acids,1,MI,Microbiology,866.3870,Detection of  Leishmania species in skin lesions.,N,1
+RAA,Laser Products (Pre-Standard),N,,Unknown,,"A laser product assembled or manufactured before August 1, 1976",Y,
+KHY,"Cane, Safety Walk",1,PM,Physical Medicine,890.3075,,Y,4
+CAX,"Flowmeter, Tube, Thorpe, Back-Pressure Compensated",1,AN,Anesthesiology,868.2340,,N,4
+QAN,"Stent, Iliac Vein",3,,Unknown,,A metal scaffold placed via a delivery catheter in the iliac vein to maintain the lumen,N,2
+QGG,Esophageal Sheath With Distal Balloon Anchor,2,GU,"Gastroenterology, Urology",876.1510,Used to provide an endoluminal pathway to facilitate insertion of an endoscope or other specifically validated device into the upper gastrointestinal tract.  A distal balloon anchor assists in keeping the sheath in place to facilitate positioning of the endoscope or other specifically validated device.,N,1
+IKY,"Mattress, Flotation Therapy, Non-Powered",1,HO,General Hospital,880.5150,,Y,4
+KXJ,"Table, Radiologic",2,RA,Radiology,892.1980,,N,4
+PUN,Lice Removal Kit Containing A Solution,1,HO,General Hospital,880.5960,To remove lice eggs from hair,N,4
+LNL,"Stimulator, Electrical For Sperm Collection",U,,Unknown,,,N,1
+OQW,"2009 H1n1 Influenza Virus (Swine Origin), Nucleic Acid Or Antigen, Detection And Identification",2,MI,Microbiology,866.3332,2009 H1N1 influenza virus detection and identification reagents are used to directly detect and differentiate the 2009 H1N1 influenza virus in human respiratory specimens,N,1
+FBW,Filiform And Filiform Follower,1,GU,"Gastroenterology, Urology",876.5520,,N,4
+FQP,"Lamp, Operating-Room",2,SU,"General, Plastic Surgery",878.4580,,N,4
+ESW,"Prosthesis, Esophageal",2,SU,"General, Plastic Surgery",878.3610,,N,1
+JIL,"Method, Enzymatic, Glucose (Urinary, Non-Quantitative)",2,CH,Clinical Chemistry,862.1340,,N,1
+EPT,"Microscope, Surgical",1,SU,"General, Plastic Surgery",878.4700,,N,4
+MGI,"Aspirator, Ultrasonic",3,,Unknown,,,N,3
+GQI,"Antiserum, Cf, Cytomegalovirus",2,MI,Microbiology,866.3175,,N,1
+KIW,"Kit, Mycoplasma Detection",1,HE,Hematology,864.2360,,N,4
+MYJ,"Device, Mixing And Weighing, Semi-Automated",2,HE,Hematology,864.9195,,N,1
+RCA,X-Ray Controls - Fluoroscopic,N,,Unknown,,"A device which controls input power to the x-ray high-voltage generator and/or the x-ray tube. It includes equipment such as timers, phototimers, automatic brightness stabilizers, and similar devices which control the technique factors of an x-ray exposure for generating x-ray images and presenting them simultaneously and continuously as visible images.",N,
+DGC,"Ige, Antigen, Antiserum, Control",2,IM,Immunology,866.5510,,N,1
+NEW,"Suture, Surgical, Absorbable, Polydioxanone",2,SU,"General, Plastic Surgery",878.4840,,N,1
+KDO,"Rongeur, Cystoscopic, Hot",2,GU,"Gastroenterology, Urology",876.1500,,N,1
+LMB,"Device, Digital Image Storage, Radiological",1,RA,Radiology,892.2010,Medical image storage hardware is a device that provides electronic maintenance and access functions for medical images.,N,4
+NBO,"Autoantibodies, Skin (Desmoglein 1 And Desmoglein 3)",2,IM,Immunology,866.5660,,N,1
+BZT,"Stethoscope, Esophageal, With Electrical Conductors",2,AN,Anesthesiology,868.1920,,N,1
+QHQ,Total Shoulder Arthroplasty System,2,OR,Orthopedic,888.3660,To treat pain and lack of function in the shoulder.,N,1
+RDF,Motor,N,,Unknown,,A machine that utilizes microwave or elf radiation in a motor.,Y,
+ITZ,"Assembly, Tube Housing, X-Ray, Therapeutic",2,RA,Radiology,892.5930,,N,1
+MHD,"Pump, Infusion, Gallstone Dissolution",2,HO,General Hospital,880.5725,,N,1
+QOC,Temporary Non-Roller Type Left Or Right Heart Support Blood Pump,N,,Unknown,,Providing temporary partial or full left or right heart circulatory support in addition to other treatments for patient during the declared public health emergency.,N,8
+BTK,"Strap, Head, Gas Mask",1,AN,Anesthesiology,868.5560,,N,4
+NKN,"Syringe, Piston, Reprocessed",2,HO,General Hospital,880.5860,"A piston syringe is a device intended for medical purposes that consists of a calibrated hollow barrel and a movable plunger.  At one end of the barrel there is a male connector (nozzle) for fitting the female connector (hub) of a hypodermic single lumen needle.  The device is used to inject fluids into, or withdraw fluids from, the body. Reprocessing validation data for this device type must be included in a 510(k) submission. (70 FR 56911, available at https://www.govinfo.gov/content/pkg/FR-2005-09-29/pdf/05-19510.pdf).",N,1
+MJS,"Contrast Media, Ultrasound",3,,Unknown,,,N,2
+QLY,Ophthalmic Syringe,2,HO,General Hospital,880.5860,"An Ophthalmic Syringe is a piston syringe intended for intraocular injections. The device consists of a calibrated hollow barrel, a movable plunger, and may include a needle. The device should be used by health care professionals to perform injections into the eye.",N,1
+GGK,"Products, Red-Cell Lysing Products",1,HE,Hematology,864.8540,,N,4
+QHO,Nucleic-Acid Tests Used For Infectious Disease Screening Of Blood And Plasma Donations,U,MI,Microbiology,610.40,For the qualitative detection of nucleic acid for infectious disease agents in human specimens.,N,3
+FFP,"Dilator, Rectal",1,GU,"Gastroenterology, Urology",876.5450,,N,4
+FZQ,"Clip, Removable (Skin)",1,SU,"General, Plastic Surgery",878.4320,,N,4
+DDQ,"Antigen, Antiserum, Control, Antithrombin Iii",2,HE,Hematology,864.7060,,N,1
+QGZ,Electrical Tumor Treatment Fields,3,,Unknown,,The device is intended to treat patients with inoperable malignant pleural mesothelioma (MPM) concurrent to chemotherapy.,N,6
+FXW,"Shoes, Operating-Room",1,SU,"General, Plastic Surgery",878.4040,,N,4
+HLE,"Ruler, Nearpoint (Punctometer)",1,OP,Ophthalmic,886.1790,,Y,4
+JRY,"Antiserum, Fluorescent, Epstein-Barr Virus",1,MI,Microbiology,866.3235,,N,1
+KJN,Brilliant Cresyl Blue,1,HE,Hematology,864.1850,,Y,4
+PDC,Investigational Use Only - Hematology,N,,Unknown,,Investigational use only and for products imported into the US only.,Y,7
+REU,"Laser Aiming Product, Visible",N,,Unknown,,"Product, laser, aiming, visible, attached to weapon; An optical devices, using a visible beam of laser light that permits the alignment of a gun, cannon or rocket system with its target",Y,
+BXJ,"Clip, Nose",1,AN,Anesthesiology,868.6225,,Y,4
+OXK,"Mesh, Surgical, Collagen, Large Abdominal Wall Defects",2,SU,"General, Plastic Surgery",878.3300,For reinforcement of soft tissue where weakness exists in abdominal wall defects.,N,1
+NNW,"Bag, Urine Collection, Leg, For External Use, Non-Sterile",1,GU,"Gastroenterology, Urology",876.5250,Urine collector and accessories; see product code FAQ.,Y,4
+PAA,Automated Breast Ultrasound,3,,Unknown,,Adjunct to mammography for breast cancer screening and diagnosis.,N,2
+KTJ,"System, Test, Alpha-Fetoprotein, Ria",3,,Unknown,,,N,2
+QEX,Coronary Mechanical Thrombectomy With Aspiration,2,CV,Cardiovascular,870.5150,To mechanically disrupt thrombus and/or debris prior to removal from the coronary vasculature through aspiration.,N,1
+NTG,"Prosthesis, Ankle, Uncemented, Non-Constrained",3,,Unknown,,"An ankle joint metal/polymer non-constrained uncemented prosthesis is a device intended to be implanted to replace an ankle joint. The device limits minimally (less than normal anatomic constraints) translation in one or more planes. It has no linkage across-the-joint. This generic type of device includes prostheses that have a tibial component made of alloys, such as cobalt-chromium-molybdenum, and a talar component made of ultra-high molecular weight polyethylene.",N,2
+RHT,"Laser Mouse, Trackball, Or Similar",N,,Unknown,,"A mouse or trackball related to a computer or similar electronic tool, used to control the curser on the screen interface.",Y,
+JAI,"Couch, Radiation Therapy, Powered",2,RA,Radiology,892.5770,,N,1
+PIL,Test For Periprosthetic Joint Infection,N,,Unknown,,A qualitative in vitro diagnostic device intended as an adjunct for the detection of periprosthetic joint infection (PJI) in synovial fluid of patients experiencing pain and/or inflammation in a replacement joint.,N,3
+EEF,"Clamp, Rubber Dam",1,DE,Dental,872.6300,,Y,4
+LBN,"Replacement, Total Ossicular, Prosthesis, Porous, Polyethylene",2,EN,"Ear, Nose, Throat",874.3495,,N,1
+PWP,Blood Borne Pathogen Response Kit,1,HO,General Hospital,880.6250,"This product code has been established in accordance with the May 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm080217.pdf.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+FWC,"Camera, Television, Surgical, With Audio",1,SU,"General, Plastic Surgery",878.4160,,N,4
+OKG,Body Fluid Clean Up Kit,2,SU,"General, Plastic Surgery",878.4040,"This product code has been established in accordance with the May 20, 1997, Guidance entitled, Convenience Kits Interim Regulatory Guidance, found at www.fda.gov/cdrh/ode/convkit.html.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+JBN,Fibrin Monomer Paracoagulation,2,HE,Hematology,864.7300,,N,4
+NRY,"Catheter, Thrombus Retriever",2,CV,Cardiovascular,870.1250,"The device is intended to restore blood flow by removing thrombus/clots in patients experiencing ischemic stroke.  The prior clearances in this category have been limited to simply identifying catheter placed in the peripheral, coronary, and neurovasculature.  It is felt that this is a unique claim and should not be combined with previously cleared catheters under a general procode.",N,1
+FIA,"Chair, Dialysis, Unpowered, Without Scales",1,GU,"Gastroenterology, Urology",876.5820,,N,4
+GAH,"Stylet, Surgical, General & Plastic Surgery",1,SU,"General, Plastic Surgery",878.4800,,N,4
+JBD,"System, Analysis, Electrophoretic Hemoglobin",2,HE,Hematology,864.7440,,N,1
+JMQ,"M. Lysodeikticus Cells (Spectrophotometric), Lysozyme (Muramidase)",1,CH,Clinical Chemistry,862.1490,,N,4
+GED,"Brush, Dermabrasion, Manual",1,SU,"General, Plastic Surgery",878.4800,,N,4
+HOY,"Shield, Eye, Ophthalmic (Including Sunlamp Protective Eyewear And Post-Mydriatic Eyewear)",1,OP,Ophthalmic,886.4750,,Y,4
+OZE,Influenza A And Influenza B Multiplex Nucleic Acid Assay,2,MI,Microbiology,866.3980,An Influenza A and Influenza B multiplex nucleic acid assay is a multiplex in vitro diagnostic test for the simultaneous qualitative detection and discrimination of influenza A and influenza B nucleic acids isolated and purified from human respiratory specimens obtained from individuals exhibiting signs and symptoms of respiratory tract infections or viral culture. The detection and discrimination of influenza A and B nucleic acids from symptomatic patients aid in the diagnosis of human respiratory tract influenza viral infections if used in conjunction with other clinical and laboratory findings.,N,1
+DHF,"D/Km-1, Antigen, Antiserum, Control",1,IM,Immunology,866.5065,,N,4
+FPB,"Filter, Infusion Line",2,HO,General Hospital,880.5440,,N,1
+RGN,Photochemical Curing And Adhesive Laser,N,,Unknown,,"An ultraviolet wavelength laser light source used to illuminate a material of a certain composition such that the light """"cures"""" or causes a chemical reaction to change the material in a desired fashion. Typical materials are adhesives, plastics, potting compounds, etc.",Y,
+NOE,"Test, System, Immunoassay, Lipoprotein-Associated Phospholipase A2",2,IM,Immunology,866.5600,"The Lipoprotein-associated Phospholipase A2, Immunoassay, System, Test, is intended to measure lipoprotein-associated phospholipase A2 in human plasma in conjunction with clinical evaluation and other patient risk factors including biochemical analyses as an aid in predicting risk for coronary heat disease. This device differs from the classification regulation in that it is a different analyte, thus a NEW marker for predicting risk of coronary heart disease. This device is measuring an enzyme that is produced by macrophages where as the regulation is for the measurement of a lipoprotein.",N,1
+QVX,Skin Patch For Treatment Of Hyperhidrosis,2,SU,"General, Plastic Surgery",878.4425,A skin patch for treatment of hyperhidrosis is a prescription topical patch that utilizes a chemical reaction to generate thermal energy in situ for treatment of hyperhidrosis.,N,1
+PJH,Dynamic Rectal Control System,2,GU,"Gastroenterology, Urology",876.5930,Intended to treat fecal incontinence by controlling the size of the rectal lumen.,N,1
+FWJ,"Camera, Cine, Microsurgical, Without Audio",1,SU,"General, Plastic Surgery",878.4160,,N,4
+GNP,"Antiserum, Cf, Epstein-Barr Virus",1,MI,Microbiology,866.3235,,N,1
+MIR,"Shunt, Portosystemic, Endoprosthesis",3,,Unknown,,,N,2
+ICM,Brilliant Yellow,1,HE,Hematology,864.1850,,Y,4
+OFK,Percutaneous Atrial Catheter Kit,2,CV,Cardiovascular,870.1250,"This product code has been established in accordance with the may 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at www.Fda.Gov/cdrh/ode/convkit.Html.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+JQT,"Densitometer/Scanner (Integrating, Reflectance, Tlc, Radiochromat.) Clinica",1,CH,Clinical Chemistry,862.2400,,N,4
+LQM,Gram Negative Identification Panel,1,MI,Microbiology,866.2660,,N,4
+EKM,Gutta-Percha,1,DE,Dental,872.3850,,N,4
+EZW,"Stimulator, Electrical, Implantable, For Incontinence",3,GU,"Gastroenterology, Urology",876.5270,PMAs to be filed by 12/26/96 (61 FR 50707 (9/27/96)),N,2
+QTI,Saline Vascular Access Flush With Integrated Alcohol Disinfectant Device,2,HO,General Hospital,880.5200,Prefilled saline flush syringe with an integrated disinfection unit is intended to be used as a disinfection cleaner for needleless access devices attached to indwelling vascular access devices (VADs) and flushing of these VADs.,N,1
+GBZ,"Catheter, Cholangiography",1,SU,"General, Plastic Surgery",878.4200,,N,4
+DAW,"Alpha-2-Ap-Glycoprotein, Antigen, Antiserum, Control",1,IM,Immunology,866.5425,,N,4
+LKM,"Counter, Urine Particle",2,HE,Hematology,864.5200,,N,1
+GXX,"Block, Test, Ultrasonic Scanner Calibration",1,NE,Neurology,882.1925,,N,4
+GCL,"Esophagoscope, General & Plastic Surgery",2,GU,"Gastroenterology, Urology",876.1500,"If the device is reusable, validated reprocessing instructions and reprocessing validation data for this device type must be included in a 510(k) submission (82 FR 26807, available at https://www.gpo.gov/fdsys/pkg/FR-2017-06-09/pdf/2017-12007.pdf).",N,1
+GFB,"Head, Surgical, Hammer",1,SU,"General, Plastic Surgery",878.4820,,N,4
+KSY,"Boxes, View, Blood Grouping",1,HE,Hematology,864.9185,,N,4
+GKW,"Aggregometer, Platelet, Thrombokinetogram",2,HE,Hematology,864.6675,,N,1
+LMF,"Agent, Absorbable Hemostatic, Collagen Based",3,SU,"General, Plastic Surgery",878.4490,,N,2
+PTL,"Wire, Guide, Catheter, Exempt",2,CV,Cardiovascular,870.1330,"This product code is the class II exempt counterpart of DQX, and was exempted, subject to the limitations of exemption, under the procedures established by the 21st Century Cures Act. This device type does not require premarket notification (510(k)) to market if it does not exceed the general limitations of exemption found in 21 CFR 870.9 and the specific limitations of exemption as stated in the Physical State field of this product code description.",N,4
+MMF,Photorefractor,2,OP,Ophthalmic,886.1120,,N,4
+QYA,System For Detection Of Nucleic Acid From Non-Viral Microorganism(S) Causing Stis Using Specimens Collected At Home,2,MI,Microbiology,866.3385,This device is an in vitro diagnostic system intended for self-collecting specimens in home settings or similar environments and testing in a clinical laboratory for detection of nucleic acids from non-viral microorganism(s) causing sexually transmitted infections. The device is intended to aid in the diagnosis of sexually transmitted infections. The device is intended for prescription use or over-the-counter use.,N,1
+JCB,Detergent,1,PA,Pathology,864.4010,,Y,4
+OVY,Liquid Chemical Processing System,2,HO,General Hospital,880.6887,The liquid chemical processing system is intended as a standard method for routine monitoring.,N,1
+DQO,"Catheter, Intravascular, Diagnostic",2,CV,Cardiovascular,870.1200,,N,1
+QWQ,Assays To Detect Pre-Existing Antibodies To Adeno-Associated Virus (Aav) Viral Vectors,3,,Unknown,,An in vitro diagnostic device intended to detect and/or measure pre-existing endogenous antibodies to adeno-associated virus (AAV) viral vectors in patients who may receive AAV vector-based gene therapy products.,N,2
+DLY,"Plate, Alumina, Tlc",1,CH,Clinical Chemistry,862.2270,,N,4
+QON,Implanted Electrical Device Intended For Treatment Of Fecal Incontinence,3,GU,"Gastroenterology, Urology",876.5270,Treatment of chronic fecal incontinence,N,2
+GDC,"Table, Operating-Room, Electrical",1,SU,"General, Plastic Surgery",878.4960,,N,4
+GRG,"Antiserum, Hai, Rubeola",1,MI,Microbiology,866.3520,,N,4
+QYI,"Ablation Catheter, Renal Denervation",3,,Unknown,,For denervating the renal nerves to lower blood pressure,N,2
+NJW,"Control Material, Her-2/Neu, Immunohistochemistry",2,HE,Hematology,864.1860,Accessory to immunohistochemistry assays for Her2-neu.  Control material intended for laboratory use to control Her2-neu immunohistochemistry assays.,N,1
+QUO,Adjunctive Heart Failure Status Indicator,2,CV,Cardiovascular,870.2200,The adjunctive heart failure status indicator is a prescription device based on sensor technology or image data to provide information to an interpreting clinician in detecting heart failure. This device is intended for adjunctive use with other physical vital sign parameters and patient information and is not intended to independently direct therapy.,N,1
+QVD,Radiological Machine Learning Based Quantitative Imaging Software With Change Control Plan,2,RA,Radiology,892.2055,"A radiological machine learning quantitative imaging software with predetermined change control plan is a software-only device which employs machine learning algorithms on radiological images to provide quantitative imaging outputs. The device includes  functions to support outputs such as view selection, segmentation and landmarking. The design specifications include planned modifications that may be made to the device consistent with an established predetermined change control plan.",N,1
+LQD,"Recorder, Attention Task Performance",U,,Unknown,,,N,1
+KZP,"Solution, Cement Dissolving",2,DE,Dental,872.3750,,N,1
+FEZ,"Catheter And Tube, Suprapubic",2,GU,"Gastroenterology, Urology",876.5090,,N,1
+OXZ,Pediatric/Child Facemask,2,SU,"General, Plastic Surgery",878.4040,"A pediatric/child facemask is intended to be worn by the patient/child to provide protection for the respiratory tract.   It is a single use, disposable device that is provided non-sterile.   The facemask is recommended for use in a healthcare setting with appropriate adult supervision.",N,1
+KAM,"Cannula, Sinus",1,SU,"General, Plastic Surgery",878.4800,,N,4
+DGK,"Igg, Fitc, Antigen, Antiserum, Control",2,IM,Immunology,866.5510,,N,1
+MZI,"Test, Qualitative, For Hla, Non-Diagnostic",U,,Unknown,,,N,1
+LHG,"Electrode, Spinal Epidural",2,NE,Neurology,882.5880,,N,1
+MNL,"Accessories, Cleaning Brushes, For Endoscope",1,GU,"Gastroenterology, Urology",876.1500,,N,4
+LZM,"Guard, Skin Graft",1,SU,"General, Plastic Surgery",878.4014,,N,4
+IJZ,"Oil, Clearing",1,PA,Pathology,864.4010,,Y,4
+KSO,"Centrifuge, Blood-Bank For In Vitro Diagnostic Use",1,HE,Hematology,864.9275,,N,4
+OJR,Vacuum Powered Body Fluid Collection Kit,2,SU,"General, Plastic Surgery",878.4780,"This product code has been established in accordance with the May 20, 1997, Guidance entitled, Convenience Kits Interim Regulatory Guidance, found at www.fda.gov/cdrh/ode/convkit.html.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+PKK,Stent Delivery System,N,,Unknown,,For coarctation of the aorta,N,3
+QQJ,"Applicator, Negative Pressure, External, Ocular",2,OP,Ophthalmic,886.5000,External ocular negative pressure system. An external ocular negative pressure system uses hardware and software to create negative pressure in front of the eye to temporarily lower intraocular pressure in glaucoma patients.,N,1
+GZF,"Stimulator, Peripheral Nerve, Implanted (Pain Relief)",2,NE,Neurology,882.5870,,N,1
+QOL,Electroencephalography (Eeg)-Driven Upper Extremity Powered Exerciser,2,NE,Neurology,890.5420,An EEG-driven upper extremity powered exerciser is a non-invasive prescription device intended for rehabilitation by driving movement or exercise of an impaired upper extremity in response to the detection of purpose oriented electrical activity produced by the patient's brain.,N,1
+CZO,"Inter-Alpha Trypsin Inhibitor, Antigen, Antiserum, Control",1,IM,Immunology,866.5890,,N,4
+DXJ,"Display, Cathode-Ray Tube, Medical",2,CV,Cardiovascular,870.2450,,N,1
+GOA,"Antisera, Cf, Adenovirus 1-33",1,MI,Microbiology,866.3020,,N,4
+DJG,"Enzyme Immunoassay, Opiates",2,TX,Clinical Toxicology,862.3650,,N,1
+OYF,Aspiration Therapy System,3,,Unknown,,Percutaneous gastric implant to remove stomach contents after eating for weight loss in the treatment of obesity in adults,N,2
+KDA,"Prosthesis, Ptfe/Carbon-Fiber",2,SU,"General, Plastic Surgery",878.3500,,N,1
+JSX,"Kit, Identification, Neisseria Gonorrhoeae",1,MI,Microbiology,866.2660,,N,4
+EFH,"Paper, Articulation",1,DE,Dental,872.6140,,Y,4
+IEH,"Lamps, Slide Warming",1,PA,Pathology,864.3010,,Y,4
+NIQ,Coronary Drug-Eluting Stent,3,,Unknown,,"Stent, coronary, drug-eluting -- a metal scaffold with a drug coating placed via a delivery catheter into the coronary artery or saphenous vein graft to maintain the lumen.  The drug coating is intended to inhibit restenosis.",N,2
+QQS,"Stapler, Skin",1,HO,General Hospital,878.4740,A surgical stapler for external use is a specialized prescription device used to deliver compatible staples to skin during surgery.,N,4
+MPA,Endoilluminator,2,GU,"Gastroenterology, Urology",876.1500,,N,1
+PWL,Oral Surgery Tray,1,DE,Dental,872.4565,"This product code has been established in accordance with the may 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm080217.pdf.This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+FKO,"Catheter, Peritoneal Dialysis, Single Use",2,GU,"Gastroenterology, Urology",876.5630,,N,1
+LPZ,"Container, Frozen Donor Tissue Storage",U,,Unknown,,,N,1
+NEU,"Marker, Radiographic, Implantable",2,SU,"General, Plastic Surgery",878.4300,,N,1
+NST,"Autoantibodies, Acetylcholine Receptor, Acetylcholine Blocking And Non-Blocking",2,IM,Immunology,866.5660,"THE DEVICE IS AN IMMUNOASSAY INDICATED AS AN AID IN THE DIAGNOSIS OF MYASTHENIA GRAVIS, AN AUTOIMMUNE DISEASE CHARACTERIZED BY EXERCISE-INDUCED MUSCLE WEAKNESS TEMPORARILY RELIEVED BY CESSATION OF EXERCISE. AUTOANTIBODY, WHEN PRESENT IN SERUM, INTERFERES WITH THE BINDING OF ACETYLCHOLINE, A NEURAL TRANSMITTER AT THE JUNCTION OF NERVES WITH MUSCLES. AUTOANTIBODY CAN ALSO BIND TO OTHER PORTIONS OF THE ACETYLCHOLINE RECEPTOR WITHOUT INTERFERING WITH ACETYLCHOLINE BINDING. PRESENCE OF AUTOANTIBODY ALONG WITH CLINICAL SIGNS AND SYMPTOMS ARE USUALLY HIGHLY SUGGESTIVE OF MYASTHENIA GRAVIS. ACETYLCHOLINE RECEPTOR AUTOANTIBODY CAN ALSO OCCUR IN THE PRESENCE OF AUTOANTIBODIES TO OTHER BODY SUBSTANCES.",N,1
+FMT,"Warmer, Infant Radiant",2,HO,General Hospital,880.5130,,N,1
+QMZ,Digital Therapy Device To Reduce Sleep Disturbance For Psychiatric Conditions,2,NE,Neurology,882.5705,A digital therapy device to reduce sleep disturbance for psychiatric conditions is a prescription device that is intended to provide stimulation using a general purpose computing platform to reduce sleep disturbance in patients who experience this symptom due to psychiatric conditions such as nightmare disorder or post traumatic stress disorder (PTSD).,N,1
+OCR,Lung Sound Monitor,2,CV,Cardiovascular,870.1875,The lung sound monitor is intended for use in monitoring and recording lung sounds.,N,4
+ONG,Powered Laser Surgical Instrument With MicrobeamFractional Output,2,SU,"General, Plastic Surgery",878.4810,"A LASER (Light Amplification by Stimulated Emission of Radiation) based device having coherence, collimated and typically monochromatic radiation. The laser output is in form of tiny beams in micro range. Typically, indicated to be used in medical specialties of general and plastic surgery and of dermatology/aesthetic to destroy, remove or coagulate tissue, generally soft tissue.  Indication for Use can be general and/or specific. The classification regulation 21 CFR 878.4810  describes a device that is carbon dioxide or argon laser intended to cut, destroy, remove or coagulate tissue by the light.",N,1
+CDG,Chromatography Separation/Zimmerman 17-Ketogenic Steroids,1,CH,Clinical Chemistry,862.1385,,N,4
+LBS,"Ldl & Vldl Precipitation, Cholesterol Via Esterase-Oxidase, Hdl",1,CH,Clinical Chemistry,862.1475,,N,4
+PMX,Absorbable Collagen Hemostatic Agent With Thrombin,3,SU,"General, Plastic Surgery",878.4490,Intended for use as an adjunct to hemostasis when control of bleeding by ligature or conventional procedures is ineffective or impractical.,N,2
+ECQ,"Aligner, Bracket, Orthodontic",1,DE,Dental,872.4565,,N,4
+HTG,"Prosthesis, Knee, Hemi-, Patellar Resurfacing, Uncemented",2,OR,Orthopedic,888.3580,,N,1
+OKP,Transcranial Magnetic Stimulator For The Treatment Of Migraine Headache,2,NE,Neurology,882.5808,"Transcranial magnetic stimulator for the treatment of migraine headache delivers brief duration, rapidly alternating, or pulsed, magnetic fields that are externally directed at spatially discrete regions of the brain to induce electric currents for the treatment of migraine headache.",N,1
+IOR,"Wheelchair, Mechanical",1,PM,Physical Medicine,890.3850,A mechanical wheelchair is a manually operated device with wheels that is intended for medical purposes to provide mobility to persons restricted to a sitting position. FDA interprets mobility to persons restricted to a sitting position to mean the device type is intended to provide mobility to individuals who have mobility impairments and/or require an assistive device for mobility.,N,1
+DEW,"Igg, Antigen, Antiserum, Control",2,IM,Immunology,866.5510,,N,1
+PTM,"Syringe, Balloon Inflation, Exempt",2,CV,Cardiovascular,870.1650,"This product code is the class II exempt counterpart of MAV, and was exempted, subject to the limitations of exemption, under the procedures established by the 21st Century Cures Act. This device type does not require premarket notification (510(k)) to market if it does not exceed the general limitations of exemption found in 21 CFR 870.9 and the specific limitations of exemption as stated in the Physical State field of this product code description.",N,4
+GRT,"Antiserum, Fluorescent, Mycobacterium Tuberculosis",1,MI,Microbiology,866.3370,,N,1
+DOJ,"Potassium Dichromate, Alcohol",2,TX,Clinical Toxicology,862.3040,,N,1
+GJP,"Control, Platelet",2,HE,Hematology,864.8625,,N,4
+NLL,"Staple, Implantable, Reprocessed",2,SU,"General, Plastic Surgery",878.4750,"Reprocessing validation data for this device type must be included in a 510(k) submission. (70 FR 56911, available at https://www.govinfo.gov/content/pkg/FR-2005-09-29/pdf/05-19510.pdf).",N,1
+LJZ,"Enzyme Linked Immunoabsorbent Assay, Mycoplasma Spp.",1,MI,Microbiology,866.3375,,N,4
+EKT,"Curette, Endodontic",1,DE,Dental,872.4565,,N,4
+PRB,Cervical Intraepithelial Neoplasia (Cin) Test System,2,PA,Pathology,864.1865,"The p16 CIN test system is a qualitative immunohistochemistry (IHC) test to assess the p16INK4a protein in formalin-fixed, paraffin-embedded (FFPE) cervical punch biopsy tissues. It is indicated as an adjunct to examination of hematoxylin and eosin (H&E) stained slide(s), to improve consistency in the diagnosis of CIN.  Diagnosis of CIN presence or level should be based on H&E stained slide(s) and other clinical and laboratory test information.",N,1
+DZI,"Drill, Bone, Powered",2,DE,Dental,872.4120,,N,1
+FSW,"Light, Surgical, Endoscopic",2,SU,"General, Plastic Surgery",878.4580,,N,4
+HMK,"Euthyscope, Ac-Powered",2,OP,Ophthalmic,886.1250,,N,4
+EOQ,Bronchoscope (Flexible Or Rigid),2,EN,"Ear, Nose, Throat",874.4680,"A bronchoscope (flexible or rigid) and accessories is a tubular endoscopic device with any of a group of accessory devices which attach to the bronchoscope and is intended to examine or treat the larynx and tracheobronchial tree. If the device is reprocessed, reprocessing validation data for this device type must be included in a 510(k) submission.    If the device is reusable, validated reprocessing instructions and reprocessing validation data for this device type must be included in a 510(k) submission (82 FR 26807, available at https://www.gpo.gov/fdsys/pkg/FR-2017-06-09/pdf/2017-12007.pdf).",N,1
+LKY,"Device, External Penile Rigidity",2,GU,"Gastroenterology, Urology",876.5020,"Intended to create or maintain sufficient penile rigidity for sexual intercourse.  These include vacuum pumps, constriction rings, and penile splints, which are mechanical, powered or pneumatic devices.",N,4
+DBI,"Complement C4, Antigen, Antiserum, Control",2,IM,Immunology,866.5240,,N,1
+OXJ,"Mesh, Surgical, Non-Absorbable, Large Abdominal Wall Defects",2,SU,"General, Plastic Surgery",878.3300,For reinforcement of soft tissue where weakness exists in abdominal wall defects.,N,1
+OCB,"Rt-Pcr Multigene Expression Test, Sentinel Lymph Node, Cancer Metastasis Detection",3,,Unknown,,"A gene expression test for detection of cancer metastasisis an in vitro diagnostic test performed on tissue of interest from patients previously diagnosed with cancer.  Results from the test can be used to guide the intra-operative or post-operative decision to remove additional tissue. Post-operative histological evaluation of permanent sections of the tissue specimen, in accordance with usual diagnostic practice and using an appropriate histological sampling scheme, is required.",N,2
+KYZ,"Syringe, Irrigating (Non Dental)",1,HO,General Hospital,880.6960,,Y,4
+PCQ,"Inhibitor, Postoperative Fibrosis (Spine Adhesion Barrier)",N,,Unknown,,Intended for use as a mechanical barrier to adhesion formation.,N,3
+OQT,"Prostate Lesion, Documentation, System",2,GU,"Gastroenterology, Urology",876.2050,Produces an elasticity image of the prostate to document prostate abnormalities that were previously identified by digital rectal examination.,N,1
+PYJ,Ulcer Wound Tray,1,SU,"General, Plastic Surgery",878.4014,"This product code has been established in accordance with the May 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm080217.pdf.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+MVY,"Monoclonal, Hiv-1",N,,Unknown,,,N,3
+DGR,"Whole Human Serum, Antigen, Antiserum, Control",1,IM,Immunology,866.5700,,N,4
+PXV,General Purpose Instrument Tray,1,SU,"General, Plastic Surgery",878.4800,"This product code has been established in accordance with the May 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm080217.pdf.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+EKH,"Carver, Dental Amalgam, Operative",1,DE,Dental,872.4565,,N,4
+KTT,"Appliance, Fixation, Nail/Blade/Plate Combination, Multiple Component",2,OR,Orthopedic,888.3030,,N,1
+JGK,"Ferric Chloride, Phenylketones (Urinary, Non-Quant.)",1,CH,Clinical Chemistry,862.1560,,N,4
+KFW,"Assembly, Shoulder/Elbow/Forearm/Wrist/Hand, Powered",1,PM,Physical Medicine,890.3420,,Y,4
+MMW,"System, Test, Tumor Marker, Monitoring, Bladder",2,IM,Immunology,866.6010,,N,1
+LWX,Device. Laser Peripheral Angioplasty,3,,Unknown,,,N,2
+JTO,"Discs, Strips And Reagents, Microorganism Differentiation",1,MI,Microbiology,866.2660,,N,4
+LCZ,"U.V. Spectrometry, Primidone",2,TX,Clinical Toxicology,862.3680,,N,1
+JPC,Hemoglobin F Quantitation,2,HE,Hematology,864.7455,,N,1
+NUV,"Massager, Vacuum, Light Induced Heating",2,SU,"General, Plastic Surgery",878.4810,The device is intended to temporarily alter the appearance of cellulite,N,1
+LOO,"Reagent, Leishmanii Serological",1,MI,Microbiology,866.3870,,N,1
+LYC,"Bone Grafting Material, Synthetic",2,DE,Dental,872.3930,"A synthetic bone grafting material is synthetically-derived device, such as hydroxylapatite, intended to fill, augment, or reconstruct periodontal and or bony defects of the upper or lower jaw.",N,1
+MNM,"Reader, Cervical Cytology Slide, Automated",3,,Unknown,,,N,2
+EIE,"Dam, Rubber",1,DE,Dental,872.6300,,Y,4
+JRM,Freezer,1,CH,Clinical Chemistry,862.2050,,Y,4
+SDE,Light Based Device For Dry Age-Related Macular Degeneration,2,OP,Ophthalmic,886.5520,A light based device for dry age-related macular degeneration is a prescription device intended for use in the application of non- coherent light energy to the eye. The device treats or improves visual acuity in patients with dry age-related macular degeneration.,N,1
+JZZ,"Saw, Laryngeal",1,EN,"Ear, Nose, Throat",874.4420,,N,4
+ODD,Endoscopic Retrograde Cholangiopancreatography (Ercp) Cannula,2,GU,"Gastroenterology, Urology",876.1500,"To identify stones, tumors, or narrowing in the biliary tree.",N,1
+DHB,"System, Test, Radioallergosorbent (Rast) Immunological",2,IM,Immunology,866.5750,,N,1
+QVS,Breast Implant Suction Retrieval Device,2,SU,"General, Plastic Surgery",878.4675,A breast implant suction retrieval system is a prescription surgical device that uses vacuum suction to assist in the removal and containment of a ruptured silicone breast implant.,N,1
+PMI,"Fluorescence In Situ Hybridization, Platelet-Derived Growth Factor Receptor, Beta Polypeptide (Pdgfrb), Rearrangement",3,,Unknown,,A fluorescence in situ hybridization (FISH) assay for PDGFRB rearrangement is a qualitative in vitro diagnostic assay to detect large rearrangements or translocations within the PDGFRB gene locus. It is indicated as an aid in the assessment of patients for whom treatment with tyrosine kinase inhibitors might be appropriate.,N,6
+OPH,Radiation Attenuating Medical Glove,1,HO,General Hospital,880.6250,"Radiations attenuating medical gloves are medical gloves that are used during medical or surgical procedures involving radiation to shield the hands of the wearer from scattered radiation exposure. The gloves offer some degree of protection to the hand from radiation exposure as well as protection from transmission of infectious agents.  The use of these gloves includes procedures that require the use of fluoroscopy or radiography.  In addition to meeting the requirements for examination or surgeon¿s gloves, manufacturers should have technical data to show that their attenuation claims meet the energy range of x-rays normally used in medical procedures.",N,1
+HFO,"Recorder, Pressure, Intrauterine",2,OB,Obstetrics/Gynecology,884.2700,,N,1
+QFQ,"Ingested, Transient, Space Occupying Device For Weight Management And/Or Weight Loss",2,GU,"Gastroenterology, Urology",876.5982,This device is an ingested material that transiently occupies space in the stomach. The device passes from the body via the natural gastrointestinal tract.,N,1
+MRD,Mammary Sizer,U,,Unknown,,,N,1
+FME,"Gown, Examination",1,HO,General Hospital,880.6265,,Y,4
+FLG,"Cleaner, Ultrasonic, Medical Instrument",1,HO,General Hospital,880.6150,,N,4
+KGM,"Silicone, Liquid, Injectable",3,,Unknown,,,N,2
+NYL,"Handpiece, Air-Powered, Root Canal Irrigation",1,DE,Dental,872.4200,To clean the root canal prior to filling and used for root canal irrigation.,N,1
+LPH,"Prosthesis, Hip, Semi-Constrained, Metal/Polymer, Porous Uncemented",2,OR,Orthopedic,888.3358,,N,1
+HGG,"Controller, Abortion Unit, Vacuum",2,OB,Obstetrics/Gynecology,884.5070,,N,1
+EGY,"Processor, Radiographic-Film, Automatic, Dental",2,RA,Radiology,892.1900,,N,4
+GNE,"Antigen, Latex Agglutination, T. Cruzi",1,MI,Microbiology,866.3870,,N,1
+QMG,Shockwave Intravascular Lithotripsy System,3,,Unknown,,Dilatation of coronary arteries prior to stenting,N,2
+LQP,Campylobacter Spp.,1,MI,Microbiology,866.3110,,N,1
+MGX,"Test System, For Drugs Of Abuse",3,,Unknown,,,N,2
+POV,Semen Analysis Device,2,HE,Hematology,864.5220,"Device used to evaluate one or more human semen parameters including semen volume, sperm concentration, total sperm number, sperm motility, sperm morphology, sperm vitality, white blood cell concentration, and pH.",N,1
+OYW,"Laser, Cellulite Appearance",2,SU,"General, Plastic Surgery",878.4810,For the removal of fat through laser lipolysis.,N,1
+LQF,"Dna-Reagents, Mycobacterium Spp.",1,MI,Microbiology,866.3370,,N,1
+QJK,Intraoral Camera,2,DE,Dental,872.3661,To capture the topographical characteristics of teeth or a stone model,N,4
+IMI,Ultrasonic Diathermy For Use In Applying Therapeutic Deep Heat,2,PM,Physical Medicine,890.5300,,N,1
+ELZ,"Crown, Preformed",1,DE,Dental,872.3330,,N,4
+GAQ,"Suture, Nonabsorbable, Steel, Monofilament And Multifilament, Sterile",2,SU,"General, Plastic Surgery",878.4495,,N,1
+HWW,Countersink,1,OR,Orthopedic,888.4540,,N,4
+LRC,"Instrument, Ent Manual Surgical",1,EN,"Ear, Nose, Throat",874.4420,,N,4
+OTN,"Mesh, Surgical, Synthetic, Urogynecologic, For Stress Urinary Incontinence, Retropubic Or Transobturator",2,SU,"General, Plastic Surgery",878.3300,Surgical treatment of female stress urinary incontinence due to intrinsic sphincter deficiency (isd) and/or urethral hypermobility,N,1
+OAU,"Des-Gamma-Carboxy-Prothrombin (Dcp), Risk Assessment, Hepatocellular Carcinoma",2,IM,Immunology,866.6030,"The test is intended to quantitatively measure dcp in human serum and use as an aid in the risk assessment of patients with chronic liver disease for progression to hepatocellular carcinoma (hcc) in conjunction with other laboratory findings, imaging studies and clinical assessment for risk assessment of patients with chronic liver disease for progression to hepatocellular carcinoma.",N,1
+DLO,"Indicator, Silica Gel Fluorescent, Tlc",1,CH,Clinical Chemistry,862.2270,,N,4
+CHJ,"Mercuric Thiocyanate, Colorimetry, Chloride",2,CH,Clinical Chemistry,862.1170,,N,1
+OIZ,Foot Examination Tool For Inflammatory Changes,1,PM,Physical Medicine,890.5050,"Assist a patient to visualize the image and condition of the soles of their feet in connection with a daily self-examination for signs of inflammation on the sole of the foot.  The device will assist the patient in determining when they should contact their  healthcare provider for further diagnosis and treatment regarding any skin  changes seen by a mirror and/or highlighted by the liquid crystal foot pads.  Intended to be used as an adjunct to, and not in replacement of,  periodic foot care and examinations conducted by a health care professional and  used under the direction of a health care professional and does not diagnose any specific disease state.",N,4
+KXO,"Monitor, Pressure, Intrauterine",2,OB,Obstetrics/Gynecology,884.2700,,N,1
+LXW,"Column, Adsorption, Low Density, Lipoprotein",3,,Unknown,,,N,3
+NGK,"Test, Occult Blood, Over The Counter",2,HE,Hematology,864.6550,,N,1
+KPE,"Container, I.V.",2,HO,General Hospital,880.5025,,N,1
+PQT,Alpha-L-Iduronidase (Idua) Newborn Screening Test System,2,CH,Clinical Chemistry,862.1488,Intended for quantitative measurement of the activity of alpha-L-iduronidase (IDUA) from newborn dried blood spot specimens.,N,1
+MZV,"Test, System, Potassium, Enzymatic Method",2,CH,Clinical Chemistry,862.1600,,N,1
+BWH,"Forceps, Biopsy, Bronchoscope (Non-Rigid)",2,EN,"Ear, Nose, Throat",874.4680,"If the device is reusable, validated reprocessing instructions and reprocessing validation data for this device type must be included in a 510(k) submission (82 FR 26807, available at https://www.gpo.gov/fdsys/pkg/FR-2017-06-09/pdf/2017-12007.pdf).",N,1
+OJB,Resorbable Spinal Intervertebral Body Fixation Orthosis - Plate,2,OR,Orthopedic,888.3060,"Maintain position of bone graft in spinal fusion procedures. Intended for use in spinal fusion procedures as a means to maintain the relative position of weak bony tissue such as allografts or autografts, in conjunction with traditional rigid fixation.",N,1
+MQI,"Microtool Fabrication, Assisted Reproduction",2,OB,Obstetrics/Gynecology,884.6140,,N,1
+JAD,"System, Therapeutic, X-Ray",2,RA,Radiology,892.5900,,N,1
+GQT,"Antisera, Cf, Parainfluenza Virus 1-4",1,MI,Microbiology,866.3400,,N,4
+EKI,"Carrier, Amalgam, Operative",1,DE,Dental,872.4565,,N,4
+NGS,"Assay, Endotoxin Activity, Chemiluminescent",2,MI,Microbiology,866.3210,,N,1
+RFK,Laser Vision,N,,Unknown,,"A laser used for positioning, focusing, inspection, counting, or other application in an industrial or commercial environment.  Often incorporated in an automated assembly line system.",Y,
+OFM,Phlebotomy Blood Collection Kit,2,CV,Cardiovascular,870.2750,"This product code has been established in accordance with the may 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm080217.pdf.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+REF,Suntan Bed,2,SU,"General, Plastic Surgery",878.4635,"A bed or other platform that is designed to incorporate one or more ultraviolet lamps and intended for irradiation of any part of the human body, by ultraviolet radiation with wavelengths in air between 200 and 400 nanometers, to induce skin tanning.",N,1
+MXJ,"Enzyme Linked Immunosorbent Assay, Herpes Simplex Virus, Hsv-1",2,MI,Microbiology,866.3305,,N,1
+EQL,Laryngostroboscope,1,EN,"Ear, Nose, Throat",874.4750,,N,4
+JNN,"P-Toluenesulphonyl-L-Arginine Methyl Ester (U.V.), Trypsin",1,CH,Clinical Chemistry,862.1725,,N,4
+NFE,"Materials, Polytetrafluoroethylene Vitreous Carbon, For Maxillofacial Alveolar Ridge Augmentation",2,DE,Dental,872.3680,,N,1
+HAM,"Apparatus, Electrosurgical",2,SU,"General, Plastic Surgery",878.4400,,N,1
+LZO,"Prosthesis, Hip, Semi-Constrained, Metal/Ceramic/Polymer, Cemented Or Non-Porous, Uncemented",2,OR,Orthopedic,888.3353,,N,1
+MPV,"Implant, Hearing, Active, Middle Ear, Partially Implanted",3,,Unknown,,,N,2
+GGF,Acid Hematin,2,HE,Hematology,864.7500,,N,4
+JTS,"Stains, Microbiologic",1,HE,Hematology,864.1850,,Y,4
+DJF,"Gas Chromatography, Opiates",2,TX,Clinical Toxicology,862.3650,,N,1
+GOG,"Antisera, Cf, Poliovirus 1-3",1,MI,Microbiology,866.3405,,N,4
+CGM,"Method, Immunodiffusion, Immunoglobulins (G, A, M)",2,IM,Immunology,866.5510,,N,1
+JHG,"Chromatographic Separation, Lecithin/Sphingomyelin Ratio",2,CH,Clinical Chemistry,862.1455,,N,1
+GGX,"Pipette, Sahli",1,HE,Hematology,864.6160,,N,4
+DMT,"Enzymatic Method, Alcohol Dehydrogenase, Ultraviolet",2,TX,Clinical Toxicology,862.3040,,N,1
+OHY,Pill Crusher/Cutter,1,HO,General Hospital,880.6430,A device used to cut or crush medication to aid in consumption.  The device is intended to only be used with medications that are labeled as acceptable for crushing or cutting.,N,4
+KMG,"Purifier, Water, Ultraviolet, Medical",2,HO,General Hospital,880.6710,,N,4
+MLM,"Enzyme Immunoassay, Tracrolimus",2,CH,Clinical Chemistry,862.1678,,N,1
+JZC,"Searcher, Mastoid",1,EN,"Ear, Nose, Throat",874.4420,,N,4
+LOE,"Stimulator, Invasive Bone Growth",3,,Unknown,,,N,2
+HOG,"Burr, Corneal, Battery-Powered",1,OP,Ophthalmic,886.4070,,N,4
+QRN,Radiation Therapy Marking Device,2,RA,Radiology,892.5785,"A radiation therapy marking device is a powered device that transdermally delivers a permanent or temporary colorant to the skin for the purpose of placing marks to guide radiation therapy. This classification does not include devices with reusable or reprocessed needles or devices intended for diagnostic, therapeutic, or aesthetic use or to deliver other products for these uses.",N,1
+JSJ,"Culture Media, Selective And Non-Differential",1,MI,Microbiology,866.2360,,N,4
+KXX,"Adhesive, Denture, Karaya And Ethylene-Oxide Homopolymer",1,DE,Dental,872.3450,,N,4
+PRH,Positive Blood Culture Identification And Ast Kit,2,MI,Microbiology,866.1650,"Fluorescence in situ hybridization (FISH) identification and quantitative, antimicrobial susceptibility testing (AST) kit intended for simultaneous detection and identification of multiple microbial targets.",N,1
+RHD,Ir Remote Controller,N,,Unknown,,A noncoherent infrared light source used to transmit signals and/or information in order to operate equipment or machinery remotely.,Y,
+FRL,"Fiber, Medical, Absorbent",1,HO,General Hospital,880.5300,,Y,4
+DPA,"Apparatus, General Use, Thin Layer Chromatography",1,CH,Clinical Chemistry,862.2270,,Y,4
+CJJ,"Diazo, Alt/Sgpt",1,CH,Clinical Chemistry,862.1030,,N,4
+ETK,"Tube, Toynbee Diagnostic",1,EN,"Ear, Nose, Throat",874.1925,,N,4
+ISD,"Exerciser, Measuring",2,PM,Physical Medicine,890.5360,,N,4
+OAJ,"Catheter, Drainage, Intraoral/Extraoral",1,SU,"General, Plastic Surgery",878.4200,"To allow continuous drainage of saliva and/or fluid irrigation of the salivary duct as well as assisting in maintaining duct patency during the healing process following removal of salivary gland stones for temporary insertion into the salivary gland, whether orally or through the cheek following endoscopic or surgical removal of salivary gland stones",N,4
+MJG,"Device, Percutaneous, Biopsy",1,SU,"General, Plastic Surgery",878.4800,,N,4
+PKC,"Prosthesis, Total Anatomic Shoulder, Uncemented Metaphyseal Humeral Stem With No Diaphyseal Incursion, Semi-Constrained",2,OR,Orthopedic,888.3660,Replacement of the humeral head for total anatomic shoulder arthroplasty,N,1
+FAJ,"Cystoscope And Accessories, Flexible/Rigid",2,GU,"Gastroenterology, Urology",876.1500,"To examine and perform procedures within the urinary tract.    For reusable, flexible endoscopes in this product code, validated reprocessing instructions and reprocessing validation data must be included in a 510(k) submission (82 FR 26807, available at https://www.gpo.gov/fdsys/pkg/FR-2017-06-09/pdf/2017-12007.pdf).",N,1
+JBK,"Glucose-6-Phosphate Dehydrogenase (Erythrocytic), U.V. Kinetic",2,HE,Hematology,864.7360,,N,1
+GON,"Antigen, Cf (Including Cf Control), Rubella",2,MI,Microbiology,866.3510,,N,1
+DKB,"Calibrators, Drug Mixture",2,TX,Clinical Toxicology,862.3200,,N,4
+GSB,"Antigens, Cf, All, Mycoplasma Spp.",1,MI,Microbiology,866.3375,,N,4
+DEL,"Lipoprotein X, Antigen, Antiserum, Control",1,IM,Immunology,866.5590,,N,4
+PKN,"Dilator, Cervical, Synthetic, Osmotic",2,OB,Obstetrics/Gynecology,884.4260,Cervical softening and dilation,N,1
+JBZ,"Study, Platelet Adhesive",2,HE,Hematology,864.6650,,N,4
+LAD,"Gas Chromatography, Codeine",2,TX,Clinical Toxicology,862.3270,,N,1
+SEF,Central Venous Catheter With Manual Insertion System,2,HO,General Hospital,880.5200,A central venous catheter with manual insertion system is intended to provide short-term access (<30 days) to the central venous system. The manual insertion system is attached to the catheter and facilitates placement in the targeted vessel.,N,1
+QCL,Acid-Sphingomyelinase (Asm) Newborn Screening Test System,2,CH,Clinical Chemistry,862.1488,For quantitative measurement of the activity of acid-sphingomyelinase (ASM) from newborn dried blood spot specimens as an aid in screening newborns for Niemann-Pick disease.,N,1
+DLS,"Gas Chromatograph, Alcohol (Dedicated Instruments)",2,TX,Clinical Toxicology,862.3040,,N,1
+BTL,"Ventilator, Emergency, Powered (Resuscitator)",2,AN,Anesthesiology,868.5925,,N,1
+HZJ,"Stain, Papanicolau",1,HE,Hematology,864.1850,,Y,4
+LPM,"Lenses, Soft Contact, Extended Wear",3,OP,Ophthalmic,886.5925,,N,2
+NEC,"Bandage, Liquid, Skin Protectant",1,HO,General Hospital,880.5090,,N,4
+MIZ,"Enzyme Linked Immunoabsorbent Assay, Histoplasma Capsulatum",2,MI,Microbiology,866.3320,,N,4
+PME,External Cleaning Solution,2,DE,Dental,872.3260,"For use on dental restorations, external to the mouth, prior to insertion into the mouth.",N,4
+QHV,Multiple Osteoarticular Pathogen Antigen Kit,N,,Unknown,,Qualitative detection of microbial antigen in synovial fluid,N,3
+QHW,Single Lumen Ecmo Cannula,2,CV,Cardiovascular,870.4100,"Single-lumen cannulas/catheters to be used with an extracorporeal circuit intended for use in patients with acute respiratory failure or acute cardiopulmonary failure, where other available treatment options have failed, and continued clinical deterioration is expected or the risk of death is imminent.",N,1
+LZC,"Medical Glove, Specialty",1,HO,General Hospital,880.6250,"A disposable medical glove (examination or surgeons) is a device that may or may not bear a trace amount of residual powder and is intended to be worn on the hand or finger(s) for medical purposes to prevent contamination. In addition, these gloves may have specialty claims such as chemotherapy, etc.",N,1
+DKP,"Radioimmunoassay, Phenobarbital",2,TX,Clinical Toxicology,862.3660,,N,1
+PMY,"System, Nucleic Acid Amplification Test, Dna, Carbapenem Non-Susceptible Gram Negative Organism, Colony",2,MI,Microbiology,866.1640,To detect the presence of genetic markers of antimicrobial resistance by testing isolated bacterial colonies using nucleic  acid amplification technology.,N,1
+KAI,"Mirror, Ent",1,EN,"Ear, Nose, Throat",874.4420,,N,4
+LXM,"Manipulator, Plunger-Like Joint",U,,Unknown,,,N,1
+JAZ,"Prosthesis, Facial, Mandibular Implant",2,EN,"Ear, Nose, Throat",874.3695,,N,1
+OUB,Instrument For Treatment Of Hyperhidrosis,2,SU,"General, Plastic Surgery",878.4400,Soft-tissue coagulation,N,1
+KKR,Potassium Periodate,1,HE,Hematology,864.1850,,Y,4
+FBM,"Cannula And Trocar, Suprapubic, Non-Disposable",1,GU,"Gastroenterology, Urology",876.5090,,N,4
+MTO,"Software, Management, Microplate Assay",N,,Unknown,,,N,3
+GSJ,"Antiserum, Fluorescent, Francisella Tularensis",2,MI,Microbiology,866.3280,,N,4
+DOH,"Electrometry, Cholinesterase",1,TX,Clinical Toxicology,862.3240,,N,4
+JTY,"Culture Media, For Isolation Of Pathogenic Neisseria",2,MI,Microbiology,866.2410,,N,1
+KTL,Anti-Dna Indirect Immunofluorescent Solid Phase,2,IM,Immunology,866.5100,,N,1
+HJT,Haploscope,1,OP,Ophthalmic,886.1340,,N,4
+MZG,"Test, Residual, Wbc In Leukoreduced Blood",2,HE,Hematology,864.8625,CBER,N,1
+NGG,"Test, Methamphetamine, Over The Counter",2,TX,Clinical Toxicology,862.3610,,N,1
+QPK,Eua Faceshields,N,,Unknown,,Authorized faceshields intended for use during the declared public health emergency.,N,7
+NZH,"Medication Management System, Remote",2,HO,General Hospital,880.6315,A remote medication management system provides a means for the patient's prescribed medications to be stored in a delivery unit; For a medical provider to remotely schedule the patient's prescribed medications; To provide notification to the patient when the prescribed medications are due to be taken; To release the prescribed medications to a tray of the delivery unit accessible to the patient on the patient's command; And to provide to the medical provider a history of the event. The system is intended for use as an aid to medical providers in managing therapeutic regimens for patients in the home or clinic.,N,1
+KLQ,"Radioimmunoassay, Amikacin",2,TX,Clinical Toxicology,862.3035,,N,1
+EZY,"Device, Incontinence, Mechanical/Hydraulic",3,GU,"Gastroenterology, Urology",876.5280,PMA to be filed by 12/26/00 (65 FR 57731 (9/26/00)),N,2
+KKD,Nigrosin,1,HE,Hematology,864.1850,,Y,4
+PUE,"Biomicroscope, Slit-Lamp, Ac-Powered, Exempt",2,OP,Ophthalmic,886.1850,"This product code is the class II exempt counterpart of HJO, and was exempted, subject to the limitations of exemption, under the procedures established by the 21st Century Cures Act. This device type does not require premarket notification (510(k)) to market if it does not exceed the general limitations of exemption found in 21 CFR 886.9 and the specific limitations of exemption as stated in the Physical State field of this product code description.",N,4
+FSP,"Loupe, Diagnostic/Surgical",1,SU,"General, Plastic Surgery",878.4800,,N,4
+PEN,Gram-Negative Bacteria And Associated Resistance Markers,2,MI,Microbiology,866.3365,A qualitative multiplexed in vitro diagnostic device to detect and identify gram-negative bacteria and resistance markers in positive blood cultures.,N,1
+JZD,"Snare, Ear",1,EN,"Ear, Nose, Throat",874.4420,,N,4
+DHA,"System, Test, Human Chorionic Gonadotropin",2,CH,Clinical Chemistry,862.1155,,N,1
+MOU,Intravascular Radiation Delivery System,3,,Unknown,,,N,2
+MMK,"Container, Sharps",2,HO,General Hospital,880.5570,,N,1
+DOR,"Radioimmunoassay, Digoxin (3-H), Bovine Antibody, Charcoal Sep.",2,TX,Clinical Toxicology,862.3320,,N,1
+ORL,Whole Blood Pre-Treatment T-Cell Enrichment Reagent,3,,Unknown,,The reagent is for the pre-treatment of whole blood prior to lymphocyte separation. The reagent aids in the removal of selected white blood cells from whole blood stored at room temperature (18-25°C).,N,2
+LYN,"Apparatus, Visual Reinforcement Audiometric",2,EN,"Ear, Nose, Throat",874.1050,,N,4
+IYO,"System, Imaging, Pulsed Echo, Ultrasonic",2,RA,Radiology,892.1560,,N,1
+KBF,"Trephine, Sinus",1,EN,"Ear, Nose, Throat",874.4420,,N,4
+QDF,Parathyroid Autofluorescence Detection Device,2,SU,"General, Plastic Surgery",878.4550,An autofluorescence detection device for general surgery and dermatological use is an adjunct tool that uses autofluorescence to detect tissues or structures. This device is not intended to provide a diagnosis.,N,1
+IBM,"Microscope, Phase Contrast",1,PA,Pathology,864.3600,,Y,4
+FFH,"Collector, Urine, Pediatric, For Indwelling Catheter",2,GU,"Gastroenterology, Urology",876.5250,,N,4
+FMQ,"Restraint, Protective",1,HO,General Hospital,880.6760,,N,4
+JWY,Manual Antimicrobial Susceptibility Test Systems,2,MI,Microbiology,866.1640,,N,1
+LCY,"U.V. Spectrometry, Theophylline",2,TX,Clinical Toxicology,862.3880,,N,1
+LSE,"Epstein-Barr Virus, Other",1,MI,Microbiology,866.3235,,N,1
+PUW,"System, Test, Radioallergosorbent (Rast) Immunological, Exempt Allergens",2,IM,Immunology,866.5750,"Intended for in vitro diagnostic use as an aid in the clinical diagnosis of IgE mediated allergic disorders in conjunction with other clinical findings, and is to be used in clinical laboratories.    FDA has exempted these devices from the premarket notification requirement by publishing in the Federal Register of July 11, 2017 (82 FR 31976) available at https://www.federalregister.gov/documents/2017/07/11/2017-14453/medical-devices-exemptions-from-premarket-notification-class-ii-devices subject to the limitations under 21 CFR XXX.9, where XXX refers to Parts 862-892, and any limitations on the exemption described in (82 FR 31976).  Any device that exceeds the limitations found in 21 CFR sections 862.9 to 892.9 or identified in the Federal Register  (82 FR 31976) available at https://www.federalregister.gov/documents/2017/07/11/2017-14453/medical-devices-exemptions-from-premarket-notification-class-ii-devices is required to submit a premarket notification submission (510(k)) to FDA before introducing a device into interstate commerce.  If a manufacturers device is exempt from the premarket notification requirement, then a premarket notification submission and FDA clearance is not required before marketing the device in the U.S. however, manufacturers are required to meet all other requirements under the Federal Food Drug & Cosmetic and implementing regulations including (but not limited to) registration and listing requirements. Please see the Device Registration and Listing website for additional information on registration and listing.",N,4
+HNS,Expressor,1,OP,Ophthalmic,886.4350,,N,4
+PJF,Illuminator System For Blood Products,3,,Unknown,,"Preparation and storage of pathogen-reduced, blood components.",N,2
+RAY,Oscilloscope (Exempted),N,,Unknown,,"A device that depicts on a screen periodic changes in an electric quantity, as voltage or current, using a cathode ray tube.",Y,
+DDB,"Ceruloplasmin, Antigen, Antiserum, Control",2,IM,Immunology,866.5210,,N,4
+PWY,Lumbar Puncture Tray (Adult & Pediatric),2,HO,General Hospital,880.5570,"This product code has been established in accordance with the May 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm080217.pdf.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+LGQ,"Fluorescence Polarization Immunoassay, Phenobarbital",2,TX,Clinical Toxicology,862.3660,,N,1
+FFA,"Tube, Drainage, Suprapubic",2,GU,"Gastroenterology, Urology",876.5090,,N,1
+PFR,"System, Cystic Fibrosis Transmembrane Conductance Regulator Gene, Mutations & Variants Panel Sequencing Detection",2,IM,Immunology,866.5900,"The CFTR gene mutation detection system is used to simultaneously detect and identify a specified panel of mutations and variants in the CFTR gene using sequencing methods. It is intended for carrier screening, as an aid in confirmatory diagnostic testing of individuals with suspected cystic fibrosis (CF), and as an initial test to aid in the diagnosis of individuals with suspected CF. It is not intended for stand-alone diagnostic purposes, prenatal diagnostic, or pre-implantation screening.",N,1
+JJR,Electrolyte Controls (Assayed And Unassayed),1,CH,Clinical Chemistry,862.1660,,N,4
+GAM,"Suture, Absorbable, Synthetic, Polyglycolic Acid",2,SU,"General, Plastic Surgery",878.4493,,N,1
+SEP,Device For Home Collection And Transport Of Vaginal Specimens By Lay Users For Use In An Approved Hpv Molecular Assay,2,MI,Microbiology,866.2920,A device for home collection and transport of vaginal specimens by lay users for HPV testing is a device intended for use by lay users in home settings or similar environments for the collection and transportation of vaginal specimens for testing using an approved HPV molecular assay with which the device has been validated.,N,1
+LDG,"Kit, Earmold, Impression",1,EN,"Ear, Nose, Throat",874.3300,,N,4
+HBR,"Rack, Clip",1,NE,Neurology,882.4215,,N,4
+SEG,Leadless Cardiac Resynchronization Therapy (Crt),3,,Unknown,,Leadless Cardiac Resynchronization Therapy (CRT) is intended to deliver CRT using a leadless left ventricular implant,N,2
+JIT,"Calibrator, Secondary",2,CH,Clinical Chemistry,862.1150,,N,4
+LDO,"Enzymatic Radiochemical Assay, Tobramycin",2,TX,Clinical Toxicology,862.3900,,N,1
+HBG,"Drills, Burrs, Trephines & Accessories (Manual)",2,NE,Neurology,882.4300,,N,1
+QJA,Tympanostomy Tube Delivery Product With Drug,3,,Unknown,,Intended to place a tympanostomy tube across the tympanic membrane under local anesthesia.,N,2
+MUJ,"System, Planning, Radiation Therapy Treatment",2,RA,Radiology,892.5050,,N,1
+KBT,"Punch, Tonsil",1,EN,"Ear, Nose, Throat",874.4420,,N,4
+NZF,"Static Electricity-Emitting Device, Cosmetic Use",N,,Unknown,,Intended for relaxation and cosmetic use.,N,7
+IQW,"Hook, External Limb Component, Powered",1,PM,Physical Medicine,890.3420,,Y,4
+FHS,"Dialyzer, Single Coil",2,GU,"Gastroenterology, Urology",876.5820,,N,1
+KYT,"Light, Examination, Medical, Battery Powered",1,HO,General Hospital,880.6350,,Y,4
+LSL,"Dna-Reagents, Neisseria",2,MI,Microbiology,866.3390,,N,1
+LTD,Paraquat Assay,3,,Unknown,,,N,3
+NIJ,"System, Test, Genotypic Detection, Resistant Markers, Enterococcus Species",2,MI,Microbiology,866.1640,The in vitro device is intended to detect the presence of the vanA and vanB genes in isolated colonies of Enterococcus spp.  as a marker for vancomycin resistance using DNA probe technology,N,1
+GMX,"Antisera, Fluorescent Antibody For Fta-Abs Test",2,MI,Microbiology,866.3830,,N,1
+HQS,"Burr, Corneal, Ac-Powered",1,OP,Ophthalmic,886.4070,,N,4
+FNP,Urinal,1,HO,General Hospital,880.6730,,Y,4
+RED,Laser Advertising Display System,N,,Unknown,,"Product, laser, demo, system, display, advertising",Y,
+DDZ,"Albumin, Fitc, Antigen, Antiserum, Control",2,IM,Immunology,866.5040,,N,4
+QHJ,"Sensor, Glucose, Implanted, Non-Adjunctive Use",3,,Unknown,,"A non-adjunctive implanted glucose sensor is intended to determine glucose   levels, and the direction and rate of change of glucose levels in people with   diabetes. The device is indicated to replace information obtained from standard   blood glucose monitoring devices to make diabetes-related treatment decisions. The device also provides historical glucose information, facilitating long-term therapy adjustments.",N,2
+RAK,Pest Repeller,N,,Unknown,,Equipment using ultrasound to repel pests in a commercial or household application,Y,
+FKP,"System, Dialysate Delivery, Single Patient",2,GU,"Gastroenterology, Urology",876.5820,,N,1
+KEM,"Agent, Clearing",1,PA,Pathology,864.4010,,Y,4
+JWI,"Prosthesis, Wrist, 2 Part Metal-Plastic Articulation, Semi-Constrained",2,OR,Orthopedic,888.3800,,N,1
+GFG,"Bit, Surgical",1,SU,"General, Plastic Surgery",878.4820,,N,4
+GZX,"Instrument, Microsurgical",1,NE,Neurology,882.4525,,N,4
+LXV,"Apparatus, Vestibular Analysis",U,,Unknown,,,N,1
+PSP,Intracranial Pressure & Temperature Monitoring Kit,2,NE,Neurology,882.1620,"This product code has been established in accordance with the May 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm080217.pdf.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+EFS,"Unit, Oral Irrigation",1,DE,Dental,872.6510,,N,4
+MMQ,"Topographer, Corneal, Ac-Powered",1,OP,Ophthalmic,886.1350,,N,4
+OXR,5-Fluorouracil Assay,N,,Unknown,,Measures levels of a chemotherapy drug in the blood.,N,3
+PLU,Thermal System For Insomnia,2,NE,Neurology,882.5700,A thermal system for insomnia is a prescription device for use in patients with insomnia that is used to apply a specified temperature to the skin surface.,N,1
+FBX,"Sound, Urethral, Metal Or Plastic",1,GU,"Gastroenterology, Urology",876.5520,,N,4
+GCG,Peritoneoscope,2,GU,"Gastroenterology, Urology",876.1500,,N,1
+NNQ,"Forceps, Wire Closure, Ent, Non-Sterile",1,EN,"Ear, Nose, Throat",874.3540,Prosthesis modification instrument for ossicular replacement surgery; see product code JXX.,Y,4
+QSZ,Absorbable Synthetic Wound Dressing,U,,Unknown,,Intended as a physical barrier to cover the wound and provide a moist wound environment. Intended to be left on wounds after topical application.,N,1
+PCE,Permanently Mounted Wheelchair Platform Lift,2,PM,Physical Medicine,890.3930,"Intended for medical purposes to provide a guided platform to move a person with impaired mobility, with or without a wheelchair, from one level to another.",N,4
+FKX,"System, Peritoneal, Automatic Delivery",2,GU,"Gastroenterology, Urology",876.5630,,N,1
+LHC,"Warmer, Irrigation Solution",1,PM,Physical Medicine,890.5950,,N,4
+NQZ,"Antigen, Invasive Fungal Pathogens",2,MI,Microbiology,866.3050,"Invasive fungal pathogen assays are devices that consist of antigens, antisera, or proteases used in serological assays for the presumptive diagnosis of fungal infection in serum or plasma.  The assay is indicated for use in patients with symptoms of, or medical conditions predisposing the patient to invasive fungal infection.  The device can be used as an aid in the diagnosis of deep seated mycoses and fungemias.  A positive result does not indicate which class of fungi may be causing infection. The assays should be used in conjunction with other diagnostic procedures, such as microbiological culture, histological examination of biopsy samples and radiological examination.",N,1
+RCP,"Vehicle And Cargo X-Ray System, Mobile",N,,Unknown,,"A mobile system, usually mounted in a truck or similar conveyance which uses x-rays to find contraband, explosives, or weapons concealed in vehicles and cargo containers.",Y,
+PVQ,Rickettsia Spp. Nucleic Acid Based Detection Assay,2,MI,Microbiology,866.3316,"An in vitro diagnostic test for the detection of Rickettsia spp. nucleic acids in specimens from individuals with signs or symptoms of rickettsial infection and epidemiological risk factors consistent with potential exposure. Test results are used in conjunction with other diagnostic assays and clinical observations to aid in the diagnosis infection, in accordance with criteria defined by the appropriate public health authorities in the Federal government.",N,1
+GQM,"Antisera, Neutralization, Herpesvirus Hominis",2,MI,Microbiology,866.3305,,N,1
+HRK,"Table, Instrument, Manual, Ophthalmic",1,OP,Ophthalmic,886.4855,,Y,4
+FPK,"Tubing, Fluid Delivery",2,HO,General Hospital,880.5440,,N,1
+RIQ,Low Emission Leds As Indicators Or Decorations,N,,Unknown,,"Finished LED products intended to act as an indicator or for decorative purposes, such as Christmas tree lights or display backlighting. LED product only intending to emit visible radiation at low intensities.",Y,
+JZJ,"Prealbumin, Antigen, Antiserum, Control",1,IM,Immunology,866.5060,,N,4
+QZA,Body Temperature Sensing Software,2,HO,General Hospital,880.2915,Body temperature sensing software is a software device used for the determination of human body temperature by means of analyzing input sensor data.,N,1
+RDO,Microwave Lan,N,,Unknown,,A machine that utilizes microwave radiation for communication and data transmission in a local area network.,Y,
+LLB,"System, Blood, Extracorporeal And Accessories",2,GU,"Gastroenterology, Urology",876.5820,,N,1
+IKX,"Aid, Transfer",1,PM,Physical Medicine,890.5050,,Y,4
+JKL,"Acid, Delta-Aminolevulinic, Ion-Exchange Columns With Colorimetry",1,CH,Clinical Chemistry,862.1060,,N,4
+MDA,"Elastomer, Silicone, For Scar Management",1,SU,"General, Plastic Surgery",878.4025,,N,4
+ORR,"Neurological Stereotaxic Instrument, Real-Time Intraoperative Mri",2,NE,Neurology,882.4560,To aid the surgeon in planning and conducting general stereotactic neurosurgery in an MRI suite.,N,1
+FAX,"Bougie, Urological",1,GU,"Gastroenterology, Urology",876.5520,,N,4
+MBX,"Stimulator, Thalamic, Epilepsy, Implanted",3,,Unknown,,,N,3
+EKZ,"Unit, Electrosurgical, And Accessories, Dental",2,DE,Dental,872.4920,,N,1
+HTJ,"Gauge, Depth",1,OR,Orthopedic,888.4300,,N,4
+RCW,Materials Processing,N,,Unknown,,A machine that utilizes microwave radiation for industry drying/heating of non-food products (non-dielectric heater rf sealers),Y,
+OTX,Foot Wrap For Treating Restless Leg Syndrome Symptoms,1,PM,Physical Medicine,890.5760,Applying compression to the muscles of the foot for the purpose of affecting nerve impulses sent to the central nervous system.,N,4
+FFQ,"Speculum, Rectal",1,GU,"Gastroenterology, Urology",876.4730,,N,4
+BWN,"Table And Attachments, Operating-Room",1,SU,"General, Plastic Surgery",878.4950,,N,4
+EXI,"Device, Paste-On For Incontinence, Sterile",1,GU,"Gastroenterology, Urology",876.5250,,N,4
+DIJ,"Lead, Delta Amino Levulinic Acid",2,TX,Clinical Toxicology,862.3550,,N,1
+IXR,"Table, Radiographic, Tilting",2,RA,Radiology,892.1980,,N,4
+MJC,"Catheter, Urological (Antimicrobial) And Accessories",2,GU,"Gastroenterology, Urology",876.5130,,N,1
+DDL,"Thyroglobulin, Rhodamine, Antigen, Antiserum, Control",2,IM,Immunology,866.5870,,N,1
+OEM,Human Metapneumovirus (Hmpv) Rna Assay System,2,MI,Microbiology,866.3980,A qualitative in vitro diagnostic assay intended to detect human metapneumovirus (hmpv) rna extracted from human respiratory specimens or viral cultures. Detection of hmpv rna aids in the diagnosis of respiratory hmpv infection in conjunction with other clinical and laboratory testing in patients exhibiting signs and symptoms of upper respiratory tract infections.,N,1
+RFJ,Process Control,N,,Unknown,,"A laser used for inspection, counting, or other application intended to monitor a part of the manufacturing process in an industrial or commercial environment.  Often incorporated in an automated process system.",Y,
+QJR,"Reagents, 2019-Novel Coronavirus Nucleic Acid",N,,Unknown,,Nucleic acid-based in vitro diagnostic devices for the detection of 2019-novel coronavirus (2019-nCoV) and/or diagnosis of 2019-nCoV infection in human clinical specimens.,N,8
+GTP,"Exoenzymes, Multiple, Streptococcal",1,MI,Microbiology,866.3720,,N,4
+NOG,"Topographer, Corneal, Battery Powered",1,OP,Ophthalmic,886.1350,"Topographer, corneal, battery powered",Y,4
+LDS,"Device, Pasteurization, Hot Water",2,HO,General Hospital,880.6991,,N,4
+CAE,"Airway, Oropharyngeal, Anesthesiology",1,AN,Anesthesiology,868.5110,,N,4
+PCN,Immunoglobulin G Kappa Heavy And Light Chain Combined,2,IM,Immunology,866.5510,Intended for the in-vitro quantification of IgG kappa concentration in human serum.,N,1
+DTQ,"Console, Heart-Lung Machine, Cardiopulmonary Bypass",2,CV,Cardiovascular,870.4220,,N,1
+RIC,Ultrasonic Cutter,N,,Unknown,,Equipment used to cut objects in commercial or industrial applications.,Y,
+PAG,"Mesh, Surgical, Non-Synthetic, Urogynecologic, For Stress Urinary Incontinence, Retropubic Or Transobturator",2,SU,"General, Plastic Surgery",878.3300,Transvaginal surgical repair of female stress urinary incontinence (SUI) due to intrinsic sphincter deficiency (ISD) and/or urethral hypermobility.,N,1
+IQA,"System, Environmental Control, Powered",2,PM,Physical Medicine,890.3725,,N,4
+KIJ,"Instrument, Surgical, Orthopedic, Dc-Powered Motor And Accessory/Attachment",1,SU,"General, Plastic Surgery",878.4820,,N,4
+OQL,"Mesh, Surgical, Deployment Balloon",2,SU,"General, Plastic Surgery",878.3300,The device is intended to be used to facilitate the delivery of soft tissue prosthetics during the laparoscopic repair of hernias.,N,1
+HDA,"Forceps, Obstetrical",2,OB,Obstetrics/Gynecology,884.4400,,N,4
+FFD,"Evacuator, Bladder, Manually Operated",1,GU,"Gastroenterology, Urology",876.4370,,N,4
+HDX,"Dilator, Vaginal",2,OB,Obstetrics/Gynecology,884.3900,,N,1
+MDL,"Implant, Transmandibular",2,DE,Dental,872.4760,,N,1
+KTX,"Prosthesis, Knee, Femorotibial, Non-Constrained, Metal/Composite Cemented",2,OR,Orthopedic,888.3490,,N,1
+RFQ,Interferometric Position Measuring Product,N,,Unknown,,A laser used as an interferometer for high precision positioning and/or measurements.,Y,
+LLE,"Stimulator, Spinal-Cord, Implanted For Peripheral Vascular Disease",3,,Unknown,,,N,3
+FIB,"Protector, Transducer, Dialysis",2,GU,"Gastroenterology, Urology",876.5820,,N,1
+FXG,Specula Accessories,1,SU,"General, Plastic Surgery",878.1800,,N,4
+FCY,"Bulb, Inflation, For Endoscope",1,GU,"Gastroenterology, Urology",876.1500,An endoscope bulb pressurizes the interior of an endoscope. The user identifies the presence of leaks in the endoscope by immersing in water and visually observing for bubbles.,N,4
+DNI,"Liquid Chromatography, Amphetamine",2,TX,Clinical Toxicology,862.3100,,N,1
+NAW,Microspheres Radionuclide,3,,Unknown,,Approved PMA:  P990065,N,2
+OHR,Catheter Care Tray,2,GU,"Gastroenterology, Urology",876.5130,"This product code has been established in accordance with the may 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at www.Fda.Gov/cdrh/ode/convkit.Html.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+JZW,Nephelometer,1,IM,Immunology,866.4540,,N,4
+QBX,Direct Blood Bacterial Nucleic Acid Detection System,2,MI,Microbiology,866.3960,"Amplification, detection and identification of microbial pathogens directly from whole blood specimens",N,1
+RHC,"High Pressure Mercury, Metal Halide, And Mercury Xenon Lamp (Not For General Purpose Illumination)",N,,Unknown,,"A high pressure mercury vapor, metal halide, or mercury xenon lamp used for a specific purpose and not intended for general purpose illumination.  Specific examples are lamps used in scientific and industrial equipment, projection televisions and computer projectors, searchlights, etc.",Y,
+HCB,"Device, Aversive Conditioning",2,NE,Neurology,882.5235,,N,1
+JSC,"Culture Media, General Nutrient Broth",1,MI,Microbiology,866.2350,,N,4
+OGO,Intraocular Pressure Lowering Implant,3,,Unknown,,An intraocular pressure lowering implant is a device intended to reduce intraocular pressure when implanted in eyes which have not failed conventional medical and surgical treatment.,N,2
+OWP,Biological Sterilization Process Indicator With Recombinant-Dna Plasmid,2,HO,General Hospital,880.2805,A Recombinant-DNA plasmid biological indicator is intended for use by a health care provider to accompany products being sterilized through a sterilization procedure and to monitor adequacy of sterilization.,N,1
+PMJ,Cpr Aid Feedback Device (No Software),2,CV,Cardiovascular,870.5210,"Provides real-time feedback to the rescuer regarding the quality of CPR being delivered to the victim, and provides either audio and/or visual information to encourage the rescuer to continue the consistent application of effective manual CPR in accordance with current accepted CPR guidelines",N,4
+GML,"Antisera, Fluorescent, Histoplasma Capsulatum",2,MI,Microbiology,866.3320,,N,4
+QIZ,"Material, Implantable For Controlled Release, Cder Or Cber Led",N,,Unknown,,Implantable material for controlled release of drug substance.,N,3
+OJQ,Cardiac Allograft Gene Expression Profiling Test System,2,CV,Cardiovascular,862.1163,"In vitro diagnostic multivariate index assay (ivdmia) test service, performed in a single laboratory, for assessing the gene expression profile of rna isolated from peripheral blood mononuclear cells (pbmc) and indicated for use to aid in the identification of heart transplant recipients with stable allograft function who have a low probability of moderate/severe acute cellular rejection (acr) at the time of testing in conjunction with standard clinical assessment.",N,1
+GGG,Guaiac Reagent,2,HE,Hematology,864.6550,,N,1
+KTD,"Orthosis, Abdominal",1,PM,Physical Medicine,890.3490,,Y,4
+HYL,Hematoxylin Mayer'S,1,HE,Hematology,864.1850,,Y,4
+QAI,Powered Microneedle Device,2,SU,"General, Plastic Surgery",878.4430,A powered microneedle device is a device using one or more needles to mechanically puncture and injure skin tissue for aesthetic use.,N,1
+HGX,"Pump, Breast, Powered",2,OB,Obstetrics/Gynecology,884.5160,,N,1
+FHN,"Ligator, Hemorrhoidal",2,GU,"Gastroenterology, Urology",876.4400,,N,4
+HHW,"Pessary, Vaginal",2,OB,Obstetrics/Gynecology,884.3575,,N,1
+QRQ,Non-Irrigation Endosseous Dental Implant Drill Bits,1,DE,Dental,872.3980,The device is intended to prepare the site for placement of endosseous dental implants.  It is to be used at a low speed without irrigation.,N,4
+OOG,Knee Arthroplasty Implantation System,2,OR,Orthopedic,888.3560,"Intended to be used to assist in the implantation of a specific knee arthroplasty device or a set of specific knee arthroplasty devices.  Indicated to include guiding alignment, making or establishing cuts, selecting, sizing, attaching, positioning or orienting implant components.",N,1
+RHK,"Laser Marker Or Engraver, Industrial Or Commercial",N,,Unknown,,"A laser intended to mark or engrave an object with text, logos, etc. Using either a mask or a scanned laser beam.",Y,
+HDN,"Dilator, Cervical, Expandable",3,OB,Obstetrics/Gynecology,884.4250,Call for PMAs to be filed by 12/26/96 per 61 FR 50708 on 9/27/96,N,2
+FON,"Bag, Drainage, With Adhesive, Ostomy",1,GU,"Gastroenterology, Urology",876.5900,,N,4
+GDT,"Staple, Removable (Skin)",1,SU,"General, Plastic Surgery",878.4760,,N,4
+FJC,"Detector, Blood Level",2,GU,"Gastroenterology, Urology",876.5820,,N,1
+OTA,Mass Spectrometer For Clinical Multiplex Test Systems,2,CH,Clinical Chemistry,862.2570,A mass spectrometer for clinical multiplex test systems is a device that is intended to measure and sort multiple signals generated by an assay from a clinical sample.  The generated signals are produced by ionizing the compound or biological material under investigation and separating the resulting ions by means of an electrical and magnetic field according to their mass-to-charge ratios.  This instrumentation is used with specific assays to comprise an assay test system to measure multiple analytes of a similar chemical nature.,N,4
+GCD,"Connector, Catheter",1,SU,"General, Plastic Surgery",878.4200,,N,4
+QFB,Isocapnic Ventilation Device,2,HO,General Hospital,868.5480,"An isocapnic ventilation device is a prescription device used to administer a blend of carbon dioxide and oxygen gases to a patient to induce hyperventilation. This device may be labeled for use with breathing circuits made of reservoir bags (21 CFR 868.5320), oxygen cannulas (21 CFR 868.5340), masks (21 CFR 868.5550), valves (21 CFR 868.5870), resuscitation bags (21 CFR 868.5915), and/or tubing (21 CFR 868.5925).",N,1
+PJI,Severe Combined Immunodeficiency Disorder (Scid) Newborn Screening Test System,2,IM,Immunology,866.5930,A newborn screening test for severe combined immunodeficiency (SCID) intended for the detection of T-cell receptor excision circle (TREC) genomic DNA isolated from newborn blood specimens dried on filter paper.  It is intended as an aid in screening newborns for severe combined immunodeficiency (SCID).,N,1
+QSS,Hiv Self-Tests,3,,Unknown,,Human immunodeficiency virus (HIV) self-tests are intended for use by an individual to test themselves for the presence of HIV in body fluids.,N,2
+QQB,Prognostic Test For Assessment Of Liver Related Disease Progression,2,CH,Clinical Chemistry,862.1622,"prognostic test for assessment of liver related disease progression is intended to measure one or more analytes obtained from human samples as an aid in assessing progression of liver related disease. This device is not intended for diagnosis of any disease, for monitoring the effect of any therapeutic product, for assessing progression to hepatocellular carcinoma, or for assessing disease progression in individuals with viral hepatitis. It is also not intended for the detection of viruses, viral antigens, or antibodies to viruses.",N,1
+PVO,Lumbar Drainage Catheter Kit,2,NE,Neurology,882.5550,"This product code has been established in accordance with the May 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm080217.pdf.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+LIA,"Antigens, All Groups, Shigella Spp.",2,MI,Microbiology,866.3660,,N,4
+JDO,"Device, Fixation, Proximal Femoral, Implant",2,OR,Orthopedic,888.3030,,N,1
+CEX,"Chromatographic Separation, Lactate Dehydrogenase Isoenzymes",2,CH,Clinical Chemistry,862.1445,,N,4
+SEU,Peripheral Temporary And Retrievable Stent System,2,CV,Cardiovascular,870.5110,A peripheral temporary and retrievable stent system is a temporary scaffold placed into the peripheral vasculature via a delivery catheter system for treating stenotic lesions. The device is designed to be retrieved and removed following successful treatment.,N,1
+CHW,"Titrimetric With Edta And Indicator, Calcium",2,CH,Clinical Chemistry,862.1145,,N,1
+MJJ,"Cpb Check Valve, Retrograde Flow, In-Line",2,CV,Cardiovascular,870.4400,,N,1
+DRK,"Dc-Defibrillator, High Energy, (Including Paddles)",3,CV,Cardiovascular,870.5300,PMA to be filed by 12/26/96 (FR 50706 (9/27/96)),N,2
+MTP,"Antibody To Htlv-1, Elisa",3,,Unknown,,,N,3
+NHF,"Monitor, Orthotic/Prosthetic",1,PM,Physical Medicine,890.3025,"A monitor, orthotic/prosthetic is a non-invasive, battery-powered, data storage accessory device that is attached to or embedded in medical appliances such as splints, braces, orthotics, prosthetics, and wearable exercise devices, to record how often the appliance is worn, through the use of sensors that record changes in temperature, motion, skin proximity, etc.",Y,4
+KJL,Azure C,1,HE,Hematology,864.1850,,Y,4
+NLQ,Single-Use Reprocessed Ultrasonic Surgical Instruments,U,,Unknown,,"Single-use reprocessed versions of the ultrasonic devices used in surgical procedures either for fragmentation, emulsification and aspiration of soft tissue and hard tissue or for ligation of vessels (under product code LFL). Reprocessing validation data for this device type must be included in a 510(k) submission.. (70 FR 56911, available at https://www.govinfo.gov/content/pkg/FR-2005-09-29/pdf/05-19510.pdf).",N,1
+NKA,"System, Documentation, Breast Lesion",2,OB,Obstetrics/Gynecology,884.2990,A Breast lesion documentation device is a device for recording and documenting palpable breast lesions detected during a clinical breast exam.,N,1
+LNS,"Lithotriptor, Extracorporeal Shock-Wave, Urological",2,GU,"Gastroenterology, Urology",876.5990,,N,1
+OHH,Breast Pump Kit,2,OB,Obstetrics/Gynecology,884.5160,"This product code has been established in accordance with the may 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at www.Fda.Gov/cdrh/ode/convkit.Html.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+ESD,"Hearing Aid, Air-Conduction, Prescription",1,EN,"Ear, Nose, Throat",874.3300,An air-conduction hearing aid is a wearable sound amplifying device intended to compensate for impaired hearing that conducts sound to the ear through the air. This is a prescription hearing aid.,N,4
+LWA,"Prosthesis, Ligament, Ptfe",3,,Unknown,,,N,2
+QMW,Coronary Artery Disease Risk Indicator From Acoustic Heart Signals,2,CV,Cardiovascular,870.1420,"A coronary artery disease risk indicator using acoustic heart signals is a device that records heart sounds including murmurs and vibrations to calculate a patient-specific risk of presence of coronary artery disease, as an aid in cardiac analysis and diagnosis.",N,1
+HHN,Cleidoclast,2,OB,Obstetrics/Gynecology,884.4500,,N,1
+GCM,"Endoscope, Rigid",2,GU,"Gastroenterology, Urology",876.1500,,N,1
+KKY,"Material, Polytetrafluoroethylene Vitreous Carbon, For Maxillofacial Reconstruction",2,SU,"General, Plastic Surgery",878.3500,,N,1
+KGC,"Tube, Gastro-Enterostomy",2,GU,"Gastroenterology, Urology",876.5980,,N,1
+LAM,"High Pressure Liquid Chromatography, Quinine",1,TX,Clinical Toxicology,862.3750,,N,1
+KCW,"Epilator, High Frequency, Needle-Type",1,SU,"General, Plastic Surgery",878.5350,,N,4
+PTW,"System, Peritoneal, Automatic Delivery, Exempt",2,GU,"Gastroenterology, Urology",876.5630,"This product code is the class II exempt counterpart of FKX, and was exempted, subject to the limitations of exemption, under the procedures established by the 21st Century Cures Act. This device type does not require premarket notification (510(k)) to market if it does not exceed the general limitations of exemption found in 21 CFR 876.9 and the specific limitations of exemption as stated in the Physical State field of this product code description.",N,4
+GTL,"Phages, Staphylococcal Typing, All Types",1,MI,Microbiology,866.2050,,N,4
+HCJ,"Device, Skin Potential Measurement",2,NE,Neurology,882.1560,,N,4
+DQT,"Occluder, Catheter Tip",2,CV,Cardiovascular,870.1370,,N,1
+MLQ,"Inhibitor, Peridural Fibrosis (Adhesion Barrier)",3,,Unknown,,,N,2
+MDU,"Antigen, Elisa, Cryptococcus",2,MI,Microbiology,866.3165,,N,4
+NDH,"Nail, Fixation, Bone, Metallic",2,OR,Orthopedic,888.3030,,N,1
+FXO,"Suit, Surgical",1,SU,"General, Plastic Surgery",878.4040,,N,4
+FZC,"Prosthesis, Arterial Graft, Bovine Carotid Artery",3,,Unknown,,,N,2
+GQC,"Antisera, Cf, Equine Encephalitis Virus, Eee, Wee",1,MI,Microbiology,866.3240,,N,4
+DCF,"Albumin, Antigen, Antiserum, Control",2,IM,Immunology,866.5040,,N,4
+NKQ,"Guidewire, Catheter, Reprocessed",2,CV,Cardiovascular,870.1330,"Reprocessing validation data for this device type must be included in a 510(k) submission. (70 FR 56911, available at https://www.govinfo.gov/content/pkg/FR-2005-09-29/pdf/05-19510.pdf).",N,1
+FMR,"Device, Transfer, Patient, Manual",1,HO,General Hospital,880.6785,,Y,4
+IWK,"Cyclotron, Medical",2,RA,Radiology,892.5050,,N,1
+IGN,"Fluid, Bouin'S",1,PA,Pathology,864.4010,,Y,4
+QOJ,"Apparatus, Suction, Operating-Room, Wall Vacuum Powered (Export Only)",N,,Unknown,,Intended to be used for the removal of prosthetic breast implant specimens.,N,3
+LTA,"Fluid, Hysteroscopy",3,,Unknown,,,N,2
+ODF,"Mini Endoscope, Gastroenterology-Urology",2,GU,"Gastroenterology, Urology",876.1500,"To examine and perform procedures in body cavities of the GI and GU tract.    If the device is reusable, validated reprocessing instructions and reprocessing validation data for this device type must be included in a 510(k) submission (82 FR 26807, available at https://www.gpo.gov/fdsys/pkg/FR-2017-06-09/pdf/2017-12007.pdf).",N,1
+FCT,"Headlight, Fiberoptic Focusing",2,OP,Ophthalmic,886.4335,,N,4
+NMA,"Tube, Tracheal, Reprocessed",2,AN,Anesthesiology,868.5730,"Reprocessing validation data for this device type must be included in a 510(k) submission. (70 FR 56911, available at https://www.govinfo.gov/content/pkg/FR-2005-09-29/pdf/05-19510.pdf).",N,1
+HZM,"Hematoxylin, Acid, Phosphotungstic",1,HE,Hematology,864.1850,,Y,4
+MWH,Pulmonic Valved Conduit,f,,Unknown,,,N,6
+OBB,"Kit, Conception-Assist, Home Use",2,OB,Obstetrics/Gynecology,884.5250,"The kit is intended for assisted insemination in situations in which low sperm count , sperm immobility, or hostile vaginal environment have been diagnosed.  The kit is used for semen collection and placement into the bowl of a cervical cap as an aid to conception.  It is to be used at home following physician instruction.  The Cap should not be left in place for more than 6 hours.  The kit consists of:  conception (cervical) caps; 3 polyurethane condoms; 24 ovulation predictors; 3 pregnancy test kits; 3 ""sperm friendly"" moisturizer samples (Pre Lubricant); 1 conception journal; 1 instruction manual; 2 conception wheels (1 in English and 1 in French); 1 medical provider envelope.",N,1
+MNV,"Strip, Dialysate Ph Indicator",2,GU,"Gastroenterology, Urology",876.5820,,N,1
+OEI,Drainage Catheter With Antibiotic,2,SU,"General, Plastic Surgery",878.4780,A tubular drain made from silicone or similar material and is coated with a silver containing material and is intended to drain fluids from body cavities using gravity drainage or attached to a suction pump.,N,1
+NLM,"Laparoscope, General & Plastic Surgery, Reprocessed",2,GU,"Gastroenterology, Urology",876.1500,"The ""Endoscope and accessories, reprocessed"" is intended to provide access, illumination, and allow observation or manipulation of body cavities, hollow organs, and canals.  This device is indicated for reuse/reprocessing. Reprocessing validation data for this device type must be included in a 510(k) submission. (70 FR 56911, available at https://www.govinfo.gov/content/pkg/FR-2005-09-29/pdf/05-19510.pdf).",N,1
+PVB,"Test, Codeine, Employment And Insurance Testing, Exempt",2,TX,Clinical Toxicology,862.3270,"The codeine test is an in vitro diagnostic test for the qualitative analysis of codeine for employment and insurance testing.    FDA has exempted these devices from the premarket notification requirement by publishing in the Federal Register of July 11, 2017 (82 FR 31976) available at https://www.federalregister.gov/documents/2017/07/11/2017-14453/medical-devices-exemptions-from-premarket-notification-class-ii-devices subject to the limitations under 21 CFR XXX.9, where XXX refers to Parts 862-892, and any limitations on the exemption described in (82 FR 31976).  Any device that exceeds the limitations found in 21 CFR sections 862.9 to 892.9 or identified in the Federal Register  (82 FR 31976) available at https://www.federalregister.gov/documents/2017/07/11/2017-14453/medical-devices-exemptions-from-premarket-notification-class-ii-devices is required to submit a premarket notification submission (510(k)) to FDA before introducing a device into interstate commerce.  If a manufacturers device is exempt from the premarket notification requirement, then a premarket notification submission and FDA clearance is not required before marketing the device in the U.S. however, manufacturers are required to meet all other requirements under the Federal Food Drug & Cosmetic and implementing regulations including (but not limited to) registration and listing requirements. Please see the Device Registration and Listing website for additional information on registration and listing.",N,4
+NRB,"Wound Cleaner, Ultrasound",2,SU,"General, Plastic Surgery",878.4410,The ultrasound wound cleaner/mild debridement system is a device that delivers a cleaning fluid to the wound that is pulsed using low power ultrasound radiation.  The device is intended to clean and mildly debride wounds.  The ultrasound generator must deliver 1.0 mw/cm2 or less energy to the wound,N,1
+FAB,"Replacer, Ureteral",3,,Unknown,,,N,2
+LHL,"Reagents, Antibody, Legionella, Direct & Indirect Fluorescent",2,MI,Microbiology,866.3300,,N,4
+QCF,Electrical Tongue Stimulator To Treat Motor Deficits,2,NE,Neurology,882.5889,An electrical tongue nerve stimulator to treat motor deficits is a prescription device that consists of a non-implantable apparatus to generate electrical pulses for stimulation of the nerves in the tongue to provide treatment of motor deficits.,N,1
+QFJ,Intravascular Bleed Monitor,2,CV,Cardiovascular,870.1345,"An intravascular bleed monitor is a probe, catheter, or catheter introducer that measures changes in bioimpedance and uses an algorithm to detect or monitor progression of potential internal bleeding complications.",N,1
+JGI,"Atomic Absorption, Magnesium",1,CH,Clinical Chemistry,862.1495,,N,1
+OZZ,Bordetella Pertussis Dna Assay System,2,MI,Microbiology,866.3980,A qualitative in vitro diagnostic assay intended to detect Bordetella pertussis DNA extracted from human respiratory specimens. Detection of Bordetella pertussis DNA aids in the diagnosis of Bordetella pertussis respiratory infection in conjunction with other clinical and laboratory testing in patients exhibiting signs and symptoms of upper respiratory tract infection.,N,1
+QVL,Absorbable Gel For Intraoperative Use In Spine Surgery,2,OR,Orthopedic,888.3047,This device is an absorbable gel implant for intraoperative use in spinal procedures that is applied to nerve roots after hemostasis has been achieved and prior to closure. The device is intended as an adjunct to the surgical procedure to reduce pain and neurological symptoms.,N,1
+CZQ,"Bence-Jones Protein, Antigen, Antiserum, Control",2,IM,Immunology,866.5150,,N,1
+OJX,Drug Eluting Permanent Left Ventricular (Lv) Pacemaker Electrode,3,,Unknown,,Drug eluting permanent lv pacemaker electrodes are used with compatible cardiac rhythm therapy (crt) devices to deliver pacing pulses to the heart.,N,2
+GTC,"Antisera, All Types, Klebsiella Spp.",1,MI,Microbiology,866.3340,,N,4
+JFQ,"P-Phenyl-Enediamine/Edta (Spectrophotometric), Ceruloplasmin",2,IM,Immunology,866.5210,,N,4
+BRW,"Protector, Dental",1,AN,Anesthesiology,868.5820,,N,4
+DDN,"Beta-2-Glycoprotein I, Antigen, Antiserum, Control",1,IM,Immunology,866.5430,,N,4
+KPR,"System, X-Ray, Stationary",2,RA,Radiology,892.1680,,N,1
+GZC,"Stimulator, Neuromuscular, Implanted",3,NE,Neurology,882.5860,Call for PMAs to be filed by 7/13/99 per 64 FR 18329 on 4/14/99,N,2
+DIE,Heavy Metals Control Materials,1,TX,Clinical Toxicology,862.3280,,N,4
+HKY,"Tonometer, Manual",2,OP,Ophthalmic,886.1930,,N,1
+PTS,"Endoscopic Grasping/Cutting Instrument, Non-Powered, Exempt",2,GU,"Gastroenterology, Urology",876.1500,"This product code is the class II exempt counterpart of OCZ, and was exempted, subject to the limitations of exemption, under the procedures established by the 21st Century Cures Act. This device type does not require premarket notification (510(k)) to market if it does not exceed the general limitations of exemption found in 21 CFR 876.9 and the specific limitations of exemption as stated in the Physical State field of this product code description.",N,4
+HLT,"Preamplifier, Ac-Powered, Ophthalmic",2,OP,Ophthalmic,886.1640,,N,1
+ETR,"Adaptor, Short Increment Sensitivity Index (Sisi)",1,EN,"Ear, Nose, Throat",874.1070,,N,4
+PFX,"System, Microarray-Based, Genome-Wide, Postnatal Chromosomal Abnormality Detection",2,IM,Immunology,866.5920,"A microarray-based, genome-wide, postnatal chromosomal abnormality detection system is used to qualitatively detect constitutional gains and losses in chromosomal copy numbers across the human genome using microarray methods.  It is intended as an aid in the postnatal diagnosis of developmental delay and/or intellectual disability (DD/ID), congenital anomalies, and dysmorphic features in conjunction with other clinical information currently used in postnatal diagnosis.  It is not intended to be used for standalone diagnostic purposes, prenatal or pre-implantation testing or screening, population screening, or for the detection of, or screening for, acquired or somatic genetic aberrations.",N,1
+DYT,"Maintainer, Space Preformed, Orthodontic",1,DE,Dental,872.5525,,N,4
+PAS,"Rf/Microwave Hyperthermia System, Cancer Treatment",f,,Unknown,,Used in conjunction with radiation therapy for the treatment of cervical carcinoma patients who normally would be treated with combined chemotherapy and radiation but are ineligible for chemotherapy due to patient related factors.,N,6
+PBP,Rectal Insert,2,GU,"Gastroenterology, Urology",876.5980,Acts as a barrier to the passage of fecal matter through the rectum.,N,1
+PJK,Tissue Adhesive For Internal Use,3,SU,"General, Plastic Surgery",878.4010,Approximation of tissue layers where subcutaneous dead space exists between the tissue planes in abdominoplasty.,N,2
+NNX,"Device, Incontinence, Urosheath Type, Non-Sterile",1,GU,"Gastroenterology, Urology",876.5250,Urine collector and accessories; see product code EXJ,Y,4
+RBH,Projector,N,,Unknown,,Electronic products that use a cathode ray tube or several cathode ray tubes to generate television images which are projected on a screen either from the front or from the rear.,Y,
+QYK,Semi-Automated Autologous Skin Graft Harvesting And Application Device,2,SU,"General, Plastic Surgery",878.4795,A semi- automated autologous skin graft harvesting and application device is a handheld electromechanical surgical instrument that extracts autologous skin graft tissue from a healthy donor skin site and deposits it to a recipient site. The device extraction and deposition functions are automated and are activated by the user. The device is not intended for treatment of third degree burns.,N,1
+LNR,"System, Photopheresis, Extracorporeal",3,,Unknown,,,N,2
+QQY,Culture Plate Imaging System For Qualitative Assessment Of Resistant Organisms,2,MI,Microbiology,866.2190,Culture plate imaging system for qualitative assessment of resistant organisms is an automated system to assess the presence or absence of colony growth on solid chromogenic culture media.,N,1
+NPE,"Material, Embolization, Neurovascular, Polymerizing Or Precipitating",3,,Unknown,,This is an neurovascular embolization device which is placed in a blood vessel to permanently obstruct blood flow to an aneurysm or other vascular malformation.  It is unlike the coil or particulate embolization devices in that it polymerizes or precipitates in situ.  Particulate or coil-based embolic agents are delivered in pre-formed shapes and configurations.,N,2
+MOM,"System, Hemodynamic, Implantable",3,,Unknown,,,N,2
+HEE,"Set, Anesthesia, Paracervical",2,OB,Obstetrics/Gynecology,884.5100,,N,1
+SBP,Simple Point-Of-Care Nucleic Acid-Based Hepatitis C Virus Ribonucleic Acid Test,2,MI,Microbiology,866.3171,"A simple point-of-care nucleic acid-based hepatitis C virus (HCV) ribonucleic acid (RNA) test is an in vitro diagnostic device that is intended for prescription use for the detection of HCV RNA in clinical specimens as an aid in the diagnosis of HCV infection or as an aid in the management of HCV-infected patients, including individuals without antibodies to HCV. This device is simple to use and does not involve sample manipulation, transportation of the sample to another functional area (e.g., a central laboratory or other specialized area), or measurement of reagents or analytes that could be affected by conditions such as sample turbidity or cell lysis. The test is not intended for use as a donor screening test for the presence of HCV RNA in blood, blood products, or tissue donors.",N,1
+PJY,Osseoanchored Prostheses For The Rehabilitation Of Transfemoral Amputees,3,,Unknown,,The device is a percutaneous prosthetic device for the direct skeletal attachment of a prosthetic limb.,N,2
+DEZ,"Igm, Rhodamine, Antigen, Antiserum, Control",2,IM,Immunology,866.5550,,N,1
+EBO,Denture Repair Kit,2,DE,Dental,872.3570,"This product code has been established in accordance with the may 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at www.Fda.Gov/cdrh/ode/convkit.Html.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+LFZ,"Enzyme Linked Immunoabsorbent Assay, Cytomegalovirus",2,MI,Microbiology,866.3175,,N,1
+PNV,Impedance Measuring Device Utilizing Oscillation Techniques,2,AN,Anesthesiology,868.1840,This device measures respiratory impedance.,N,1
+OTD,Endovascular Suturing System,2,CV,Cardiovascular,870.3460,Provides fixation and sealing between and endovascular graft and the native artery.,N,1
+JZX,"Equipment, Rocket Immunoelectrophoresis",1,IM,Immunology,866.4830,,N,4
+SGJ,Ultrasound Imaging System For Acquiring Images At Home By Lay Users,2,RA,Radiology,892.1590,"An ultrasound imaging system for acquiring images at home by lay users is a prescription home use device that may consist of hardware and/or software intended for acquiring ultrasound images for interpretation by a qualified health care professional (e.g., fetal images for determination of fetal heart rate). The device provides guidance to lay users to aid image acquisition.",N,1
+ION,"Exerciser, Non-Measuring",1,PM,Physical Medicine,890.5370,,Y,4
+DND,"Radioimmunoassay, Digitoxin (125-I), Rabbit Antibody, Solid Phase Sep.",2,TX,Clinical Toxicology,862.3300,,N,1
+HOR,Simulatan (Including Crossed Cylinder),1,OP,Ophthalmic,886.1840,,Y,4
+LKX,"Device, Thermal, Hemorrhoids",U,,Unknown,,,N,1
+HMQ,"Marker, Sclera",1,OP,Ophthalmic,886.4570,,N,4
+KAO,"Curette, Ethmoid",1,EN,"Ear, Nose, Throat",874.4420,,N,4
+KEP,"Media, Mounting, Oil Soluble",1,PA,Pathology,864.4010,,Y,4
+EGI,Parallelometer,1,DE,Dental,872.4565,,N,4
+HLM,"Instrument, Measuring, Lens, Ac-Powered",1,OP,Ophthalmic,886.1425,,N,4
+QFZ,Gastroenterology-Urology Accessories To A Biopsy Instrument,1,GU,"Gastroenterology, Urology",876.1080,A gastroenterology-urology accessory to a biopsy instrument is an accessory used to remove a specimen of tissue for microscopic examination by cutting or aspiration.  This generic type of device includes a syringe for specimen aspiration and a biopsy channel adaptor.  This device does not include accessories to biopsy instruments used in other medical specialty areas.,N,4
+MRG,"System, Test, Vitamin D",2,CH,Clinical Chemistry,862.1825,,N,1
+PKI,Fully Subcutaneous Implanted Hemodialysis Catheter,2,GU,"Gastroenterology, Urology",876.5540,Provides access to the blood for hemodialysis or other chronic uses.,N,1
+REP,Surveying Laser Product,N,,Unknown,,"Product, laser, surveying, instrument, determine position by measurement of angles",Y,
+DMS,"Gases, Glc",1,CH,Clinical Chemistry,862.2250,,N,4
+GGN,"Plasma, Coagulation Control",2,HE,Hematology,864.5425,,N,4
+GWK,"Conditioner, Signal, Physiological",2,NE,Neurology,882.1845,,N,1
+HEM,"Imager, Ultrasonic Obstetric-Gynecologic",2,OB,Obstetrics/Gynecology,884.2225,,N,1
+SDZ,Endovascular System For Treatment Of Ascending Aorta And Aortic Arch Lesions,3,,Unknown,,Endovascular Repair of Ascending Aorta and Aortic Arch Lesions,N,2
+HIH,Hysteroscope (And Accessories),2,OB,Obstetrics/Gynecology,884.1690,,N,1
+GWN,Nystagmograph,2,NE,Neurology,882.1460,,N,1
+GHZ,"Solution, Gugol Blue",1,HE,Hematology,864.1850,,Y,4
+LKO,"Anti-Rnp Antibody, Antigen And Control",2,IM,Immunology,866.5100,,N,1
+EJS,"Alloy, Other Noble Metal",2,DE,Dental,872.3060,,N,4
+MCG,"Dna-Probe, Agent, Listeria",1,MI,Microbiology,866.3355,,N,4
+CGR,"Radioimmunoassay, Cortisol",2,CH,Clinical Chemistry,862.1205,,N,1
+NPW,Percutaneously Delivered Prostheses And Tricuspid Valves,3,,Unknown,,These devices are intended to replace a patient's tricuspid heart valve.  They are different from the classified device (heart valves) in that they are placed percutaniously and do not require open chest surgery or a cardiotomy for placement.,N,2
+GTN,"Antisera, Fluorescent, All Types, Staphylococcus Spp.",1,MI,Microbiology,866.3700,,N,4
+FTL,"Mesh, Surgical, Polymeric",2,SU,"General, Plastic Surgery",878.3300,,N,1
+JOB,"Hexane Extraction, Fluorescence, Vitamin E",1,CH,Clinical Chemistry,862.1815,,N,4
+LAI,"Thin Layer Chromatography, Opiates",2,TX,Clinical Toxicology,862.3650,,N,1
+MFK,"Lens, Multifocal Intraocular",3,OP,Ophthalmic,886.3600,,N,2
+GGJ,"Fluid, Diluting, White-Cell",1,HE,Hematology,864.8200,,N,4
+HPO,"Magnet, Ac-Powered",2,OP,Ophthalmic,886.4440,,N,4
+MIX,"System, Vocal Cord Medialization",2,EN,"Ear, Nose, Throat",874.3620,,N,1
+JMY,"Citrulline, Arsenate, Nessler (Colorimetry), Ornithine Carbamyl Transferase",1,CH,Clinical Chemistry,862.1535,,N,4
+EHQ,"Cusp, Preformed",1,DE,Dental,872.3360,,N,4
+JIJ,"Wet Ash Method, Protein-Bound Iodine",1,CH,Clinical Chemistry,862.1640,,N,4
+MDP,"Separator For Therapeutic Purposes, Membrane Automated Blood Cell/Plasma",3,,Unknown,,,N,2
+SHA,Solid Wound Dressing With Permanently Bound Antimicrobial Agent,2,SU,"General, Plastic Surgery",878.4013," A solid wound dressing with permanently bound antimicrobial agent consists of a solid wound dressing containing antimicrobial permanently bound to the substrate surface. The solid wound dressing is used to cover and protect a wound, to absorb exudate, and to maintain appropriate moisture balance within the wound and is intended for use only on external cutaneous (skin) wounds. The solid wound dressing is provided sterile in a form able to hold structural integrity. Antimicrobials are used for protectant purposes only to reduce microbial growth within the solid wound dressing while in use, or to provide an antimicrobial barrier to microbial penetration through the solid wound dressing. This classification does not include solid wound dressings containing a medically important antimicrobial as defined in the special controls.",N,1
+QRC,Non-Implanted Electrical Stimulation Device For Management Of Premature Ejaculation,2,GU,"Gastroenterology, Urology",876.5026,A non-implanted electrical stimulation device for management of premature ejaculation is intended to be used in patients with premature ejaculation by delivery of electrical stimulation to the perineal muscles and nerves.,N,1
+RGH,Toilet Seat Sanitizer,N,,Unknown,,An ultraviolet wavelength noncoherent light source used for sanitizing toilet seats.,Y,
+DKE,"Reagents, Test, Tetrahydrocannabinol",2,TX,Clinical Toxicology,862.3870,,N,1
+JBQ,Antithrombin Iii Quantitation,2,HE,Hematology,864.7060,,N,1
+NLP,"Drills, Burrs, Trephines, And Accessories (Powered Compound), Reprocessed",2,NE,Neurology,882.4305,"Reprocessing validation data for this device type must be included in a 510(k) submission. (70 FR 56911, available at https://www.govinfo.gov/content/pkg/FR-2005-09-29/pdf/05-19510.pdf).",N,1
+HFD,"Washer, Endometrial",2,OB,Obstetrics/Gynecology,884.1185,,N,1
+EFN,"Cotton, Roll",1,DE,Dental,872.6050,,Y,4
+OKW,Seminal Fluid Collection Kit,2,OB,Obstetrics/Gynecology,884.5300,"This product code has been established in accordance with the May 20, 1997, Guidance entitled, Convenience Kits Interim Regulatory Guidance, found at www.fda.gov/cdrh/ode/convkit.html.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance",N,7
+GZL,"Electrode, Depth",2,NE,Neurology,882.1330,,N,1
+JLJ,"Uridine-5-Diphosphoglucose, Nad (U.V.), Alpha-D Galactose-1-Phosphate",2,CH,Clinical Chemistry,862.1315,,N,1
+MOI,"System, Test, Immunological, Antigen, Tumor",2,IM,Immunology,866.6010,,N,1
+KMY,"Positioner, Tooth, Preformed",1,DE,Dental,872.5525,,N,4
+OVF,"Assay, Direct, Nucleic Acid Amplification, Q Fever",1,MI,Microbiology,866.3500,These reagents are nucleic acid primers and probes intended for the amplification and identification of Coxiella burnetii directly from clinical specimens. The identification aids in the diagnosis of Q Fever and provides epidemiological information on this disease. This reagent differs from the description in the regulation in that it consists of nucleic acid primers and probes rather than antisera or antigens.,N,1
+CAO,"Airway, Esophageal (Obturator)",2,AN,Anesthesiology,868.5650,,N,1
+EAS,"Gel, Electrode, For Pulp Tester",1,DE,Dental,872.1730,,N,4
+QSN,Orthopedic Infection Microbial Multiplex Nucleic Acid Detection System,2,MI,Microbiology,866.3988,A qualitative nucleic acid assay that detects and identifies microbial organisms and antimicrobial resistance markers in clinical specimens to aid in the diagnosis of orthopedic infections.,N,1
+GBJ,"Prosthesis, Adhesive, External",1,SU,"General, Plastic Surgery",878.3750,,N,4
+EGT,"Controller, Temperature, Radiographic",2,RA,Radiology,892.1900,,N,4
+PUX,"Test, Amphetamine, Employment And Insurance Testing, Exempt",2,TX,Clinical Toxicology,862.3100,"The amphetamine test is an in vitro diagnostic test for the qualitative analysis of amphetamine for employment and insurance testing.    FDA has exempted these devices from the premarket notification requirement by publishing in the Federal Register of July 11, 2017 (82 FR 31976) available at https://www.federalregister.gov/documents/2017/07/11/2017-14453/medical-devices-exemptions-from-premarket-notification-class-ii-devices subject to the limitations under 21 CFR XXX.9, where XXX refers to Parts 862-892, and any limitations on the exemption described in (82 FR 31976).  Any device that exceeds the limitations found in 21 CFR sections 862.9 to 892.9 or identified in the Federal Register  (82 FR 31976) available at https://www.federalregister.gov/documents/2017/07/11/2017-14453/medical-devices-exemptions-from-premarket-notification-class-ii-devices is required to submit a premarket notification submission (510(k)) to FDA before introducing a device into interstate commerce.  If a manufacturers device is exempt from the premarket notification requirement, then a premarket notification submission and FDA clearance is not required before marketing the device in the U.S. however, manufacturers are required to meet all other requirements under the Federal Food Drug & Cosmetic and implementing regulations including (but not limited to) registration and listing requirements. Please see the Device Registration and Listing website for additional information on registration and listing.",N,4
+QER,"Camera, Ophthalmic, Slit-Scanning",2,OP,Ophthalmic,886.1120,An ophthalmic slit-scanning camera is an AC-powered device intended to take photographs of the eye and the surrounding area.,N,1
+JBM,"Glucose-6-Phosphate Dehydrogenase (Erythrocytic), Electrophoresis",2,HE,Hematology,864.7360,,N,1
+MXO,"Laser, System, Phacolysis",2,OP,Ophthalmic,886.4670,,N,1
+QOV,Critical Care Ventilator,N,,Unknown,,A continuous ventilator (respirator) is a device intended to mechanically control or assist patient breathing by delivering a predetermined percentage of oxygen in the breathing gas during emergency and/or transfer use. Device is intended to be used temporarily and/or in emergency situations during declared public health emergency.,N,8
+ILC,"Utensil, Eating",1,PM,Physical Medicine,890.5050,,Y,4
+ELK,"Teeth, Artificial, Backing And Facing",1,DE,Dental,872.3910,,N,4
+HPG,"Aid, Vision, Electronic, Battery-Powered",1,OP,Ophthalmic,886.5900,,N,4
+GGY,"Pipette, Diluting",1,HE,Hematology,864.6160,,N,4
+LEQ,"Detectors, Electrochemical, Liquid Chromatography",1,CH,Clinical Chemistry,862.2260,,N,4
+PAT,Bladder System,f,,Unknown,,"for the treatment of patients who have complete spinal cord lesions (ASIA Classification) with intact parasympathetic innervation of the bladder and are skeletally mature and neurologically stable, to provide urination on demand and to reduce post-void residual volumes of urine.",N,6
+BZR,"Mixer, Breathing Gases, Anesthesia Inhalation",2,AN,Anesthesiology,868.5330,,N,1
+LDB,"U.V. Spectrometry, Carbamazepine",2,TX,Clinical Toxicology,862.3645,,N,1
+MAM,"Dna-Probe, B And T Lymphocyte",2,HE,Hematology,864.5220,,N,1
+SDG,Brain Intraparenchymal Infusion Cannula,2,NE,Neurology,882.4110,"A brain intraparenchymal infusion cannula is a non-powered, hollow tube-like device with a rigid component for stereotaxic-aided temporary placement in brain parenchyma tissue to deliver a therapy.",N,1
+HIS,Condom,2,OB,Obstetrics/Gynecology,884.5300,,N,1
+EKY,"Handpiece, Water-Powered",1,DE,Dental,872.4200,,N,1
+HIY,"Brush, Haidinger, (Including Macular Integrity)",1,OP,Ophthalmic,886.1090,,N,4
+NUF,"Catheter, Neurovasculature, Occluding Balloon",3,NE,Neurology,882.5150,"Call for PMAs - 12/26/96 per 61 FR 50708 on 9/27/96 - For the treatment of cerebral ischemia resulting from symptomatic  vasospasm following aneurismal subarachnoid hemorrhage, secured by either  surgical or endovascular intervention for patients who have failed maximal  medical management",N,2
+IDC,Acridine Orange,1,HE,Hematology,864.1850,,Y,4
+SGG,"Mass Spectrometric, Immunoglobulins (G, A, M, D, E)",2,IM,Immunology,866.5510,The test system is intended for the (semi-)quantitative or quantitative determination of monoclonal immunoglobulins (M-proteins) and/or the identification of Immunoglobulin isotype of M-proteins in human specimens by mass spectrometric methods.,N,1
+NTK,"Caries Detector, Laser Light, Transmission",2,DE,Dental,872.1745,,N,1
+QMV,Device To Detect And Identify Selected Microbial Agents That Cause Acute Febrile Illness,2,MI,Microbiology,866.3966,"A device to detect and identify selected microbial agents that cause acute febrile illness is identified as a in vitro device intended for the detection and identification of microbial agents in human clinical specimens from patients with signs and symptoms of acute febrile illness who are at risk for exposure or who may have been exposed to these agents. It is intended to aid in the diagnosis of acute febrile illness in conjunction with other clinical, epidemiologic, and laboratory data, including patient travel, pathogen endemicity, or other risk factors.",N,1
+OPX,Immunoglobulin A Kappa Heavy & Light Chain Combined,2,IM,Immunology,866.5510,"Intended for the in-vitro quantification of iga kappa concentration in human serum.  The result is to be used with previously diagnosed iga multiple myeloma, in conjunction with other clinical and laboratory findings.  For previously diagnosed iga multiple myeloma patients.",N,1
+EIX,"Probe, Periodontic",1,DE,Dental,872.4565,,N,4
+NMN,"Instrument, Clip, Forming/Cutting, Reprocessed",1,NE,Neurology,882.4190,"Reprocessing validation data for this device type must be included in a 510(k) submission. (70 FR 56911, available at https://www.govinfo.gov/content/pkg/FR-2005-09-29/pdf/05-19510.pdf).",N,1
+HTC,"Pliers, Surgical",1,SU,"General, Plastic Surgery",878.4800,,N,4
+JAB,"System, X-Ray, Fluoroscopic, Non-Image-Intensified",2,RA,Radiology,892.1660,,N,1
+RBD,"Video Monitor, Medical Imaging, Color",N,,Unknown,,An electronic product using a color cathode ray tube to display medical images in colors from signals from a computer or electronic medical device.,Y,
+JJO,Flame Emission Photometer For Clinical Use,1,CH,Clinical Chemistry,862.2540,,N,4
+LJX,"Test, Urine Leukocyte",1,HE,Hematology,864.7675,,N,4
+NFH,"Digitizer, Images, Ophthalmic",2,RA,Radiology,892.2030,,N,4
+FCF,"Instrument, Biopsy, Mechanical, Gastrointestinal",2,GU,"Gastroenterology, Urology",876.1075,,N,1
+LBG,"Device, Fluidized Therapy, Dry Heat",2,PM,Physical Medicine,890.5500,,N,1
+MPJ,Interarticular Disc Prosthesis (Interpositional Implant),3,DE,Dental,872.3970,,N,2
+MSS,"Folders And Injectors, Intraocular Lens (Iol)",1,OP,Ophthalmic,886.4300,,N,1
+JCA,"Device, Bleeding Time",2,HE,Hematology,864.6100,,N,4
+DLF,"Enzyme Immunoassay, Ethosuximide",2,TX,Clinical Toxicology,862.3380,,N,1
+GJR,"Control, Red-Cell",2,HE,Hematology,864.8625,,N,4
+LTC,Hyaline Membrane Disease Assay,3,,Unknown,,,N,3
+MSK,Immunoassay For Blood Tacrolimus,N,,Unknown,,,N,3
+OTQ,Research Use Only/Hematology Devices,N,,Unknown,,For research use only and for products imported into the US only.,Y,7
+MKO,Falloposcope,2,OB,Obstetrics/Gynecology,884.1690,,N,1
+OSV,"Insufflator, Endoscopic Vessel Harvesting",2,OB,Obstetrics/Gynecology,884.1730,To provide selected flow rates and pressures of co2 gas to separate tissue planes so the saphenous vein or radial artery can be isolated and ligated.,N,1
+MCF,"Unit, Ultraviolet Sanitation/Sterilization (For Toothbrushes), Sterile",1,DE,Dental,872.6855,,N,4
+QSF,Software Option For Anesthesia Gas Machine To Achieve And Maintain Targeted End Tidal Oxygen And Anesthetic Agents,3,,Unknown,,"The software feature is  indicated for use with the anesthesia system to support clinicians in maintaining the targeted end tidal oxygen and end tidal anesthetic agent concentrations that the clinician sets during an anesthetic procedure, by making multiple, limited adjustments to the fresh gas composition and total flow. The software  feature is indicated for adult patients, 18 years of age and older.    The anesthesia system and the software feature are intended for prescription use only.",N,2
+OLW,Index-Generating Electroencephalograph Software,2,NE,Neurology,882.1400,Analyze electrical activity of the brain by transformation of electroencephalograph signals into a dimensionless index number for use and interpretation by a qualified user.,N,1
+PHJ,"System, Mass Spectrometry, Multiplex Genotyping, Hereditary Thrombophilia Related Mutations",2,HE,Hematology,864.7280,A multiplex genotying test system intended for the qualitative detection and identification of specific thrombophilia related gene mutations from genomic DNA by genomic amplification and mass spectrometry.  It is intended as an aid in diagnosis of patients with suspected thrombophilia.,N,1
+GNG,"Antigens, Cf (Including Cf Control), Coxsackievirus A 1-24, B 1-6",1,MI,Microbiology,866.3145,,N,4
+OCO,"Mouthguard, Migraine/Tension Headache",U,,Unknown,,"A device to be used in the prophylactic treatment of medically diagnosed migraine pain as well as migraine associated tension-type headaches, by reducing their signs and symptoms through reduction of trigeminally innervated muscular activity, and; For the prevention of bruxism and tmj syndrome through reduction of trigeminally innervated muscular activity.",N,1
+QUU,Simple In Vitro Diagnostic Device For The Detection Of Secreted Proteins From Bacillus Spp. In Human Clinical Samples,2,MI,Microbiology,866.3046,"A simple in vitro diagnostic device for the detection of secreted proteins from Bacillus species (spp.) is a prescription in vitro diagnostic device used to detect and presumptively identify B. anthracis and other Bacillus spp. in human clinical samples as an aid in the diagnosis of anthrax and other diseases caused by Bacillus spp. This device is simple to use and does not involve sample manipulation or measurement of an analyte that could be affected by conditions such as sample turbidity or cell lysis. This device may be used to aid in the presumptive diagnosis of anthrax in individuals who have signs and symptoms consistent with anthrax and a likelihood of exposure. Bacillus infections include anthrax (cutaneous, inhalational, or gastrointestinal) caused by B. anthracis, gastrointestinal disease, non-gastrointestinal infections, and an anthrax-like illness caused by B. cereus.",N,1
+GMB,"Light, Wood'S, Fluorescence",1,MI,Microbiology,866.2600,,Y,4
+JET,"Pick, Massaging",1,DE,Dental,872.6650,,Y,4
+MLS,Labor And Delivery Kit,2,OB,Obstetrics/Gynecology,884.4530,"This product code has been established in accordance with the May 20, 1997, Guidance entitled, Convenience Kits Interim Regulatory Guidance, found at www.fda.gov/cdrh/ode/convkit.html.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance",N,7
+JCY,"Catheter, Infusion",1,SU,"General, Plastic Surgery",878.4200,,N,4
+QJU,Image Acquisition And/Or Optimization Guided By Artificial Intelligence,2,RA,Radiology,892.2100,"A radiological acquisition and/or optimization guidance system is a device that is intended to aid in the acquisition and/or optimization of images and/or diagnostic signals. The device interfaces with the acquisition system, analyzes its output, and provides guidance and/or feedback to the operator for improving image and/or signal quality.",N,1
+REL,Guide-Star Laser System,N,,Unknown,,"Product, laser, adaptive-optics telescope focusing accessory, generate artificial star; A laser used for focusing adaptive-optics telescopes.",Y,
+HSN,"Prosthesis, Ankle, Semi-Constrained, Cemented, Metal/Polymer",2,OR,Orthopedic,888.3110,,N,1
+MZH,"Test, Quantitative, For Hla, Non-Diagnostic",N,,Unknown,,,N,3
+HXB,Probe,1,OR,Orthopedic,888.4540,,N,4
+FFW,"String And Tubes, Gastrointestinal, To Locate Internal Bleeding",2,GU,"Gastroenterology, Urology",876.5980,,N,1
+IWM,"Synchrotron, Medical",2,RA,Radiology,892.5050,,N,1
+MRQ,"Analyzer, Nitrogen Dioxide",2,AN,Anesthesiology,868.2385,,N,1
+SAX,Home Monitoring Ophthalmic Optical Coherence Tomography (Oct) Imaging Device,2,OP,Ophthalmic,886.1600,A home monitoring ophthalmic imaging device is a prescription self-imaging device that incorporates imaging system hardware and automated image processing and analysis to enable patients at home to provide measurements that are intended for use by a physician for monitoring ophthalmic diseases or conditions in between regularly scheduled assessments.,N,1
+NOZ,"Assay, 1,5-Anhydroglucitol (15ag)",2,HE,Hematology,864.7470,"The test provides quantitative measurement of 1,5-anhydroglucitol (15AG) in patient's blood. The test is for professional use, and is indicated for the monitoring of glycemic control in people with diabetes.",N,1
+DPI,"Radioimmunoassay, Digoxin (125-I), Bovine Antibody, Charcoal Sep.",2,TX,Clinical Toxicology,862.3320,,N,1
+JPD,Hemoglobin A2 Quantitation,2,HE,Hematology,864.7400,,N,1
+DSR,"Stimulator, Carotid Sinus Nerve",3,CV,Cardiovascular,870.3850,Call for PMAs 12/26/96 (61 FR 50706 (9/27/96)),N,2
+RCS,"Microwave Oven, Commercial",N,,Unknown,,"A machine that utilizes microwave radiation for food preparation, designed for commercial establishments",Y,
+FNG,"Lift, Patient, Ac-Powered",2,HO,General Hospital,880.5500,,N,4
+PVV,Paracervical Anesthesia Kit,2,OB,Obstetrics/Gynecology,884.5100,"This product code has been established in accordance with the May 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm080217.pdf.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+HJH,"Loupe, Binocular, Low Power",1,OP,Ophthalmic,886.5120,,Y,4
+MNR,Ventilatory Effort Recorder,2,AN,Anesthesiology,868.2375,,N,1
+CHG,"Acid, Phosphoric-Tungstic (Spectrophotometric), Chloride",2,CH,Clinical Chemistry,862.1170,,N,1
+SEM,Sub-Scalp Implanted Electroencephalogram System For Remote Patient Monitoring,2,NE,Neurology,882.1360,"A sub-scalp implanted electroencephalogram (EEG) system for remote patient monitoring is a prescription device used for continuously acquiring, transmitting, and storing electrical brain activity of patients with epilepsy. The device consists of sub-scalp implanted electrodes that are connected to a transmitter or storage device. The device is used to aid clinicians in the remote monitoring of electrical activity in the patients brain. The device is not intended to be implanted in brain tissue.",N,1
+IFP,"Formalin, Neutral Buffered",1,PA,Pathology,864.4010,,Y,4
+GQX,"Antiserum, Cf, Varicella-Zoster",2,MI,Microbiology,866.3900,,N,1
+JYN,"Inserter, Sacculotomy Tack",1,EN,"Ear, Nose, Throat",874.4420,,N,4
+PDQ,Neurosurgical Nerve Locator,2,EN,"Ear, Nose, Throat",874.1820,To locate or monitor function of spinal nerve roots or peripheral nerves during neurosurgery.,N,1
+QRJ,Laser-Powered Inferior Vena Cava Filter Retrieval Catheter,2,CV,Cardiovascular,870.5125,A laser-powered inferior vena cava (IVC) filter retrieval catheter is a percutaneous catheter that uses a laser to ablate tissue and is intended to facilitate in the detachment and removal of indwelling IVC filters.,N,1
+NLD,"Instrument, Diamond, Dental, Reprocessed",1,DE,Dental,872.4535,"same as DZP except reprocessed. Reprocessing validation data for this device type must be included in a 510(k) submission. (70 FR 56911, available at https://www.govinfo.gov/content/pkg/FR-2005-09-29/pdf/05-19510.pdf).",N,1
+CAM,"Yoke Assembly, Medical Gas",1,AN,Anesthesiology,868.6885,,N,4
+MXG,"Lamp, Uvc, (For Treating Skin And Wounds)",2,SU,"General, Plastic Surgery",878.4630,,N,1
+FSM,"Tray, Surgical, Instrument",1,SU,"General, Plastic Surgery",878.4800,,N,4
+RGD,Counterfeit Detection,N,,Unknown,,An ultraviolet wavelength noncoherent light source used for detection of counterfeit money.,Y,
+KRO,"Prosthesis, Knee, Femorotibial, Constrained, Cemented, Metal/Polymer",2,OR,Orthopedic,888.3510,,N,1
+FMS,"Bed, Pediatric Open Hospital",2,HO,General Hospital,880.5140,,N,4
+KWM,"Prosthesis, Wrist, Semi-Constrained",2,OR,Orthopedic,888.3800,,N,1
+FIG,"Clamp, Tubing, Blood, Automatic",2,GU,"Gastroenterology, Urology",876.5820,,N,1
+KPT,"Calibrator, Dose, Radionuclide",2,RA,Radiology,892.1360,,N,1
+SGQ,Intraoral Phototherapy Device,2,DE,Dental,872.5595,"An intraoral phototherapy device is an intraoral, non-ionizing, light-based device that is intended for non-surgical treatment of oral conditions such as oral mucositis.",N,1
+HTT,"Burr, Orthopedic",1,OR,Orthopedic,888.4540,,N,4
+PZT,Peripheral Blood Processing Device For Osteoarthritis,N,,Unknown,,Preparation of autologous anti-inflammatory (AAI) solution from a small sample of peripheral blood for treatment of osteoarthritis.,N,3
+JXN,"Enzyme Immunoassay, Propoxyphene",2,TX,Clinical Toxicology,862.3700,,N,1
+PWD,Flow Cytometric Test System For Hematopoietic Neoplasms,2,HE,Hematology,864.7010,"Reagents intended for in vitro diagnostic use as a panel for qualitative identification of cell populations by multiparameter immunophenotyping on a flow cytometer. These reagents are used as an aid in the differential diagnosis of hematologically abnormal patients having, or suspected of having the following hematopoietic neoplasms: chronic leukemia, acute leukemia, non-Hodgkin's lymphoma, myeloma, myelodysplastic syndrome (MDS), and/or myeloproliferative neoplasms (MPN)",N,1
+KRI,"Accessory Equipment, Cardiopulmonary Bypass",1,CV,Cardiovascular,870.4200,,N,4
+RHG,"Light, Spectrum, Broad (Non-Medical)",N,,Unknown,,A broad spectrum output noncoherent light source intended for general purpose.,Y,
+KZE,"Injector, Fluid, Non-Electrically Powered",2,HO,General Hospital,880.5430,,N,1
+OJK,Eye Tray,2,OP,Ophthalmic,886.4790,"This product code has been established in accordance with the May 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm080217.pdf.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,4
+HNH,"Ring, Ophthalmic (Flieringa)",1,OP,Ophthalmic,886.4350,,N,4
+QNO,Neuromuscular Tongue Muscle Stimulator For The Reduction Of Snoring And Obstructive Sleep Apnea,2,DE,Dental,872.5575,A neuromuscular tongue muscle stimulator for the reduction of snoring and obstructive sleep apnea consists of a removable intraoral mouthpiece that uses electrodes to deliver neuromuscular stimulation to the tongue to strengthen tongue musculature to reduce snoring and obstructive sleep apnea.,N,1
+JGE,"Turbidimetric Method, Globulin",1,CH,Clinical Chemistry,862.1330,,N,4
+OAC,"Plethysmograph, Air Displacement For Body Composition Analysis",2,CV,Cardiovascular,870.2770,To measure the total body volume and weight for calculating the estimated body composition (total body fat and total body lean mass).,N,1
+PFU,Tissue Processing Kit,N,,Unknown,,For the preparation of human tissue specimens for frozen sectioning and histological examination.,N,7
+JSL,"Culture Media, Anaerobic Transport",1,MI,Microbiology,866.2390,,N,1
+KLX,Electroglottograph,2,EN,"Ear, Nose, Throat",874.1325,,N,4
+GYD,"Transducer, Tremor",2,NE,Neurology,882.1950,,N,1
+GPD,"Antigen, Indirect Fluorescent Antibody Test, Echinococcus Granulosus",1,MI,Microbiology,866.3200,,N,4
+MCL,"Kit, Test, In Vitro Periodontal",3,,Unknown,,,N,2
+SIF,Software Device System For Estimation Of Cardiac Pressures,2,CV,Cardiovascular,870.1150,"This prescription-only device uses machine learning-based algorithms to analyze one or more non-invasive physiologic signals or parameters to estimate a cardiac pressure (e.g. pulmonary capillary wedge pressure, left ventricular end diastolic pressure, or pulmonary artery pressure.) This device is intended for adjunctive use with patient information and is not intended to independently direct therapy. The device may contain hardware sensors. This device is not intended to estimate systemic, vascular blood pressure.",N,1
+OXA,"Mesh, Surgical, Non-Absorbable, Thoracic, Chest Wall Reconstruction",2,SU,"General, Plastic Surgery",878.3300,For reinforcement of soft tissue where weakness exists during chest wall reconstruction.,N,1
+GAK,"Suture, Absorbable",2,SU,"General, Plastic Surgery",878.4830,,N,1
+PNQ,Apical Closure Device,2,CV,Cardiovascular,870.4510,This device is intended for closure of cardiac apical tissue.,N,1
+LGF,"Component, Cast",1,OR,Orthopedic,888.5940,,Y,4
+KYX,"Dispenser, Liquid Medication",1,HO,General Hospital,880.6430,,Y,4
+MAI,"Fastener, Fixation, Biodegradable, Soft Tissue",2,OR,Orthopedic,888.3030,,N,1
+FTJ,"Colonoscope, General & Plastic Surgery",2,GU,"Gastroenterology, Urology",876.1500,,N,1
+FTN,Plastic Surgery And Accessories Kit,1,SU,"General, Plastic Surgery",878.3925,"This product code has been established in accordance with the may 20, 1997, guidance entitled, convenience kits interim regulatory guidance, found at www.Fda.Gov/cdrh/ode/convkit.Html.  This type of convenience kit, as listed in the guidance above, is under enforcement discretion, and does not require a premarket notification (510(k)) to market if it meets all criteria in the guidance.",N,7
+EWC,"Chamber, Acoustic (For Audiometric Testing)",1,EN,"Ear, Nose, Throat",874.1060,,N,4
+HWP,"Punch, Femoral Neck",1,OR,Orthopedic,888.4540,,N,4
+FNS,Ring Cutter,1,HO,General Hospital,880.6200,,Y,4
+LFM,"Enzyme Immunoassay, Digitoxin",2,TX,Clinical Toxicology,862.3300,,N,1
+NSB,Patient Personal Hygiene Kit,1,DE,Dental,872.6855,This device contains items given to an individual during their hospital stay.,Y,4
+OBJ,"Catheter, Ultrasound, Intravascular",2,CV,Cardiovascular,870.1200,For intracardiac and intraluminal visualization of cardiovascular anatomy and physiology.,N,1
+EHL,"Point, Abrasive",1,DE,Dental,872.6010,,Y,4
+OSI,Bariatric Bed,2,HO,General Hospital,880.5100,A bed intended for obese patients weighing 500 pounds and above.  Beds can expand from 38 to 60 inches in width.,N,4
+KIT,"Media And Components, Synthetic Cell And Tissue Culture",1,HE,Hematology,864.2220,,N,4
+HQF,"Laser, Ophthalmic",2,OP,Ophthalmic,886.4390,,N,1
+ERL,"Drill, Surgical, Ent (Electric Or Pneumatic) Including Handpiece",2,EN,"Ear, Nose, Throat",874.4250,,N,1
+JJM,Osmometer For Clinical Use,1,CH,Clinical Chemistry,862.2730,,N,4
+HGL,"Transducer, Ultrasonic, Obstetric",2,OB,Obstetrics/Gynecology,884.2960,,N,1
+IMX,"Board, Lap, Wheelchair",1,PM,Physical Medicine,890.3910,,Y,4
+LJB,"Enzyme Linked Immunoabsorbent Assay, Rubeola Igg",1,MI,Microbiology,866.3520,The qualitative detection of measles specific IgG antibodies in serum or plasma.,N,4
+QQH,Powered Insertion System For A Cochlear Implant Electrode Array,2,EN,"Ear, Nose, Throat",874.4450,A powered insertion system for a cochlear implant electrode array is a prescription device used to assist in placing an electrode array into the cochlea.,N,1
+MZQ,"Balloon, Detachable, For Neurovascular Occlusion",2,NE,Neurology,882.5950,,N,1
+NIO,"Stent, Iliac",3,,Unknown,,"Stent, Iliac -- a metal scaffold placed via a delivery catheter into the iliac artery to maintain the lumen",N,2
+NHK,"Resuscitator, Manual, Non Self-Inflating",2,AN,Anesthesiology,868.5905,"A non self-inflating manual resuscitator, also called a hyperinflation system, is a manual ventilator intended to ventilate a patient by forcing a volume of fresh gas into the patient via compression of the ventilator bag; a source of compressed breathing gas is required to inflate the bag.",N,1
+OZG,Transcatheter Septal Occluder (Atrial),3,,Unknown,,For the treatment of defects in the atrial septum and closure of atrial septal defects via transcatheter technique.,N,2
+QPB,"System, Suction, Lipoplasty For Removal",2,SU,"General, Plastic Surgery",878.5040,A suction lipoplasty system is a device intended for the removal of adipose tissue for purposes of aesthetic body contouring,N,1
+MCH,"Clip, Hemostatic",2,SU,"General, Plastic Surgery",878.4300,,N,1
+LPB,Cardiac Ablation Percutaneous Catheter,3,,Unknown,,"This product code pertains to cardiac ablation catheters indicated for general indications, treatment of supraventricular tachycardia (svt) and ventricular tachycardia (vt).  This product code excludes ablation catheters indicated for treatment of atrial flutter [product code oad] and atrial fibrillation [product code oae].",N,2
+OCG,"Prosthesis, Hip, Pelvifemoral Resurfacing, Metal/Polymer, Uncemented",3,OR,Orthopedic,888.3410,"Call for PMAs to be filed by 1/3/05 per 69 FR 59134 on 10/4/04 - Intended to replace the articulating surfaces of the hip while preserving the femoral head and neck and indicated for osteoarthritis, rheumatoid arthritis, traumatic arthritis, avascular necrosis of the femoral head.",N,2
+OPC,Powder-Free Polychloroprene Patient Examination Glove,1,HO,General Hospital,880.6250,"A powder free polychloroprene patient examination glove is a disposable device made of polychloroprene rubber tthat bears powder to facilitate donning, and is intended to be worn on the hand for medical purposes to provide a barrier against potentially infectious materials and other contaminants.",N,1
+OYK,Ankle Arthroplasty Implantation System,2,OR,Orthopedic,888.3110,"Intended to be used to assist in the implantation of a specific ankle arthroplasty device.  Indicated to include guiding alignment, making or establishing cuts, and sizing.",N,1
+GCQ,"Endoscope, Flexible",2,GU,"Gastroenterology, Urology",876.1500,,N,1
+HTE,Elevator,1,SU,"General, Plastic Surgery",878.4800,,N,4
+KAW,"Punch, Antrum",1,EN,"Ear, Nose, Throat",874.4420,,N,4
+KWF,"Prosthesis, Finger, Polymer",2,OR,Orthopedic,888.3230,,N,1
+FPL,"Incubator, Neonatal Transport",2,HO,General Hospital,880.5410,,N,1
+RAD,Gauging,N,,Unknown,,Test equipment using ultrasound to determine thickness of material in commercial or industrial applications,Y,
+FRN,"Pump, Infusion",2,HO,General Hospital,880.5725,,N,1
+PPW,Adjunctive Cardiovascular Status Indicator,2,CV,Cardiovascular,870.2200,The adjunctive cardiovascular status indicator is a prescription device based on sensor technology for the measurement of a physical parameter(s). This device is intended for adjunctive use with other physical vital sign parameters and patient information and is not intended to independently direct therapy.,N,1
+ETT,"Cushion, Earphone (For Audiometric Testing)",1,EN,"Ear, Nose, Throat",874.1100,,N,4
+PSW,"High Level Disinfection Reprocessing Instrument For Ultrasonic Transducers, Liquid",2,RA,Radiology,892.1570,"To provide high level disinfection of ultrasound transducers    If the device is reusable, validated reprocessing instructions and reprocessing validation data for this device type must be included in a 510(k) submission (82 FR 26807, available at https://www.gpo.gov/fdsys/pkg/FR-2017-06-09/pdf/2017-12007.pdf).",N,1
+INO,"Chair, Positioning, Electric",2,PM,Physical Medicine,890.3110,,N,4
+NFD,"Selector, Color, Spectacle, Lens, Tint",1,OP,Ophthalmic,886.1160,,N,4
+ETP,"Stimulator, Caloric-Water",1,EN,"Ear, Nose, Throat",874.1800,,N,4
+JNT,"Chromatographic, Phospholipids",1,CH,Clinical Chemistry,862.1575,,N,4
+MRX,"System, Assisted Reproduction Laser",2,OB,Obstetrics/Gynecology,884.6200,"This system is inteded to be used to drill a small tangential hole in or to thin the zona pellucida of the embryo in selected in vitro fertilization patients with otherwise poor prognois for successful pregnancy outcome, such as advanced maternal age, prior failed in vitro fertilization procedures, cryopreserved embryos, or abnormal zona pellucida morphology.",N,1
+ITG,"Bandage, Cast",1,PM,Physical Medicine,890.3025,,Y,4
+CIY,"Radioimmunoassay, Androsterone",1,CH,Clinical Chemistry,862.1080,,N,4

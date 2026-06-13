@@ -1,0 +1,126 @@
+{
+  "name": "FDA Medical Device Submissions - Clean Dataset",
+  "version": "1.0",
+  "target_variable": "pathway",
+  "target_classes": [
+    "510k",
+    "De_Novo",
+    "PMA"
+  ],
+  "total_records": 10013,
+  "schema": {
+    "submission_id": {
+      "dtype": "str",
+      "null_count": 0
+    },
+    "pathway": {
+      "dtype": "str",
+      "null_count": 0
+    },
+    "device_name": {
+      "dtype": "str",
+      "null_count": 0
+    },
+    "product_code": {
+      "dtype": "str",
+      "null_count": 0
+    },
+    "advisory_committee": {
+      "dtype": "str",
+      "null_count": 0
+    },
+    "decision_code": {
+      "dtype": "str",
+      "null_count": 0
+    },
+    "decision_date": {
+      "dtype": "datetime64[us]",
+      "null_count": 0
+    },
+    "applicant": {
+      "dtype": "str",
+      "null_count": 0
+    },
+    "country_code": {
+      "dtype": "str",
+      "null_count": 0
+    },
+    "device_class": {
+      "dtype": "int64",
+      "null_count": 0,
+      "min": 1.0,
+      "max": 3.0
+    },
+    "medical_specialty": {
+      "dtype": "str",
+      "null_count": 0
+    },
+    "clearance_type": {
+      "dtype": "str",
+      "null_count": 0
+    },
+    "third_party_flag": {
+      "dtype": "str",
+      "null_count": 0
+    },
+    "decision_year": {
+      "dtype": "int32",
+      "null_count": 0,
+      "min": 1980.0,
+      "max": 2025.0
+    },
+    "decision_month": {
+      "dtype": "int32",
+      "null_count": 0,
+      "min": 1.0,
+      "max": 12.0
+    },
+    "review_days": {
+      "dtype": "float64",
+      "null_count": 2013,
+      "min": 0.0,
+      "max": 92.0
+    },
+    "device_class_unknown": {
+      "dtype": "int64",
+      "null_count": 0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "is_us": {
+      "dtype": "int64",
+      "null_count": 0,
+      "min": 0.0,
+      "max": 1.0
+    }
+  },
+  "constraints": {
+    "no_nulls_in": [
+      "submission_id",
+      "pathway",
+      "device_class",
+      "advisory_committee"
+    ],
+    "class_distribution": {
+      "510k": 8000,
+      "PMA": 1502,
+      "De_Novo": 511
+    },
+    "date_range": {
+      "min": "1980-01-03 00:00:00",
+      "max": "2025-12-28 00:00:00"
+    }
+  },
+  "recommended_features": [
+    "device_class",
+    "advisory_committee",
+    "medical_specialty",
+    "is_us",
+    "country_code",
+    "decision_year",
+    "decision_month",
+    "review_days",
+    "clearance_type",
+    "third_party_flag"
+  ]
+}
