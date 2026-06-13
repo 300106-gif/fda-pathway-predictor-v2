@@ -892,11 +892,12 @@ elif page == "Preparation Checklist":
                 f'<div class="s-tip">{step["tip"]}</div>'
                 if step.get("tip") else ""
             )
+            line_html = "" if is_last else f'<div class="s-line {line_cls}"></div>'
             html += (
                 f'<div class="step-wrap">'
                 f'  <div class="step-left">'
                 f'    <div class="s-circle {circle_cls}">{circle_icon}</div>'
-                f'    {"" if is_last else f\'<div class="s-line {line_cls}"></div>\'}'
+                f'    {line_html}'
                 f'  </div>'
                 f'  <div class="s-content">'
                 f'    <div class="s-lbl {lbl_cls}">{lbl_text}</div>'
