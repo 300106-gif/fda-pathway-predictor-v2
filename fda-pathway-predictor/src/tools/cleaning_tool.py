@@ -67,12 +67,12 @@ def clean_data(input_path="artifacts/raw_data.csv", output_dir="artifacts"):
         "samd", "remote monitoring", "telemedicine",
     ]
     IVD_KEYWORDS = [
-        "ivd", "in vitro", "test strip", "glucose monitor", "glucometer",
-        "reagent", "assay", "immunoassay", "analyzer", "analyser",
+        "ivd", "in vitro", "test strip", "glucometer",
+        "reagent", "assay", "immunoassay",
         "lateral flow", "pcr", "elisa", "immunodiagnostic", "diagnostic kit",
         "blood glucose", "hba1c", "cholesterol test", "pregnancy test",
-        "urinalysis", "urine test", "rapid test", "point of care",
-        "culture media", "hematology analyzer", "coagulation analyzer",
+        "urinalysis", "urine test", "rapid test",
+        "culture media",
     ]
 
     if "device_name" in df.columns:
