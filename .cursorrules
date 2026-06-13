@@ -1,0 +1,561 @@
+# FDA Regulatory Pathway Predictor — Project Context for Claude Code
+
+## COURSE REQUIREMENTS (from teacher's brief)
+
+This is a **final project for an AI Developer course**. The deliverables are:
+1. Repository with source code, artifacts, and documentation
+2. Business presentation (10-12 slides) — DONE ✅
+3. Short demo video (≤5 min) — TODO
+
+### What the teacher expects:
+- A **CrewAI Flow** coordinating two separate multi-agent crews
+- **Crew 1 — Data Analyst** (at least 3 agents): ingest, clean, EDA, produce clean_data.csv, eda_report.html, insights.md, dataset_contract.json
+- **Crew 2 — Data Scientist** (at least 3 agents): feature engineering, train 2+ model variations, produce features.csv, model.pkl, evaluation_report.md, model_card.md
+- Flow must automate handoff, include validation steps, support reproducibility, fail gracefully
+- **Required stack:** CrewAI, Python, Git+GitHub (with PRs), Streamlit or Flask, Pandas, scikit-learn, Matplotlib/Seaborn
+- **Git:** Must use branches and Pull Requests (teacher checks PR history)
+- Optional deployment to Streamlit Cloud or Railway
+
+---
+
+## PROJECT OVERVIEW
+
+**FDA Regulatory Pathway Predictor** — an ML pipeline that predicts which FDA regulatory pathway (510(k), PMA, or De Novo) a medical device should go through, based on device characteristics.
+
+**User persona:** Sarah, 35, RA Manager at a 50-person medtech startup. She needs to quickly determine the likely FDA pathway before committing months of work and budget.
+
+**Data source:** openFDA API (api.fda.gov) — public government data:
+- /device/510k.json — ~174,000 510(k) clearances (De Novo identified by "DEN" prefix)
+- /device/pma.json — ~30,000 PMA approvals  
+- /device/classification.json — ~6,000 device classifications (enrichment)
+- Merge key: product_code (3-letter code shared across endpoints)
+- API limit: 1,000 records per query — pagination by date range needed
+
+---
+
+## ARCHITECTURE
+
+```
+openFDA API → [Data Ingestor] → [Data Cleaner] → [EDA Analyst]
+                                                        │
+                                                 Validation Gate
+                                                        │
+              [Model Evaluator] ← [Model Trainer] ← [Feature Engineer]
+                      │
+                [Streamlit App]
+```
+
+### Crew 1 — Data Analyst (3 agents):
+1. **Data Ingestor** — fetches from 3 openFDA endpoints with pagination, merges into unified dataset → raw_data.csv
+2. **Data Cleaner** — deduplicates, handles missing values, standardizes types, generates dataset contract → clean_data.csv + dataset_contract.json
+3. **EDA Analyst** — generates 7 chart types, produces HTML report and insights → eda_report.html + insights.md
+
+### Validation Gate:
+- Checks dataset_contract.json against clean_data.csv
+- Verifies target variable exists, classes match, minimum record count, no-null constraints
+
+### Crew 2 — Data Scientist (3 agents):
+4. **Feature Engineer** — frequency encoding, label encoding, temporal features, boolean flags (20 features total) → features.csv + label_encoders.json
+5. **Model Trainer** — Random Forest (200 trees, balanced) vs Gradient Boosting (200 estimators). 5-fold CV → model.pkl
+6. **Model Evaluator** — accuracy, F1-macro, precision, recall, ROC-AUC, confusion matrices, feature importance → evaluation_report.md + model_card.md
+
+### Streamlit App (3 pages):
+- Page 1: Pathway Predictor — enter device details, get recommendation with confidence scores
+- Page 2: EDA Dashboard — embedded charts and insights
+- Page 3: Model Performance — evaluation metrics, confusion matrices, model card
+
+---
+
+## PROJECT STRUCTURE
+
+```
+fda-pathway-predictor/
+├── src/
+│   ├── crews/
+│   │   ├── analyst_crew.py      # Crew 1: 3 data analyst agents with custom tools
+│   │   └── scientist_crew.py    # Crew 2: 3 data scientist agents with custom tools
+│   ├── flow/
+│   │   └── main_flow.py         # CrewAI Flow orchestration + direct-mode runner
+│   ├── tools/
+│   │   ├── fda_api_tool.py      # openFDA API ingestion with pagination
+│   │   ├── generate_sample_data.py  # Realistic sample data when API unavailable
+│   │   ├── cleaning_tool.py     # Data cleaning + dataset contract generation
+│   │   ├── eda_tool.py          # EDA charts + insights
+│   │   ├── feature_tool.py      # Feature engineering (20 features)
+│   │   └── model_tool.py        # Model training + evaluation + model card
+│   └── app/
+│       └── streamlit_app.py     # 3-page Streamlit dashboard
+├── artifacts/                   # All pipeline outputs (auto-generated)
+├── tests/
+├── .cursorrules
+├── .gitignore
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## KEY TECHNICAL DECISIONS
+
+1. **decision_code_encoded is EXCLUDED from model features** — it leaks the target variable (SESE is 510k-specific, APPR is PMA-specific)
+2. Class imbalance handled with `class_weight="balanced"` in Random Forest
+3. Frequency encoding for high-cardinality categoricals (product_code, applicant)
+4. Cyclical sin/cos encoding for month
+5. Pipeline has two modes: CrewAI Flow (needs LLM API key) and direct mode (no LLM)
+6. When FDA API is unreachable, falls back to generate_sample_data.py
+
+---
+
+## GIT STRATEGY (7 feature branches with PRs)
+
+```
+main
+ ├── feature/project-setup        → PR #1: .gitignore, README, requirements.txt, __init__.py files
+ ├── feature/data-ingestion       → PR #2: fda_api_tool.py, generate_sample_data.py
+ ├── feature/data-cleaning-eda    → PR #3: cleaning_tool.py, eda_tool.py
+ ├── feature/feature-engineering  → PR #4: feature_tool.py
+ ├── feature/model-training       → PR #5: model_tool.py
+ ├── feature/crewai-flow          → PR #6: analyst_crew.py, scientist_crew.py, main_flow.py
+ └── feature/streamlit-app        → PR #7: streamlit_app.py
+```
+
+Each PR should have a description: What was added, Why, What artifacts it produces, How to test.
+
+---
+
+## IMMEDIATE TASKS
+
+The project files are already in this folder. The student needs help with:
+
+1. **Fix Python environment** — there's a ModuleNotFoundError for 'requests'. Run `where python` and `python --version` to diagnose. Likely multiple Python installations.
+2. **Install dependencies** — `pip install -r requirements.txt` into the correct Python
+3. **Test FDA API** — verify `https://api.fda.gov/device/510k.json?limit=1` returns data
+4. **Run the full pipeline** — `python -m src.flow.main_flow` (will use sample data if API fails)
+5. **Set up Git** — initialize repo, create GitHub remote, start making PRs per the branch strategy above
+6. **Launch Streamlit** — `streamlit run src/app/streamlit_app.py`
+
+---
+
+## RUNNING THE PROJECT
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run full pipeline (direct mode, no LLM key needed)
+python -m src.flow.main_flow
+
+# Run with CrewAI agents (needs LLM key)
+set OPENAI_API_KEY=your-key-here
+python -m src.flow.main_flow
+
+# Launch Streamlit app
+streamlit run src/app/streamlit_app.py
+```
+
+## ALL REQUIRED ARTIFACTS (13 files in artifacts/)
+
+Crew 1: raw_data.csv, clean_data.csv, dataset_contract.json, eda_report.html, insights.md
+Crew 2: features.csv, label_encoders.json, model_meta.json, model.pkl, evaluation_report.md, model_card.md, confusion_matrices.png, feature_importance.png
+
+---
+
+## STREAMLIT APP — DETAILED UI/UX SPECIFICATION
+
+The Streamlit app (`src/app/streamlit_app.py`) must have 3 pages. Below is the exact UI specification for each. Implement these using Streamlit components (st.columns, st.metric, st.bar_chart, st.markdown with HTML, st.selectbox, st.text_input, st.text_area, st.checkbox, st.button, st.expander, etc.).
+
+### PAGE 1 — Device Input (Pathway Predictor)
+
+**Layout:** Two-column layout. Left = input form (wider), Right = info cards (narrower).
+
+**Left column — Input Form:**
+- Title: "FDA Pathway Advisor"
+- Subtitle: "Enter your device details to get a regulatory pathway recommendation."
+- "Device Name" — text input, placeholder "e.g. Wireless cardiac rhythm monitor"
+- "Device Description" — large text area, placeholder "Describe your device's intended use, technology, and how it works"
+- "Medical Specialty" — dropdown with options: Cardiovascular, Radiology, Orthopedic, Neurology, General Surgery, Dental, Ophthalmic, Clinical Chemistry, Ear/Nose/Throat, Gastroenterology, Anesthesiology, General Hospital, Immunology, Microbiology, Obstetrics/Gynecology, Pathology, Physical Medicine, Clinical Toxicology
+- "Device Risk Profile" — three selectable cards in a row: "Class I - Low Risk" (green dot), "Class II - Moderate Risk" (yellow dot), "Class III - High Risk" (red dot). Default: Class II selected.
+- "Country of Origin" — dropdown: United States, Germany, Japan, United Kingdom, France, Israel, Canada, Switzerland, Ireland, Other
+- Checkbox: "This device has a substantially equivalent predicate device already on the market"
+- Large blue button: "Analyze Pathway"
+
+**Right column — Info Cards:**
+- Card 1 heading "What is this tool?" with text: "This tool uses machine learning trained on 200,000+ historical FDA submissions to predict the most likely regulatory pathway for your medical device."
+- Card 2 heading "Supported Pathways" listing: blue dot "510(k) - Premarket Notification", orange dot "PMA - Premarket Approval", green dot "De Novo - Classification Request"
+
+**Sidebar navigation:**
+- Small logo/icon at top
+- Nav items: "New Analysis" (active), "How It Works", "About the Model"
+
+### PAGE 2 — Results (shown after clicking Analyze Pathway)
+
+**Top section:**
+- Back arrow + breadcrumb: "New Analysis > Results"
+- Large banner card with blue background:
+  - "Recommended Pathway: 510(k)" in large white text
+  - "87% confidence" in a white badge
+  - Small text: "Based on analysis of 200,000+ historical FDA submissions"
+
+**Three-column layout below banner:**
+
+- **Left column — "Confidence Breakdown":**
+  Three horizontal bars: 510(k) at 87% (blue), PMA at 8% (orange), De Novo at 5% (green)
+
+- **Middle column — "Why This Pathway?":**
+  Top 5 factors with relative importance bars:
+  1. Device Class II
+  2. Cardiovascular specialty
+  3. US-based manufacturer
+  4. Has predicate device
+  5. Traditional clearance type
+  (These come from model.feature_importances_ mapped to the user's input values)
+
+- **Right column — "What This Means":**
+  Info card with pathway explanation. Content varies by predicted pathway:
+  - 510(k): "Requires demonstrating substantial equivalence to a legally marketed predicate device. Typical review: 3-6 months. Clinical trials usually not required. FDA user fee: ~$22K."
+  - PMA: "Requires valid scientific evidence of safety and effectiveness. Typical review: 12-18 months. Clinical trials usually required. FDA user fee: ~$420K."
+  - De Novo: "For novel low/moderate risk devices with no predicate. Creates new classification. Typical review: 6-12 months. FDA user fee: ~$130K."
+
+**Bottom action buttons (row of 3):**
+- "View Preparation Checklist" → navigates to Page 3
+- "Download Report" → generates a summary PDF or markdown
+- "Start New Analysis" → clears form, returns to Page 1
+
+### PAGE 3 — Preparation Checklist (stretch goal / nice-to-have)
+
+**Title:** "[Pathway] Preparation Checklist" (dynamic based on predicted pathway)
+**Subtitle:** "Steps to prepare your premarket submission."
+
+**Vertical stepper layout with 6 steps** (content varies by pathway, below is 510(k)):
+
+1. **"Classify Your Device"** — green checkmark (auto-completed by our tool)
+   Description: "Product classification identified via FDA Product Classification Database"
+   Link: "View classification database" → https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfPCD/classification.cfm
+
+2. **"Identify Predicate Device"** — empty circle
+   Description: "Find a legally marketed device with the same intended use and similar technological characteristics."
+
+3. **"Prepare Comparison"** — empty circle
+   Description: "Document a comparison of your device to the predicate including intended use, technology, and performance."
+
+4. **"Conduct Performance Testing"** — empty circle
+   Description: "Complete bench testing, biocompatibility testing, and other non-clinical tests as applicable. Follow Good Laboratory Practices (21 CFR 58)."
+
+5. **"Prepare Labeling"** — empty circle
+   Description: "Draft device labeling per 21 CFR 801 including indications for use, warnings, and instructions."
+
+6. **"Submit via eSTAR"** — empty circle
+   Description: "Submit your 510(k) electronically through the FDA CDRH eSTAR portal."
+
+**Bottom notices:**
+- Yellow warning card: "Even if your device does not require a premarket submission, you must comply with applicable regulatory controls, establishment registration, and device listing."
+- Two side-by-side notice cards:
+  - "Radiation-emitting product? Also comply with 21 CFR parts 1000-1050" → link to https://www.fda.gov/radiation-emitting-products
+  - "Combination product? Contact FDA's Office of Combination Products at combination@fda.gov" → link to https://www.fda.gov/combination-products/about-combination-products/frequently-asked-questions-about-combination-products
+
+### DESIGN SYSTEM
+- Clean white background
+- Subtle card shadows (box-shadow)
+- Color scheme: Blue (#378ADD) for 510(k), Orange (#D85A30) for PMA, Green (#1D9E75) for De Novo
+- Professional medical/healthcare aesthetic
+- Consistent card styling across all pages
+- Gray disclaimer text at bottom of results: "This prediction is based on historical FDA data patterns. It should not replace professional regulatory advice."
+
+---
+
+## TWO-STAGE PREDICTION ARCHITECTURE
+
+The prediction system uses a two-stage approach. This is critical to implement correctly.
+
+### Stage 1: Rule-Based Exemption Check (runs FIRST)
+
+Before the ML model runs, query the openFDA classification endpoint to check if the device is exempt from premarket submission. Many Class I and some Class II devices are 510(k)-exempt and don't need any premarket submission.
+
+```python
+import requests
+
+def check_exemption(product_code=None, device_name=None):
+    """
+    Check FDA classification database for exemption status.
+    Returns classification info including whether device is exempt.
+    """
+    base_url = "https://api.fda.gov/device/classification.json"
+    
+    if product_code:
+        search = f"product_code:{product_code}"
+    elif device_name:
+        search = f"device_name:{device_name}"
+    else:
+        return None
+    
+    try:
+        r = requests.get(f"{base_url}?search={search}&limit=5", timeout=10)
+        if r.status_code == 200:
+            results = r.json().get("results", [])
+            if results:
+                return results[0]  # Best match
+    except Exception:
+        pass
+    return None
+
+
+def determine_pathway(device_info, model, feature_cols):
+    """
+    Two-stage pathway determination:
+    Stage 1: Check if device is exempt (rule-based)
+    Stage 2: ML prediction for non-exempt devices
+    """
+    
+    # ── STAGE 1: Exemption check ──
+    classification = check_exemption(
+        product_code=device_info.get("product_code"),
+        device_name=device_info.get("device_name"),
+    )
+    
+    if classification:
+        device_class = str(classification.get("device_class", ""))
+        # Check submission_type_id — if empty or exempt, no submission needed
+        submission_type = classification.get("submission_type_id", "")
+        
+        # GMP exempt flag is also informative
+        gmp_exempt = classification.get("gmp_exempt_flag", "")
+        
+        # Class I devices with no submission type = exempt
+        if device_class == "1" and submission_type.strip() == "":
+            return {
+                "pathway": "Exempt",
+                "confidence": 1.0,
+                "device_class": 1,
+                "product_code": classification.get("product_code", ""),
+                "regulation_number": classification.get("regulation_number", ""),
+                "message": (
+                    "This is a Class I exempt device. No premarket submission "
+                    "(510(k), PMA, or De Novo) is required. However, you must "
+                    "still comply with:\n"
+                    "• General controls (21 CFR Part 820 — Quality System Regulation)\n"
+                    "• Establishment registration (21 CFR Part 807)\n"
+                    "• Device listing (21 CFR Part 807)\n"
+                    "• Labeling requirements (21 CFR Part 801)\n"
+                    "• Medical Device Reporting (21 CFR Part 803)\n\n"
+                    "Note: If your device exceeds the limitations of exemption "
+                    "stated in 21 CFR xxx.9, a 510(k) may still be required."
+                ),
+            }
+        
+        # Class II exempt (less common but exists)
+        if device_class == "2" and submission_type.strip() == "":
+            return {
+                "pathway": "Exempt",
+                "confidence": 1.0,
+                "device_class": 2,
+                "product_code": classification.get("product_code", ""),
+                "message": (
+                    "This is a Class II exempt device. No 510(k) is required "
+                    "unless your device exceeds the limitations of exemption "
+                    "stated in 21 CFR xxx.9. You must still comply with general "
+                    "controls AND any applicable special controls."
+                ),
+            }
+        
+        # If classification found but not exempt, enrich device_info with
+        # the actual device class and specialty for better ML prediction
+        device_info["device_class"] = int(device_class) if device_class.isdigit() else 2
+        device_info["medical_specialty"] = classification.get("medical_specialty", "")
+        device_info["product_code"] = classification.get("product_code", "")
+    
+    # ── STAGE 2: ML prediction for non-exempt devices ──
+    features = build_feature_vector(device_info)
+    prediction = model.predict(features)[0]
+    probabilities = model.predict_proba(features)[0]
+    
+    pathway_map = {0: "510k", 1: "De_Novo", 2: "PMA"}  # from label_encoders.json
+    predicted_pathway = pathway_map.get(prediction, "510k")
+    
+    return {
+        "pathway": predicted_pathway,
+        "confidence": float(max(probabilities)),
+        "probabilities": {
+            "510k": float(probabilities[0]) if len(probabilities) > 0 else 0,
+            "De_Novo": float(probabilities[1]) if len(probabilities) > 1 else 0,
+            "PMA": float(probabilities[2]) if len(probabilities) > 2 else 0,
+        },
+        "device_class": device_info.get("device_class"),
+        "message": None,  # Streamlit app fills in pathway-specific guidance
+    }
+```
+
+### Stage 2: ML Model (runs only for non-exempt devices)
+
+The ML model predicts 510(k) vs PMA vs De Novo based on 18 features learned from 200K+ historical submissions. See FEATURE_COLS in model_tool.py.
+
+### How This Changes the Streamlit App
+
+In `streamlit_app.py` Page 2 (Results), add a fourth result type for "Exempt":
+
+- If pathway == "Exempt": show a GREEN banner saying "No Premarket Submission Required"
+  - Display the exemption message with compliance requirements
+  - Show a checklist for general controls, establishment registration, device listing
+  - Link to https://www.fda.gov/medical-devices/classify-your-medical-device/class-i-and-class-ii-device-exemptions
+  
+- If pathway == "510k" / "PMA" / "De_Novo": show the normal results with confidence scores
+
+### Additional Notices in Results Page
+
+After showing any result (including Exempt), check and display these notices:
+
+**Radiation-emitting products:**
+If the device could be radiation-emitting, show: "If your device is also a radiation-emitting electronic product, it must comply with 21 CFR parts 1000-1050."
+Link: https://www.fda.gov/radiation-emitting-products
+
+**Combination products:**
+Show a notice: "If your product combines a medical device with a drug, biologic, or other FDA-regulated product, contact FDA's Office of Combination Products at combination@fda.gov"
+Link: https://www.fda.gov/combination-products/about-combination-products/frequently-asked-questions-about-combination-products
+
+**General compliance reminder (always shown):**
+"Even if your device does not require a premarket submission, you must identify the correct classification and comply with applicable regulatory controls."
+Link: https://www.fda.gov/medical-devices/overview-device-regulation/regulatory-controls
+
+---
+
+## SIMILAR DEVICE LOOKUP (Evidence Feature)
+
+After the ML model predicts the pathway, show the user historical evidence from similar devices. This uses decision_code as USER-FACING EVIDENCE, not as a model feature.
+
+### Implementation
+
+Add this function to `src/tools/similar_devices.py`:
+
+```python
+"""
+Similar Device Lookup
+Finds historically similar devices and shows their pathway/decision outcomes.
+Uses clean_data.csv as the reference database.
+"""
+
+import pandas as pd
+from pathlib import Path
+
+
+def find_similar_devices(
+    device_class=None,
+    advisory_committee=None,
+    medical_specialty=None,
+    product_code=None,
+    data_path="artifacts/clean_data.csv",
+    top_n=10,
+):
+    """
+    Find devices with similar characteristics in historical FDA data.
+    Returns summary statistics and example devices.
+    """
+    df = pd.read_csv(data_path)
+
+    # Build similarity filter — progressively relax if too few matches
+    mask = pd.Series([True] * len(df))
+
+    # Exact match on device_class (strongest signal)
+    if device_class is not None:
+        mask &= df["device_class"] == device_class
+
+    # Match on advisory committee / specialty
+    if advisory_committee and advisory_committee != "UNKNOWN":
+        mask &= df["advisory_committee"] == advisory_committee
+    elif medical_specialty and medical_specialty != "UNKNOWN":
+        mask &= df["medical_specialty"] == medical_specialty
+
+    # Match on product code (if available)
+    if product_code and product_code != "UNK":
+        product_mask = mask & (df["product_code"] == product_code)
+        if product_mask.sum() >= 5:
+            mask = product_mask
+
+    similar = df[mask]
+
+    if len(similar) == 0:
+        return None
+
+    # Pathway distribution
+    pathway_dist = similar["pathway"].value_counts()
+    pathway_pct = (pathway_dist / len(similar) * 100).round(1).to_dict()
+
+    # Decision code distribution (the evidence)
+    decision_dist = similar["decision_code"].value_counts()
+    decision_pct = (decision_dist / len(similar) * 100).round(1).to_dict()
+
+    # Success rate by pathway
+    success_codes = {
+        "510k": ["SESE", "SEKD", "SESD", "SESI", "SESK", "SESP", "SEKN"],
+        "PMA": ["APPR", "APCV"],
+        "De_Novo": ["DENG"],
+    }
+
+    success_rates = {}
+    for pathway, codes in success_codes.items():
+        pathway_devices = similar[similar["pathway"] == pathway]
+        if len(pathway_devices) > 0:
+            cleared = pathway_devices["decision_code"].isin(codes).sum()
+            rate = round(cleared / len(pathway_devices) * 100, 1)
+            success_rates[pathway] = {
+                "total": len(pathway_devices),
+                "cleared": int(cleared),
+                "rate": rate,
+            }
+
+    # Top example devices (most recent)
+    examples = (
+        similar.sort_values("decision_date", ascending=False)
+        .head(top_n)[["submission_id", "device_name", "pathway", "decision_code", "applicant", "decision_date"]]
+        .to_dict("records")
+    )
+
+    return {
+        "total_similar": len(similar),
+        "pathway_distribution": pathway_pct,
+        "decision_distribution": decision_pct,
+        "success_rates": success_rates,
+        "examples": examples,
+        "filters_used": {
+            "device_class": device_class,
+            "advisory_committee": advisory_committee,
+            "product_code": product_code,
+        },
+    }
+```
+
+### Streamlit Integration (Page 2 — Results)
+
+After showing the ML prediction and confidence scores, add a section:
+
+**"Similar Devices in FDA History"**
+
+Display:
+- "We found {total_similar} similar devices in the FDA database"
+- Pathway breakdown: "94% went through 510(k), 4% through PMA, 2% through De Novo"
+- Success rate: "Of those that went through 510(k), 97% received SESE (Substantially Equivalent) clearance"
+- Expandable table showing the top 10 most recent similar devices with their submission_id, device_name, pathway, decision_code, applicant, and decision_date
+
+Example UI text for a Class II Cardiovascular device:
+
+```
+📊 Similar Devices in FDA History
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Found 847 similar devices (Class II, Cardiovascular)
+
+Pathway breakdown:
+  510(k)  ████████████████████████ 94.2%  (798 devices)
+  PMA     ██                       3.8%  (32 devices)
+  De Novo █                        2.0%  (17 devices)
+
+Historical clearance rate:
+  ✅ 97.1% of similar 510(k) submissions received SESE clearance
+
+Recent examples:
+  K241234  Cardiac Monitor Pro    510(k)  SESE  Medtronic       2024-08-15
+  K240987  HeartSync Wireless     510(k)  SESE  Abbott Labs     2024-07-22
+  K240543  CardioTrack System     510(k)  SESE  Boston Sci      2024-06-10
+  ...
+```
+
+### Why This Matters
+
+This feature transforms the tool from "the model says 510(k)" into "the model says 510(k), AND here's the evidence: 847 similar devices went through 510(k) with a 97% clearance rate." The decision_code (SESE, APPR, DENG) is shown as evidence to the user, not fed to the model. This is the proper way to use decision_code — transparency, not leakage.
