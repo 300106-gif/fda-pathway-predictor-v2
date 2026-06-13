@@ -79,6 +79,16 @@ def clean_data(input_path="artifacts/raw_data.csv", output_dir="artifacts"):
         "hematology analyzer", "coagulation analyzer",
         "point of care", "poc ",
     ]
+    IMPLANT_KEYWORDS = [
+        "implant", "implantable", "implanted",
+        "pacemaker", "stent", "defibrillator", "icd ",
+        "hip replacement", "knee replacement", "joint replacement",
+        "intraocular lens", "iol ", "cochlear implant",
+        "spinal cord stimulator", "deep brain stimulator",
+        "breast implant", "vascular graft", "cardiac implant",
+        "orthopedic implant", "dental implant", "bone screw",
+        "neurostimulator", "sacral neuromodulation",
+    ]
 
     if "device_name" in df.columns:
         name_lower = df["device_name"].fillna("").str.lower()
@@ -86,21 +96,24 @@ def clean_data(input_path="artifacts/raw_data.csv", output_dir="artifacts"):
 
         is_samd         = name_lower.apply(lambda n: any(kw in n for kw in SAMD_KEYWORDS))
         is_ivd          = name_lower.apply(lambda n: any(kw in n for kw in IVD_KEYWORDS))
+        is_implant      = name_lower.apply(lambda n: any(kw in n for kw in IMPLANT_KEYWORDS))
         is_analyzer_poc = name_lower.apply(lambda n: any(kw in n for kw in ANALYZER_POC_KEYWORDS))
 
-        # Priority: SaMD > IVD > ANALYZER_POC
+        # Priority: SaMD > IVD > IMPLANT > ANALYZER_POC
         df.loc[still_null & is_samd, "advisory_committee"] = "SAMD"
         df.loc[still_null & ~is_samd & is_ivd, "advisory_committee"] = "IVD"
-        df.loc[still_null & ~is_samd & ~is_ivd & is_analyzer_poc, "advisory_committee"] = "ANALYZER_POC"
+        df.loc[still_null & ~is_samd & ~is_ivd & is_implant, "advisory_committee"] = "IMPLANT"
+        df.loc[still_null & ~is_samd & ~is_ivd & ~is_implant & is_analyzer_poc, "advisory_committee"] = "ANALYZER_POC"
 
         # Mirror to medical_specialty
         ms_still_null = df["medical_specialty"].isna()
         df.loc[ms_still_null & is_samd, "medical_specialty"] = "SAMD"
         df.loc[ms_still_null & ~is_samd & is_ivd, "medical_specialty"] = "IVD"
-        df.loc[ms_still_null & ~is_samd & ~is_ivd & is_analyzer_poc, "medical_specialty"] = "ANALYZER_POC"
+        df.loc[ms_still_null & ~is_samd & ~is_ivd & is_implant, "medical_specialty"] = "IMPLANT"
+        df.loc[ms_still_null & ~is_samd & ~is_ivd & ~is_implant & is_analyzer_poc, "medical_specialty"] = "ANALYZER_POC"
 
-        rescued = (still_null & (is_samd | is_ivd | is_analyzer_poc)).sum()
-        logger.info(f"  Keyword rescue: {rescued} records classified as SaMD/IVD/ANALYZER_POC")
+        rescued = (still_null & (is_samd | is_ivd | is_implant | is_analyzer_poc)).sum()
+        logger.info(f"  Keyword rescue: {rescued} records classified as SaMD/IVD/IMPLANT/ANALYZER_POC")
 
     df["advisory_committee"] = df["advisory_committee"].fillna("UNKNOWN").str.upper().str.strip()
     df["medical_specialty"] = df["medical_specialty"].fillna("UNKNOWN").str.upper().str.strip()
