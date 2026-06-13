@@ -74,25 +74,33 @@ def clean_data(input_path="artifacts/raw_data.csv", output_dir="artifacts"):
         "urinalysis", "urine test", "rapid test",
         "culture media",
     ]
+    ANALYZER_POC_KEYWORDS = [
+        "glucose monitor", "analyzer", "analyser",
+        "hematology analyzer", "coagulation analyzer",
+        "point of care", "poc ",
+    ]
 
     if "device_name" in df.columns:
         name_lower = df["device_name"].fillna("").str.lower()
         still_null = df["advisory_committee"].isna()
 
-        is_samd = name_lower.apply(lambda n: any(kw in n for kw in SAMD_KEYWORDS))
-        is_ivd  = name_lower.apply(lambda n: any(kw in n for kw in IVD_KEYWORDS))
+        is_samd         = name_lower.apply(lambda n: any(kw in n for kw in SAMD_KEYWORDS))
+        is_ivd          = name_lower.apply(lambda n: any(kw in n for kw in IVD_KEYWORDS))
+        is_analyzer_poc = name_lower.apply(lambda n: any(kw in n for kw in ANALYZER_POC_KEYWORDS))
 
-        # SaMD takes precedence over IVD if both match
+        # Priority: SaMD > IVD > ANALYZER_POC
         df.loc[still_null & is_samd, "advisory_committee"] = "SAMD"
         df.loc[still_null & ~is_samd & is_ivd, "advisory_committee"] = "IVD"
+        df.loc[still_null & ~is_samd & ~is_ivd & is_analyzer_poc, "advisory_committee"] = "ANALYZER_POC"
 
         # Mirror to medical_specialty
         ms_still_null = df["medical_specialty"].isna()
         df.loc[ms_still_null & is_samd, "medical_specialty"] = "SAMD"
         df.loc[ms_still_null & ~is_samd & is_ivd, "medical_specialty"] = "IVD"
+        df.loc[ms_still_null & ~is_samd & ~is_ivd & is_analyzer_poc, "medical_specialty"] = "ANALYZER_POC"
 
-        rescued = (still_null & (is_samd | is_ivd)).sum()
-        logger.info(f"  Keyword rescue: {rescued} records classified as SaMD/IVD")
+        rescued = (still_null & (is_samd | is_ivd | is_analyzer_poc)).sum()
+        logger.info(f"  Keyword rescue: {rescued} records classified as SaMD/IVD/ANALYZER_POC")
 
     df["advisory_committee"] = df["advisory_committee"].fillna("UNKNOWN").str.upper().str.strip()
     df["medical_specialty"] = df["medical_specialty"].fillna("UNKNOWN").str.upper().str.strip()
