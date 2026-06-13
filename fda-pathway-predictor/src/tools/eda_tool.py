@@ -44,38 +44,64 @@ def generate_eda(input_path="artifacts/clean_data.csv", output_dir="artifacts"):
         ax.set_title("Submissions Over Time by Pathway"); ax.set_xlabel("Year"); ax.set_ylabel("Count"); ax.legend(); ax.grid(True, alpha=0.3)
         charts.append(("Submissions Over Time", _fig_to_b64(fig)))
 
-    # 3. Device class by pathway
-    fig, ax = plt.subplots(figsize=(8,5))
-    ct = pd.crosstab(df["pathway"], df["device_class"], normalize="index")*100
-    ct.plot(kind="bar", ax=ax, color=["#85B7EB","#378ADD","#0C447C"])
-    ax.set_title("Device Class by Pathway (%)"); ax.set_ylabel("%"); ax.set_xticklabels(ax.get_xticklabels(), rotation=0)
-    ax.legend(title="Class", labels=["I","II","III"])
-    charts.append(("Device Class by Pathway", _fig_to_b64(fig)))
+    # 3. Specialty distribution (all categories including SaMD/IVD/IMPLANT/ANALYZER_POC)
+    fig, ax = plt.subplots(figsize=(12, 6))
+    spec_counts = df["advisory_committee"].value_counts().head(15)
+    special_colors = {
+        "SAMD": "#7C3AED", "IVD": "#0891B2", "IMPLANT": "#D85A30",
+        "ANALYZER_POC": "#F59E0B", "UNKNOWN": "#94A3B8",
+    }
+    bar_colors = [special_colors.get(s, "#378ADD") for s in spec_counts.index]
+    ax.barh(spec_counts.index[::-1], spec_counts.values[::-1], color=bar_colors[::-1], alpha=0.85)
+    ax.set_title("Medical Specialty / Category Distribution", fontsize=13)
+    ax.set_xlabel("Submissions")
+    for i, v in enumerate(spec_counts.values[::-1]):
+        ax.text(v + spec_counts.values.max() * 0.01, i, f"{v:,}", va="center", fontsize=9)
+    charts.append(("Specialty Distribution", _fig_to_b64(fig)))
 
-    # 4. Top specialties
-    fig, ax = plt.subplots(figsize=(10,6))
-    top = df["advisory_committee"].value_counts().head(10)
-    ax.barh(top.index[::-1], top.values[::-1], color="#378ADD", alpha=0.8)
-    ax.set_title("Top 10 Medical Specialties"); ax.set_xlabel("Submissions")
-    charts.append(("Top Specialties", _fig_to_b64(fig)))
+    # 4. Device class breakdown per specialty (stacked bar)
+    if "device_class" in df.columns:
+        fig, ax = plt.subplots(figsize=(12, 6))
+        top_specs = df["advisory_committee"].value_counts().head(12).index
+        ct = pd.crosstab(
+            df[df["advisory_committee"].isin(top_specs)]["advisory_committee"],
+            df[df["advisory_committee"].isin(top_specs)]["device_class"],
+        )
+        ct = ct.reindex(top_specs)
+        class_colors = {1: "#85B7EB", 2: "#378ADD", 3: "#0C447C"}
+        bottom = np.zeros(len(ct))
+        for cls in sorted(ct.columns):
+            vals = ct[cls].fillna(0).values
+            ax.barh(ct.index, vals, left=bottom,
+                    color=class_colors.get(int(cls), "#aaa"), label=f"Class {int(cls)}", alpha=0.85)
+            bottom += vals
+        ax.set_title("Device Class Breakdown by Specialty", fontsize=13)
+        ax.set_xlabel("Submissions")
+        ax.legend(title="Device Class", loc="lower right")
+        charts.append(("Device Class by Specialty", _fig_to_b64(fig)))
 
-    # 5. Country
-    fig, ax = plt.subplots(figsize=(8,5))
-    us_pct = (df["is_us"]==1).mean()*100
-    ax.pie([us_pct,100-us_pct], labels=["US","International"], autopct="%1.1f%%", colors=["#378ADD","#F0997B"])
+    # 5. Specialty vs Pathway heatmap
+    fig, ax = plt.subplots(figsize=(12, 6))
+    top_specs = df["advisory_committee"].value_counts().head(12).index
+    hm = pd.crosstab(
+        df[df["advisory_committee"].isin(top_specs)]["advisory_committee"],
+        df[df["advisory_committee"].isin(top_specs)]["pathway"],
+    )
+    sns.heatmap(hm, annot=True, fmt="d", cmap="Blues", ax=ax, linewidths=0.5)
+    ax.set_title("Specialty vs Regulatory Pathway", fontsize=13)
+    ax.set_ylabel("Specialty / Category"); ax.set_xlabel("Pathway")
+    charts.append(("Specialty vs Pathway Heatmap", _fig_to_b64(fig)))
+
+    # 6. Country
+    fig, ax = plt.subplots(figsize=(8, 5))
+    us_pct = (df["is_us"] == 1).mean() * 100
+    ax.pie([us_pct, 100 - us_pct], labels=["US", "International"],
+           autopct="%1.1f%%", colors=["#378ADD", "#F0997B"])
     ax.set_title("Domestic vs International")
     charts.append(("Country", _fig_to_b64(fig)))
 
-    # 6. Heatmap
-    fig, ax = plt.subplots(figsize=(12,6))
-    top_specs = df["advisory_committee"].value_counts().head(10).index
-    hm = pd.crosstab(df[df["advisory_committee"].isin(top_specs)]["advisory_committee"], df[df["advisory_committee"].isin(top_specs)]["pathway"])
-    sns.heatmap(hm, annot=True, fmt="d", cmap="Blues", ax=ax)
-    ax.set_title("Pathway by Specialty"); ax.set_ylabel("Committee"); ax.set_xlabel("Pathway")
-    charts.append(("Heatmap", _fig_to_b64(fig)))
-
     # 7. Decision codes
-    fig, ax = plt.subplots(figsize=(10,5))
+    fig, ax = plt.subplots(figsize=(10, 5))
     dc = df["decision_code"].value_counts().head(10)
     ax.barh(dc.index[::-1], dc.values[::-1], color="#1D9E75", alpha=0.8)
     ax.set_title("Top 10 Decision Codes"); ax.set_xlabel("Count")
