@@ -58,6 +58,42 @@ def clean_data(input_path="artifacts/raw_data.csv", output_dir="artifacts"):
     df.loc[ac_null & ~ms_null, "advisory_committee"] = df.loc[ac_null & ~ms_null, "medical_specialty"]
     df.loc[ms_null & ~ac_null, "medical_specialty"] = df.loc[ms_null & ~ac_null, "advisory_committee"]
 
+    # Keyword-based rescue: classify still-null specialties from device name
+    SAMD_KEYWORDS = [
+        "software", "app", "algorithm", "ai ", "artificial intelligence",
+        "machine learning", "clinical decision", "decision support",
+        "image analysis", "cad ", "computer-aided", "neural network",
+        "deep learning", "digital health", "mobile health", "mhealth",
+        "samd", "remote monitoring", "telemedicine",
+    ]
+    IVD_KEYWORDS = [
+        "ivd", "in vitro", "test strip", "glucose monitor", "glucometer",
+        "reagent", "assay", "immunoassay", "analyzer", "analyser",
+        "lateral flow", "pcr", "elisa", "immunodiagnostic", "diagnostic kit",
+        "blood glucose", "hba1c", "cholesterol test", "pregnancy test",
+        "urinalysis", "urine test", "rapid test", "point of care",
+        "culture media", "hematology analyzer", "coagulation analyzer",
+    ]
+
+    if "device_name" in df.columns:
+        name_lower = df["device_name"].fillna("").str.lower()
+        still_null = df["advisory_committee"].isna()
+
+        is_samd = name_lower.apply(lambda n: any(kw in n for kw in SAMD_KEYWORDS))
+        is_ivd  = name_lower.apply(lambda n: any(kw in n for kw in IVD_KEYWORDS))
+
+        # SaMD takes precedence over IVD if both match
+        df.loc[still_null & is_samd, "advisory_committee"] = "SAMD"
+        df.loc[still_null & ~is_samd & is_ivd, "advisory_committee"] = "IVD"
+
+        # Mirror to medical_specialty
+        ms_still_null = df["medical_specialty"].isna()
+        df.loc[ms_still_null & is_samd, "medical_specialty"] = "SAMD"
+        df.loc[ms_still_null & ~is_samd & is_ivd, "medical_specialty"] = "IVD"
+
+        rescued = (still_null & (is_samd | is_ivd)).sum()
+        logger.info(f"  Keyword rescue: {rescued} records classified as SaMD/IVD")
+
     df["advisory_committee"] = df["advisory_committee"].fillna("UNKNOWN").str.upper().str.strip()
     df["medical_specialty"] = df["medical_specialty"].fillna("UNKNOWN").str.upper().str.strip()
     df["decision_code"] = df["decision_code"].fillna("UNKNOWN").str.upper().str.strip()
