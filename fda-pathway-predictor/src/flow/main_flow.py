@@ -69,7 +69,7 @@ def run_pipeline_without_llm():
     logger.info("="*50+"\nSTEP 1: Data Ingestion\n"+"="*50)
     try:
         from src.tools.fda_api_tool import ingest_fda_data
-        df_raw = ingest_fda_data(start_year=1980, end_year=2025)
+        df_raw = ingest_fda_data(start_year=2000, end_year=2026)
         if len(df_raw) < 100: raise ValueError(f"Only {len(df_raw)} records")
     except Exception as e:
         logger.warning(f"API failed ({e}), using sample data")

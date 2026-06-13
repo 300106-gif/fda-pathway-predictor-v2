@@ -73,7 +73,7 @@ def fetch_from_api(endpoint_url, search=None, limit=1000, max_retries=3):
     return [], {}
 
 
-def fetch_paginated(endpoint_url, date_field, start_year=1980, end_year=2025, fields=None):
+def fetch_paginated(endpoint_url, date_field, start_year=2000, end_year=2026, fields=None):
     """Fetch all records by paginating through yearly date ranges."""
     all_records = []
     for year in range(start_year, end_year + 1):
@@ -121,7 +121,7 @@ def _classify_pathway(submission_id):
     return "unknown"
 
 
-def fetch_510k_data(start_year=1980, end_year=2025):
+def fetch_510k_data(start_year=2000, end_year=2026):
     logger.info("Fetching 510(k) / De Novo data...")
     records = fetch_paginated(ENDPOINTS["510k"], "decision_date", start_year, end_year, FIELDS_510K)
     df = pd.DataFrame(records)
@@ -132,7 +132,7 @@ def fetch_510k_data(start_year=1980, end_year=2025):
     return df
 
 
-def fetch_pma_data(start_year=1980, end_year=2025):
+def fetch_pma_data(start_year=2000, end_year=2026):
     logger.info("Fetching PMA data...")
     records = fetch_paginated(ENDPOINTS["pma"], "decision_date", start_year, end_year, FIELDS_PMA)
     df = pd.DataFrame(records)
@@ -178,7 +178,7 @@ def merge_and_unify(df_510k, df_pma, df_classification):
     return df_unified
 
 
-def ingest_fda_data(output_path="artifacts/raw_data.csv", start_year=1980, end_year=2025):
+def ingest_fda_data(output_path="artifacts/raw_data.csv", start_year=2000, end_year=2026):
     df_510k = fetch_510k_data(start_year, end_year)
     df_pma = fetch_pma_data(start_year, end_year)
     df_classification = fetch_classification_data()
@@ -192,6 +192,6 @@ def ingest_fda_data(output_path="artifacts/raw_data.csv", start_year=1980, end_y
 
 
 if __name__ == "__main__":
-    df = ingest_fda_data(start_year=1980, end_year=2025)
+    df = ingest_fda_data(start_year=2000, end_year=2026)
     print(f"\nShape: {df.shape}")
     print(f"\nPathway distribution:\n{df['pathway'].value_counts()}")
