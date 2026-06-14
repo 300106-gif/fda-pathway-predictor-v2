@@ -1,0 +1,56 @@
+{
+  "predicates": [
+    {
+      "submission_id": "K255849",
+      "device_name": "endoscopes model 346",
+      "applicant": "Small Device Startup B",
+      "decision_date": "2025-12-27",
+      "decision_code": "SEKD",
+      "product_code": "EYE",
+      "similarity_score": 0.0,
+      "source": "semantic_tfidf"
+    },
+    {
+      "submission_id": "K255998",
+      "device_name": "bone screws model 182",
+      "applicant": "Edwards Lifesciences",
+      "decision_date": "2025-12-25",
+      "decision_code": "SESE",
+      "product_code": "QYX",
+      "similarity_score": 0.0,
+      "source": "semantic_tfidf"
+    },
+    {
+      "submission_id": "K254751",
+      "device_name": "retinal cameras model 902",
+      "applicant": "Roche Diagnostics",
+      "decision_date": "2025-12-25",
+      "decision_code": "SESE",
+      "product_code": "QGK",
+      "similarity_score": 0.0,
+      "source": "semantic_tfidf"
+    },
+    {
+      "submission_id": "K253261",
+      "device_name": "blood analyzers model 424",
+      "applicant": "Roche Diagnostics",
+      "decision_date": "2025-12-24",
+      "decision_code": "SESE",
+      "product_code": "XRS",
+      "similarity_score": 0.0,
+      "source": "semantic_tfidf"
+    },
+    {
+      "submission_id": "K255393",
+      "device_name": "glucose monitors model 838",
+      "applicant": "Johnson & Johnson",
+      "decision_date": "2025-12-23",
+      "decision_code": "SESE",
+      "product_code": "XLF",
+      "similarity_score": 0.0,
+      "source": "semantic_tfidf"
+    }
+  ],
+  "total_found": 5,
+  "pathway_context": "510k"
+}

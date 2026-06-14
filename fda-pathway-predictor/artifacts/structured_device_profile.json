@@ -1,0 +1,11 @@
+{
+  "device_type": "Unknown",
+  "specialty": "HO",
+  "software_based": true,
+  "ai_enabled": false,
+  "implantable": false,
+  "life_sustaining": false,
+  "predicate_claimed": true,
+  "device_class": 2,
+  "extraction_method": "deterministic"
+}

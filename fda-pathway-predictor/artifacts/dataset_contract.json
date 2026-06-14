@@ -7,7 +7,7 @@
     "De_Novo",
     "PMA"
   ],
-  "total_records": 10013,
+  "total_records": 50342,
   "schema": {
     "submission_id": {
       "dtype": "str",
@@ -55,18 +55,20 @@
       "dtype": "str",
       "null_count": 0
     },
-    "clearance_type": {
+    "gmp_exempt_flag": {
       "dtype": "str",
-      "null_count": 0
+      "null_count": 45240
     },
-    "third_party_flag": {
-      "dtype": "str",
-      "null_count": 0
+    "submission_type_id": {
+      "dtype": "float64",
+      "null_count": 45240,
+      "min": 1.0,
+      "max": 4.0
     },
     "decision_year": {
       "dtype": "int32",
       "null_count": 0,
-      "min": 1980.0,
+      "min": 2010.0,
       "max": 2025.0
     },
     "decision_month": {
@@ -77,15 +79,15 @@
     },
     "review_days": {
       "dtype": "float64",
-      "null_count": 2013,
-      "min": 0.0,
-      "max": 92.0
+      "null_count": 50342,
+      "min": null,
+      "max": null
     },
     "device_class_unknown": {
       "dtype": "int64",
       "null_count": 0,
       "min": 0.0,
-      "max": 0.0
+      "max": 1.0
     },
     "is_us": {
       "dtype": "int64",
@@ -102,13 +104,13 @@
       "advisory_committee"
     ],
     "class_distribution": {
-      "510k": 8000,
-      "PMA": 1502,
-      "De_Novo": 511
+      "510k": 48919,
+      "PMA": 1011,
+      "De_Novo": 412
     },
     "date_range": {
-      "min": "1980-01-03 00:00:00",
-      "max": "2025-12-28 00:00:00"
+      "min": "2010-01-04 00:00:00",
+      "max": "2025-12-31 00:00:00"
     }
   },
   "recommended_features": [
