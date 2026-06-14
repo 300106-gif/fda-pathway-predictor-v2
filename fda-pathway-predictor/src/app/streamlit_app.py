@@ -2,8 +2,10 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import json, joblib, requests, base64
+import json, joblib, requests, base64, logging
 from pathlib import Path
+
+logger = logging.getLogger(__name__)
 
 ARTIFACTS = Path("artifacts")
 st.set_page_config(
@@ -1011,6 +1013,14 @@ elif page == "Pathway Predictor":
                 key="inp_ct",
                 help="Applicable for 510(k) pathway. 'Not Specified' uses dataset most common.",
             )
+            _pc_default = foi_match.get("productcode", "") if foi_match else ""
+            st.text_input(
+                "Product Code (optional)",
+                value=_pc_default,
+                placeholder="e.g. DQK — auto-filled from FDA suggestion",
+                key="inp_pc",
+                help="3-letter FDA product code. Used for predicate lookup and regulatory evidence.",
+            )
 
         # ── Resolve auto-detect values before prediction ──────────────────────
         # Advisory committee
@@ -1148,6 +1158,27 @@ elif page == "Pathway Predictor":
             st.session_state.last_device_class = device_class
             st.session_state.last_advisory = advisory_committee_str
             st.session_state.last_feature_cols = feature_cols
+
+            # Gather regulatory evidence (graceful — never blocks prediction)
+            try:
+                from src.tools.regulatory_evidence import build_regulatory_evidence
+                _inp_pc = st.session_state.get("inp_pc", "").strip()
+                with st.spinner("Gathering regulatory evidence..."):
+                    evidence = build_regulatory_evidence(
+                        device_name=device_name,
+                        device_description="",
+                        device_class=device_class,
+                        advisory_committee=advisory_committee_str if advisory_committee_str != "Auto" else None,
+                        product_code=_inp_pc or None,
+                        pathway=pathway,
+                        has_predicate=has_predicate,
+                        data_path=str(ARTIFACTS / "clean_data.csv"),
+                    )
+                st.session_state.last_evidence = evidence
+            except Exception as _ev_err:
+                st.session_state.last_evidence = None
+                logger.warning(f"Evidence gathering skipped: {_ev_err}")
+
             st.session_state.show_results = True
             st.rerun()
 
@@ -1330,6 +1361,115 @@ elif page == "Pathway Predictor":
             with st.expander("View example devices"):
                 st.dataframe(pd.DataFrame(sim["examples"]), width='stretch', hide_index=True)
             st.markdown('</div>', unsafe_allow_html=True)
+
+        # ── REGULATORY EVIDENCE SECTIONS ──────────────────────────────────────
+        evidence = st.session_state.get("last_evidence")
+        if evidence:
+            st.markdown("<br>", unsafe_allow_html=True)
+
+            # ── Section 1: Evidence Strength ───────────────────────────────────
+            strength = evidence.get("evidence_strength", "LOW")
+            facts    = evidence.get("supporting_facts", [])
+            strength_colors = {
+                "HIGH":   ("#d1fae5", "#065f46", "#10b981"),
+                "MEDIUM": ("#fef3c7", "#92400e", "#f59e0b"),
+                "LOW":    ("#fee2e2", "#991b1b", "#ef4444"),
+            }
+            bg, fg, dot_c = strength_colors.get(strength, strength_colors["LOW"])
+            facts_html = "".join(
+                f'<div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:7px;">'
+                f'<span style="color:{dot_c};font-size:16px;line-height:1.3;">&#10003;</span>'
+                f'<span style="font-size:13px;color:#374151;">{f}</span></div>'
+                for f in facts
+            )
+            st.markdown(
+                f'<div class="fda-card">'
+                f'<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">'
+                f'<div style="font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;'
+                f'letter-spacing:.05em;">Evidence Strength</div>'
+                f'<span style="background:{bg};color:{fg};font-size:13px;font-weight:700;'
+                f'padding:3px 14px;border-radius:999px;">{strength}</span></div>'
+                f'{facts_html}'
+                f'</div>',
+                unsafe_allow_html=True,
+            )
+
+            # ── Section 2: Top Predicate Candidates ───────────────────────────
+            predicates = evidence.get("predicate_candidates", [])
+            if predicates:
+                st.markdown(
+                    '<div class="fda-card">'
+                    '<div style="font-size:15px;font-weight:700;color:#0f172a;margin-bottom:12px;">'
+                    'Top Predicate Candidates</div>',
+                    unsafe_allow_html=True,
+                )
+                pred_df = pd.DataFrame([
+                    {
+                        "Submission ID": p.get("submission_id", ""),
+                        "Device Name":   p.get("device_name", ""),
+                        "Applicant":     p.get("applicant", ""),
+                        "Decision Date": p.get("decision_date", ""),
+                        "Decision":      p.get("decision_code", ""),
+                        "Similarity":    f'{p.get("similarity_score", 0):.2f}',
+                        "Source":        p.get("source", ""),
+                    }
+                    for p in predicates
+                ])
+                st.dataframe(pred_df, use_container_width=True, hide_index=True)
+                st.markdown('</div>', unsafe_allow_html=True)
+            else:
+                st.markdown(
+                    '<div class="fda-card">'
+                    '<div style="font-size:15px;font-weight:700;color:#0f172a;margin-bottom:8px;">'
+                    'Top Predicate Candidates</div>'
+                    '<p style="font-size:13px;color:#64748b;margin:0;">No predicate candidates found for this '
+                    'device configuration. If you have a product code, enter it above to improve results.</p>'
+                    '</div>',
+                    unsafe_allow_html=True,
+                )
+
+            # ── Section 3: Semantic Similar Devices (if available) ─────────────
+            sem = evidence.get("similar_devices", {})
+            sem_top = sem.get("top_similar_devices", [])
+            sem_method = sem.get("similarity_method", "")
+            if sem_top and sem_method:
+                with st.expander(
+                    f"Semantically Similar Devices — {sem_method.replace('_', ' ').title()} "
+                    f"({sem.get('total_matches', 0):,} total)"
+                ):
+                    sem_df = pd.DataFrame([
+                        {
+                            "Submission ID":    d.get("submission_id", ""),
+                            "Device Name":      d.get("device_name", ""),
+                            "Pathway":          d.get("pathway", ""),
+                            "Decision":         d.get("decision_code", ""),
+                            "Similarity Score": f'{d.get("similarity_score", 0):.3f}',
+                        }
+                        for d in sem_top
+                    ])
+                    st.dataframe(sem_df, use_container_width=True, hide_index=True)
+
+            # ── Section 4: Regulatory References ──────────────────────────────
+            reg_refs = evidence.get("regulatory_references", [])
+            if reg_refs:
+                st.markdown(
+                    '<div class="fda-card">'
+                    '<div style="font-size:15px;font-weight:700;color:#0f172a;margin-bottom:12px;">'
+                    'Regulatory References</div>',
+                    unsafe_allow_html=True,
+                )
+                for ref in reg_refs:
+                    label = ref.get("label", ref.get("title", ref.get("part", "")))
+                    url   = ref.get("url", "")
+                    if label and url:
+                        st.markdown(
+                            f'<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">'
+                            f'<span style="color:#002046;font-size:16px;">&#8594;</span>'
+                            f'<a href="{url}" target="_blank" style="font-size:13px;color:#378ADD;'
+                            f'text-decoration:none;font-weight:500;">{label}</a></div>',
+                            unsafe_allow_html=True,
+                        )
+                st.markdown('</div>', unsafe_allow_html=True)
 
         # Action buttons
         st.markdown("<br>", unsafe_allow_html=True)

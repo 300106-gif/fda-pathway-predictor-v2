@@ -55,6 +55,22 @@ class FDAPathwayFlow(Flow):
         return {"status":"success"}
 
     @listen(run_scientist_crew)
+    def run_regulatory_crew(self, r):
+        self._log("regulatory_crew", "STARTED")
+        try:
+            from src.crews.regulatory_crew import create_regulatory_crew
+            # Use representative defaults — real device inputs come from Streamlit
+            result = create_regulatory_crew(
+                device_name="Representative Device",
+                device_class=2,
+                pathway="510k",
+            ).kickoff()
+            self._log("regulatory_crew", "COMPLETED", str(result)[:500])
+        except Exception as e:
+            self._log("regulatory_crew", "SKIPPED", str(e))
+        return {"status": "success"}
+
+    @listen(run_regulatory_crew)
     def finalize(self, r):
         all_files = ["raw_data.csv","clean_data.csv","dataset_contract.json","eda_report.html","insights.md","features.csv","model.pkl","evaluation_report.md","model_card.md","confusion_matrices.png","feature_importance.png","label_encoders.json","model_meta.json"]
         present = [f for f in all_files if (self.artifacts_dir/f).exists()]
@@ -99,6 +115,21 @@ def run_pipeline_without_llm():
     from src.tools.model_tool import train_and_evaluate
     model, results = train_and_evaluate()
     for n,m in results.items(): logger.info(f"  {n}: acc={m['accuracy']:.4f}, f1={m['f1_macro']:.4f}")
+
+    logger.info("="*50+"\nSTEP 7: Regulatory Evidence (sample)\n"+"="*50)
+    try:
+        from src.tools.regulatory_evidence import build_regulatory_evidence
+        evidence = build_regulatory_evidence(
+            device_name="Representative Device",
+            device_class=2,
+            pathway="510k",
+            data_path="artifacts/clean_data.csv",
+        )
+        if evidence:
+            logger.info(f"Evidence strength: {evidence.get('evidence_strength')} | "
+                        f"Facts: {len(evidence.get('supporting_facts', []))}")
+    except Exception as e:
+        logger.warning(f"Regulatory evidence step skipped: {e}")
 
     logger.info(f"\n{'='*50}\nPIPELINE COMPLETE\n{'='*50}")
     for f in sorted(Path("artifacts").glob("*")): logger.info(f"  {f.name}: {f.stat().st_size/1024:.1f} KB")

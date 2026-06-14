@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FDA Pathway Advisor - Regulatory Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#2e476f",
+                        "tertiary": "#311c00",
+                        "on-tertiary-fixed": "#2a1700",
+                        "tertiary-container": "#4e2f00",
+                        "on-tertiary-container": "#dd8d00",
+                        "secondary-container": "#6cf8bb",
+                        "primary-container": "#1b365d",
+                        "primary-fixed-dim": "#aec7f7",
+                        "primary": "#002046",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-surface": "#213145",
+                        "on-primary-container": "#87a0cd",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#002113",
+                        "on-secondary-container": "#00714d",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#cbdbf5",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container": "#e5eeff",
+                        "secondary": "#006c49",
+                        "surface": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "outline": "#74777f",
+                        "background": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-surface-variant": "#44474e",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-primary-fixed": "#001b3d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "surface-container-high": "#dce9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-fixed": "#ffddb8",
+                        "outline-variant": "#c4c6cf",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "primary-fixed": "#d6e3ff",
+                        "inverse-primary": "#aec7f7",
+                        "surface-container-low": "#eff4ff",
+                        "surface-tint": "#465f88",
+                        "on-tertiary-fixed-variant": "#653e00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "sidebar-width": "280px",
+                        "max-content-width": "1200px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sidebar-active-notch {
+            position: absolute;
+            left: 0;
+            width: 4px;
+            height: 100%;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar (JSON Derived) -->
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-primary text-on-primary flex flex-col py-6">
+<div class="px-6 mb-10">
+<div class="flex items-center gap-3 mb-1">
+<span class="material-symbols-outlined text-on-primary text-[32px]" data-icon="shield" data-weight="fill" style="font-variation-settings: 'FILL' 1;">shield</span>
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary">FDA Pathway Advisor</h1>
+</div>
+<p class="font-label-md text-label-md opacity-70">Regulatory Intelligence</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Pathway Predictor (Active) -->
+<a class="relative flex items-center px-6 py-4 border-l-4 border-secondary-fixed text-on-primary bg-primary-container/20 hover:bg-primary-container/10 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="clinical_notes">clinical_notes</span>
+<span class="font-label-lg text-label-lg">Pathway Predictor</span>
+</a>
+<a class="flex items-center px-6 py-4 text-on-primary-container hover:text-on-primary hover:bg-primary-container/10 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+<span class="font-label-lg text-label-lg">EDA Dashboard</span>
+</a>
+<a class="flex items-center px-6 py-4 text-on-primary-container hover:text-on-primary hover:bg-primary-container/10 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="analytics">analytics</span>
+<span class="font-label-lg text-label-lg">Model Performance</span>
+</a>
+</nav>
+<div class="px-6 space-y-4">
+<div class="pt-6 border-t border-on-primary/10">
+<a class="flex items-center py-2 text-on-primary-container hover:text-on-primary transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="settings">settings</span>
+<span class="font-label-lg text-label-lg">Settings</span>
+</a>
+<a class="flex items-center py-2 text-on-primary-container hover:text-on-primary transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="help">help</span>
+<span class="font-label-lg text-label-lg">Support</span>
+</a>
+</div>
+<div class="text-[10px] uppercase tracking-widest opacity-40 font-bold">
+                Data source: openFDA API<br/>
+                Built with CrewAI + scikit-learn
+            </div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-[280px] min-h-screen bg-surface-container-lowest">
+<!-- TopAppBar (JSON Derived) -->
+<header class="sticky top-0 z-20 h-16 flex items-center justify-between px-8 bg-surface-container-lowest border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<span class="font-headline-sm text-headline-sm font-semibold text-primary">Pathway Predictor</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined p-2 rounded-full hover:bg-surface-container-low cursor-pointer transition-colors" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</div>
+<span class="material-symbols-outlined p-2 rounded-full hover:bg-surface-container-low cursor-pointer transition-colors" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<div class="max-w-[1200px] mx-auto p-gutter space-y-8">
+<!-- Header Section -->
+<section>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">FDA Regulatory Pathway Predictor</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Enter your medical device details below to get a predicted regulatory pathway recommendation with confidence scores.
+                </p>
+</section>
+<!-- Form Card -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+<!-- Left Column: Device Information -->
+<div class="space-y-6">
+<h3 class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Device Information</h3>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg block text-on-surface">Device Name</label>
+<input class="w-full h-12 px-4 border border-outline-variant rounded focus:border-primary-container focus:ring-2 focus:ring-primary/10 transition-all" placeholder="e.g. CardioSync Wireless Monitor" type="text"/>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg block text-on-surface">Advisory Committee / Medical Specialty</label>
+<span class="material-symbols-outlined text-[18px] text-outline cursor-help" data-icon="help">help</span>
+</div>
+<select class="w-full h-12 px-4 border border-outline-variant rounded focus:border-primary-container focus:ring-2 focus:ring-primary/10 appearance-none bg-no-repeat bg-[right_1rem_center]">
+<option>CV - Cardiovascular</option>
+<option>OR - Orthopedic</option>
+<option>GE - Gastroenterology</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg block text-on-surface">Device Class</label>
+<select class="w-full h-12 px-4 border border-outline-variant rounded focus:border-primary-container focus:ring-2 focus:ring-primary/10">
+<option>Class II</option>
+<option>Class I</option>
+<option>Class III</option>
+</select>
+<p class="text-[12px] text-outline">1=Low, 2=Moderate, 3=High risk</p>
+</div>
+</div>
+<!-- Right Column: Submission Details -->
+<div class="space-y-6">
+<h3 class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Submission Details</h3>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg block text-on-surface">Country of Origin</label>
+<select class="w-full h-12 px-4 border border-outline-variant rounded focus:border-primary-container focus:ring-2 focus:ring-primary/10">
+<option>United States</option>
+<option>Germany</option>
+<option>Japan</option>
+</select>
+</div>
+<div class="flex items-center justify-between py-2 border-b border-outline-variant/30">
+<div class="space-y-1">
+<label class="font-label-lg text-label-lg block text-on-surface">Third-party review</label>
+<p class="text-[12px] text-outline">Accelerated review by accredited organizations</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg block text-on-surface">Clearance Type</label>
+<select class="w-full h-12 px-4 border border-outline-variant rounded focus:border-primary-container focus:ring-2 focus:ring-primary/10">
+<option>Traditional</option>
+<option>Abbreviated</option>
+<option>Special</option>
+</select>
+<p class="text-[12px] text-outline">Applicable for 510(k) pathway</p>
+</div>
+</div>
+</div>
+<div class="mt-10">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg py-4 rounded flex items-center justify-center gap-2 transition-all active:scale-[0.99] group">
+<span class="material-symbols-outlined text-[20px] group-hover:animate-pulse" data-icon="sparkling">sparkling</span>
+                        Predict Pathway
+                    </button>
+</div>
+</section>
+<!-- Results Divider -->
+<div class="relative py-4">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant"></div>
+</div>
+<div class="relative flex justify-center">
+<span class="bg-surface-container-lowest px-4 text-on-surface-variant font-label-caps text-label-caps uppercase tracking-widest">Prediction Results</span>
+</div>
+</div>
+<!-- Prediction Output Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Left: Hero Card & Key Metrics -->
+<div class="lg:col-span-1 space-y-gutter">
+<!-- Recommended Pathway -->
+<div class="bg-primary rounded-xl p-8 text-on-primary shadow-lg overflow-hidden relative group">
+<p class="font-label-caps text-label-caps uppercase text-on-primary-container mb-4">Recommended Pathway</p>
+<div class="flex items-baseline gap-2">
+<span class="text-[64px] font-bold leading-none">510(k)</span>
+</div>
+<div class="mt-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-lg text-label-lg">High confidence prediction</span>
+</div>
+</div>
+<!-- Metrics -->
+<div class="space-y-4">
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl flex items-center justify-between">
+<div>
+<p class="text-on-surface-variant font-label-md text-label-md">Confidence Score</p>
+<p class="text-primary font-headline-md text-headline-md">87.3%</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="trending_up">trending_up</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl flex items-center justify-between">
+<div>
+<p class="text-on-surface-variant font-label-md text-label-md">Assigned Class</p>
+<p class="text-primary font-headline-md text-headline-md">Class II</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="clinical_notes">clinical_notes</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Visualization & Details -->
+<div class="lg:col-span-2 space-y-gutter">
+<!-- Charts Container -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 space-y-10">
+<!-- Chart 1: Confidence by Pathway -->
+<div class="space-y-4">
+<h4 class="font-headline-sm text-headline-sm text-primary">Confidence by Pathway</h4>
+<div class="space-y-4">
+<!-- 510(k) -->
+<div class="space-y-1">
+<div class="flex justify-between text-label-md font-label-md">
+<span>510(k) — Premarket Notification</span>
+<span>87%</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-primary h-full transition-all duration-1000 ease-out" style="width: 87%"></div>
+</div>
+</div>
+<!-- PMA -->
+<div class="space-y-1">
+<div class="flex justify-between text-label-md font-label-md">
+<span>PMA — Premarket Approval</span>
+<span>8%</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full transition-all duration-1000 ease-out" style="width: 8%"></div>
+</div>
+</div>
+<!-- De Novo -->
+<div class="space-y-1">
+<div class="flex justify-between text-label-md font-label-md">
+<span>De Novo Classification</span>
+<span>5%</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-secondary h-full transition-all duration-1000 ease-out" style="width: 5%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Chart 2: Key Factors -->
+<div class="space-y-4">
+<h4 class="font-headline-sm text-headline-sm text-primary">Key Factors in This Prediction</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-24 text-[11px] font-bold text-outline text-right uppercase">device_class</div>
+<div class="flex-1 bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary/60 h-full" style="width: 95%"></div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-24 text-[11px] font-bold text-outline text-right uppercase">committee</div>
+<div class="flex-1 bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary/60 h-full" style="width: 82%"></div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-24 text-[11px] font-bold text-outline text-right uppercase">is_us</div>
+<div class="flex-1 bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary/60 h-full" style="width: 65%"></div>
+</div>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-24 text-[11px] font-bold text-outline text-right uppercase">review_days</div>
+<div class="flex-1 bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary/60 h-full" style="width: 45%"></div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-24 text-[11px] font-bold text-outline text-right uppercase">app_freq</div>
+<div class="flex-1 bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary/60 h-full" style="width: 38%"></div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-24 text-[11px] font-bold text-outline text-right uppercase">specialty</div>
+<div class="flex-1 bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary/60 h-full" style="width: 22%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Info Box -->
+<div class="bg-primary-container/10 border-l-4 border-primary p-6 rounded-r-xl">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+<div>
+<h5 class="font-label-lg text-label-lg text-primary mb-1">510(k) — Premarket Notification</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                                    The 510(k) pathway requires demonstrating that the device is "substantially equivalent" to an already legally marketed device (predicate). This pathway typically features a <strong>3-6 month timeline</strong> and often requires <strong>no clinical trials</strong> if technical equivalence is proven.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Warning -->
+<footer class="bg-surface-container p-4 rounded border border-outline-variant/50 flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="warning">warning</span>
+<p class="font-label-md text-label-md text-on-surface-variant italic">
+                    This prediction is based on historical FDA data patterns. It should not replace professional regulatory advice.
+                </p>
+</footer>
+</div>
+</main>
+<!-- Custom Script for Micro-interactions -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth reveal for result elements when button is clicked (mock simulation)
+            const predictBtn = document.querySelector('button');
+            predictBtn.addEventListener('click', () => {
+                predictBtn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span> Calculating Prediction...';
+                
+                setTimeout(() => {
+                    predictBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]" data-icon="sparkling">sparkling</span> Predict Pathway';
+                    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                }, 1000);
+            });
+        });
+    </script>
+</body></html>
