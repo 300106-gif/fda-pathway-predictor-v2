@@ -32,19 +32,14 @@ def clean_data(input_path="artifacts/raw_data.csv", output_dir="artifacts"):
     else:
         df["review_days"] = np.nan
 
-    # Impute missing device_class using decision_code as evidence
+    # Impute missing device_class from dataset median ONLY.
+    # Do NOT use decision_code or pathway as a proxy — that creates a circular feature
+    # where device_class encodes the label, inflating model accuracy to 1.00.
     df["device_class"] = pd.to_numeric(df["device_class"], errors="coerce")
-    missing_class = df["device_class"].isna()
-    se_codes = ["SESE","SEKD","SESD","SESI","SESK","SESP","SEKN"]
-    df.loc[missing_class & df["decision_code"].isin(se_codes), "device_class"] = 2
-    pma_codes = ["APPR","APCV","APWD"]
-    df.loc[missing_class & df["decision_code"].isin(pma_codes), "device_class"] = 3
-    df.loc[missing_class & df["decision_code"].isin(["DENG"]), "device_class"] = 2
-    # Remaining unknown
     still_missing = df["device_class"].isna().sum()
     if still_missing > 0:
-        logger.info(f"  {still_missing} records still missing device_class after imputation")
-    mode_class = df["device_class"].mode()[0] if not df["device_class"].mode().empty else 2
+        logger.info(f"  {still_missing} records missing device_class — filling with dataset median")
+    mode_class = int(df["device_class"].mode()[0]) if not df["device_class"].mode().empty else 2
     df["device_class_unknown"] = df["device_class"].isna().astype(int)
     df["device_class"] = df["device_class"].fillna(mode_class).astype(int)
 

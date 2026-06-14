@@ -158,16 +158,18 @@ def build_regulatory_evidence(
 
     Returns:
         {
+            "pathway_inference": {...},   # new — intent-based prediction
             "evidence_strength": "HIGH",
             "supporting_facts": ["..."],
             "device_profile": {...},
             "classification": {...},
-            "similar_devices": {...},
+            "similar_devices": {},
             "predicate_candidates": [...],
             "regulatory_references": [...],
         }
     """
     result: dict = {
+        "pathway_inference": {},
         "evidence_strength": "LOW",
         "supporting_facts": [],
         "device_profile": {},
@@ -176,6 +178,32 @@ def build_regulatory_evidence(
         "predicate_candidates": [],
         "regulatory_references": [],
     }
+
+    # 0. Pathway inference from intended use + risk profile
+    try:
+        from src.tools.pathway_inference import infer_regulatory_pathway
+        inference = infer_regulatory_pathway(
+            device_name=device_name,
+            device_description=device_description,
+            device_class=device_class,
+            advisory_committee=advisory_committee,
+        )
+        result["pathway_inference"] = inference
+        logger.info(
+            f"Pathway inference: {inference.get('predicted_pathway')} "
+            f"Class {inference.get('predicted_class')} "
+            f"PC={inference.get('predicted_product_code')} "
+            f"confidence={inference.get('confidence')} "
+            f"method={inference.get('inference_method')}"
+        )
+        # Use inferred product code if none was provided
+        if not product_code or product_code in ("", "UNK"):
+            inferred_pc = inference.get("predicted_product_code", "")
+            if inferred_pc:
+                product_code = inferred_pc
+                logger.info(f"Using inferred product code: {product_code}")
+    except Exception as e:
+        logger.warning(f"Pathway inference failed: {e}")
 
     # 1. Device understanding
     try:
@@ -281,6 +309,16 @@ def build_regulatory_evidence(
     result["evidence_strength"] = strength
     result["supporting_facts"] = facts
 
+    # Sync inference confidence with evidence strength so both cards show the same signal.
+    # Rule: evidence_strength is authoritative (it has more data points); inference confidence
+    # is a preliminary estimate — cap it to never exceed evidence_strength.
+    _rank = {"HIGH": 2, "MEDIUM": 1, "LOW": 0}
+    if result.get("pathway_inference"):
+        inf_conf = result["pathway_inference"].get("confidence", "LOW")
+        # Take the lower of the two: don't let inference claim HIGH when evidence is LOW
+        unified = inf_conf if _rank[inf_conf] <= _rank[strength] else strength
+        result["pathway_inference"]["confidence"] = unified
+
     # Add device profile facts
     profile = result.get("device_profile", {})
     if profile.get("software_based"):
@@ -291,6 +329,31 @@ def build_regulatory_evidence(
         facts.append("Implantable device — enhanced biocompatibility testing required")
     if profile.get("life_sustaining"):
         facts.append("Life-sustaining device — heightened regulatory scrutiny expected")
+
+    # Add pathway inference facts
+    inference = result.get("pathway_inference", {})
+    if inference:
+        inferred_pw = inference.get("predicted_pathway", "")
+        inferred_pc = inference.get("predicted_product_code", "")
+        inferred_cls = inference.get("predicted_class", "")
+        inf_confidence = inference.get("confidence", "")
+        if inferred_pw:
+            pw_label = {
+                "510k_exempt": "Class I, 510(k) Exempt",
+                "510k": "510(k) Premarket Notification",
+                "PMA": "Premarket Approval (PMA)",
+                "De_Novo": "De Novo Classification",
+            }.get(inferred_pw, inferred_pw)
+            facts.append(f"Risk-profile inference: {pw_label} (confidence: {inf_confidence})")
+        if inferred_pc:
+            pc_desc = inference.get("predicted_product_code_desc", "")
+            facts.append(
+                f"Inferred product code family: {inferred_pc}"
+                + (f" — {pc_desc}" if pc_desc else "")
+            )
+        reg = inference.get("regulation_number", "")
+        if reg:
+            facts.append(f"Applicable regulation: {reg}")
 
     # 6. Regulatory references
     result["regulatory_references"] = _build_regulatory_refs(pathway, regulation_number)

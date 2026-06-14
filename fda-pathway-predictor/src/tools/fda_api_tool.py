@@ -41,9 +41,9 @@ FIELDS_CLASSIFICATION = [
 ]
 
 
-def fetch_from_api(endpoint_url, search=None, limit=1000, max_retries=3):
-    """Fetch records from an openFDA endpoint with API key and retry logic."""
-    params = {"limit": limit}
+def fetch_from_api(endpoint_url, search=None, limit=100, skip=0, max_retries=3):
+    """Fetch one page of records from an openFDA endpoint with retry logic."""
+    params = {"limit": limit, "skip": skip}
     if API_KEY:
         params["api_key"] = API_KEY
     if search:
@@ -61,7 +61,7 @@ def fetch_from_api(endpoint_url, search=None, limit=1000, max_retries=3):
                 logger.error(f"API blocked (403): {resp.text[:100]}")
                 return [], {}
             elif resp.status_code == 429:
-                wait = 2 ** attempt
+                wait = 2 ** (attempt + 1)
                 logger.warning(f"Rate limited. Waiting {wait}s...")
                 time.sleep(wait)
             else:
@@ -73,43 +73,89 @@ def fetch_from_api(endpoint_url, search=None, limit=1000, max_retries=3):
     return [], {}
 
 
-def fetch_paginated(endpoint_url, date_field, start_year=2000, end_year=2026, fields=None):
-    """Fetch all records by paginating through yearly date ranges."""
-    all_records = []
-    for year in range(start_year, end_year + 1):
-        search = f"{date_field}:[{year}0101 TO {year}1231]"
-        records, meta = fetch_from_api(endpoint_url, search=search, limit=1000)
-        if records:
-            total = meta.get("results", {}).get("total", len(records))
-            logger.info(f"  Year {year}: fetched {len(records)}/{total} records")
-            if total > 1000:
-                logger.info(f"  Year {year} has {total} records, splitting by quarter...")
-                records = []
-                quarters = [
-                    (f"{year}0101", f"{year}0331"), (f"{year}0401", f"{year}0630"),
-                    (f"{year}0701", f"{year}0930"), (f"{year}1001", f"{year}1231"),
-                ]
-                for q_start, q_end in quarters:
-                    q_search = f"{date_field}:[{q_start} TO {q_end}]"
-                    q_records, _ = fetch_from_api(endpoint_url, search=q_search, limit=1000)
-                    if q_records:
-                        records.extend(q_records)
-                        logger.info(f"    Q {q_start[:6]}: {len(q_records)} records")
-                    time.sleep(0.25)
-            all_records.extend(records)
-        else:
-            logger.info(f"  Year {year}: no records")
-        time.sleep(0.25)
+def _fetch_window(endpoint_url, search, fields, max_per_window=5000):
+    """
+    Fetch all records for a single search window using skip-based pagination.
+    openFDA caps total retrievable records at 26,000 without key / 99,000 with key.
+    We use batches of 100 to stay within rate limits.
+    """
+    records = []
+    # First call to get total count
+    batch, meta = fetch_from_api(endpoint_url, search=search, limit=1, skip=0)
+    total = meta.get("results", {}).get("total", 0)
+    if total == 0:
+        return records
+
+    to_fetch = min(total, max_per_window)
+    batch_size = 100
+    skip = 0
+    while skip < to_fetch:
+        this_limit = min(batch_size, to_fetch - skip)
+        batch, _ = fetch_from_api(endpoint_url, search=search, limit=this_limit, skip=skip)
+        if not batch:
+            break
+        records.extend(batch)
+        skip += len(batch)
+        if len(batch) < this_limit:
+            break
+        time.sleep(0.15)  # respect rate limits
 
     if fields:
         cleaned = []
-        for record in all_records:
-            row = {f: record.get(f) for f in fields}
-            openfda = record.get("openfda", {})
+        for r in records:
+            row = {f: r.get(f) for f in fields}
+            openfda = r.get("openfda", {})
             if openfda:
-                row["regulation_number"] = openfda.get("regulation_number", [None])[0] if openfda.get("regulation_number") else None
+                row["regulation_number"] = (
+                    openfda.get("regulation_number", [None])[0]
+                    if openfda.get("regulation_number") else None
+                )
             cleaned.append(row)
         return cleaned
+    return records
+
+
+def fetch_paginated(endpoint_url, date_field, start_year=2000, end_year=2026,
+                    fields=None, max_per_year=5000):
+    """
+    Fetch records by year using skip-based pagination within each year window.
+    Years with > max_per_year records are split by quarter automatically.
+    """
+    all_records = []
+    for year in range(start_year, end_year + 1):
+        search = f"{date_field}:[{year}0101 TO {year}1231]"
+        # Probe total for this year
+        _, meta = fetch_from_api(endpoint_url, search=search, limit=1, skip=0)
+        total = meta.get("results", {}).get("total", 0)
+        if total == 0:
+            logger.info(f"  Year {year}: 0 records")
+            time.sleep(0.1)
+            continue
+
+        if total <= max_per_year:
+            recs = _fetch_window(endpoint_url, search, fields, max_per_window=max_per_year)
+            all_records.extend(recs)
+            logger.info(f"  Year {year}: {len(recs)}/{total} records fetched")
+        else:
+            # Split by quarter
+            quarters = [
+                (f"{year}0101", f"{year}0331"),
+                (f"{year}0401", f"{year}0630"),
+                (f"{year}0701", f"{year}0930"),
+                (f"{year}1001", f"{year}1231"),
+            ]
+            year_count = 0
+            for q_start, q_end in quarters:
+                q_search = f"{date_field}:[{q_start} TO {q_end}]"
+                q_recs = _fetch_window(endpoint_url, q_search, fields,
+                                       max_per_window=max_per_year // 4)
+                all_records.extend(q_recs)
+                year_count += len(q_recs)
+                time.sleep(0.2)
+            logger.info(f"  Year {year}: {year_count}/{total} records fetched (split by quarter)")
+
+        time.sleep(0.2)
+
     return all_records
 
 

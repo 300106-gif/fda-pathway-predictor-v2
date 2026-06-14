@@ -4,13 +4,15 @@ import pandas as pd
 import numpy as np
 import json, joblib, requests, base64, logging
 from pathlib import Path
+from PIL import Image
 
 logger = logging.getLogger(__name__)
 
 ARTIFACTS = Path("artifacts")
+_FAVICON = Image.open(Path(__file__).parent / "static" / "regula_icon.png")
 st.set_page_config(
     page_title="FDA Pathway Advisor",
-    page_icon="⚕️",
+    page_icon=_FAVICON,
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -543,7 +545,7 @@ else:
 """, unsafe_allow_html=True)
 st.sidebar.markdown("---")
 
-PAGES = ["Device Classification", "Pathway Predictor", "Preparation Checklist", "EDA Dashboard", "Model Performance"]
+PAGES = ["Device Classification", "Pathway Predictor", "Preparation Checklist", "EDA Dashboard", "Model Performance", "About", "Contact"]
 # Resolve any programmatic navigation requests before the radio renders
 if "_nav_target" in st.session_state:
     st.session_state["nav_page"] = st.session_state.pop("_nav_target")
@@ -944,6 +946,21 @@ elif page == "Pathway Predictor":
                 foi_match = st.session_state["inp_dn_foi_match"]
             device_name = foi_match["devicename"].title() if foi_match else device_name_typed
 
+            # Device Description — intended use / mechanism (improves inference)
+            device_description = st.text_area(
+                "Device Description (optional — improves regulatory inference)",
+                placeholder=(
+                    "Describe the intended use, mechanism, and any patient/fluid contact. "
+                    "e.g. 'Disposable plastic clip that attaches to IV tubing so nurses can "
+                    "visually identify which line carries which medication. Does not contact "
+                    "the patient or the fluid.'"
+                ),
+                height=90,
+                key="inp_desc",
+                help="The more detail you provide about intended use and risk profile, "
+                     "the more accurate the pathway inference will be.",
+            )
+
             # Advisory Committee — Auto-detect or manual
             advisory_committees = sorted(
                 k for k in encoders.get("advisory_committee", {}).keys() if k != "UNKNOWN"
@@ -970,11 +987,9 @@ elif page == "Pathway Predictor":
 
             # Device Class — Auto-detect or manual
             _dc_options = ["Not Specified", "Class I — Low Risk", "Class II — Moderate Risk", "Class III — High Risk"]
-            _dc_idx = 0
+            _dc_idx = 0  # always default to "Not Specified"
             if foi_match is not None and foi_match.get("deviceclass", "") in ("1", "2", "3"):
-                _dc_idx = int(foi_match["deviceclass"])  # 1→idx1, 2→idx2, 3→idx3
-            elif st.session_state.get("device_class") in (1, 2, 3):
-                _dc_idx = st.session_state["device_class"]
+                _dc_idx = int(foi_match["deviceclass"])  # auto-fill from FDA suggestion only
             device_class_sel = st.selectbox(
                 "Device Class",
                 _dc_options,
@@ -1166,7 +1181,7 @@ elif page == "Pathway Predictor":
                 with st.spinner("Gathering regulatory evidence..."):
                     evidence = build_regulatory_evidence(
                         device_name=device_name,
-                        device_description="",
+                        device_description=st.session_state.get("inp_desc", ""),
                         device_class=device_class,
                         advisory_committee=advisory_committee_str if advisory_committee_str != "Auto" else None,
                         product_code=_inp_pc or None,
@@ -1367,6 +1382,125 @@ elif page == "Pathway Predictor":
         if evidence:
             st.markdown("<br>", unsafe_allow_html=True)
 
+            # ── Section 0: Pathway Inference Card ─────────────────────────────
+            inference = evidence.get("pathway_inference", {})
+            if inference and inference.get("predicted_pathway"):
+                _pw_map = {
+                    "510k_exempt": ("510(k) Exempt", "#d1fae5", "#065f46", "#10b981"),
+                    "510k":        ("510(k)",         "#dbeafe", "#1e40af", "#3b82f6"),
+                    "PMA":         ("PMA",            "#fef3c7", "#92400e", "#f59e0b"),
+                    "De_Novo":     ("De Novo",        "#ede9fe", "#5b21b6", "#7c3aed"),
+                }
+                _inf_pw = inference.get("predicted_pathway", "510k")
+                _pw_label, _bg, _fg, _dot = _pw_map.get(_inf_pw, _pw_map["510k"])
+                # Confidence is synced with evidence_strength by the backend
+                _conf = inference.get("confidence", "LOW")
+                # Use the same colour palette as the Evidence Strength card below
+                _conf_pill = {
+                    "HIGH":   ("#d1fae5", "#065f46"),
+                    "MEDIUM": ("#fef3c7", "#92400e"),
+                    "LOW":    ("#fee2e2", "#991b1b"),
+                }
+                _conf_bg, _conf_fg = _conf_pill.get(_conf, _conf_pill["LOW"])
+                _cls = inference.get("predicted_class", "")
+                _pc = inference.get("predicted_product_code", "")
+                _pc_desc = inference.get("predicted_product_code_desc", "")
+                _reg = inference.get("regulation_number", "")
+                _exemption = inference.get("exemption_status", "")
+                _gmp = inference.get("gmp_exempt", False)
+                _reasoning = inference.get("reasoning", "")
+                _fda_logic = inference.get("fda_logic", "")
+                _method = inference.get("inference_method", "")
+                _method_label = {
+                    "llm_anthropic": "LLM (Claude)",
+                    "llm_openai":    "LLM (GPT)",
+                    "keyword_deterministic": "Rule-based",
+                    "fallback": "Fallback",
+                }.get(_method, _method.replace("_", " ").title())
+
+                # Risk factor badges
+                rf = inference.get("risk_factors", {})
+                _rf_display = [
+                    ("Patient contact",    rf.get("patient_contact")),
+                    ("Fluid contact",      rf.get("fluid_contact")),
+                    ("Sterile",            rf.get("sterile")),
+                    ("Life-sustaining",    rf.get("life_sustaining")),
+                    ("Implantable",        rf.get("implantable")),
+                    ("Software / SaMD",    rf.get("software_based")),
+                    ("AI / ML",            rf.get("ai_enabled")),
+                    ("Diagnostic",         rf.get("diagnostic")),
+                    ("Therapeutic",        rf.get("therapeutic")),
+                    ("Label / tag / accessory", rf.get("label_or_tag") or rf.get("accessory")),
+                    ("IV-related",         rf.get("iv_related")),
+                ]
+                rf_html = "".join(
+                    f'<span style="display:inline-flex;align-items:center;gap:5px;'
+                    f'background:{"#f0fdf4" if v else "#fef2f2"};'
+                    f'color:{"#166534" if v else "#991b1b"};'
+                    f'border:1px solid {"#bbf7d0" if v else "#fecaca"};'
+                    f'border-radius:999px;padding:3px 10px;font-size:12px;font-weight:500;'
+                    f'margin:3px 4px 3px 0;">'
+                    f'{"&#10003;" if v else "&#10007;"} {label}'
+                    f'</span>'
+                    for label, v in _rf_display if v is not None
+                )
+
+                # Row items
+                def _inf_row(icon, label, value):
+                    return (
+                        f'<div class="ir" style="margin-bottom:10px;">'
+                        f'<div class="iw"><span class="material-icons-round">{icon}</span></div>'
+                        f'<div><div class="it-lbl">{label}</div>'
+                        f'<div class="it-val">{value}</div></div></div>'
+                    )
+
+                rows_html = ""
+                if _cls:
+                    rows_html += _inf_row("grade", "Predicted Class", f"Class {_cls}")
+                if _pc:
+                    rows_html += _inf_row("qr_code", "Product Code Family",
+                                          f"{_pc}" + (f" — {_pc_desc}" if _pc_desc else ""))
+                if _reg:
+                    rows_html += _inf_row("menu_book", "Regulation", _reg)
+                if _exemption:
+                    rows_html += _inf_row("check_circle", "Submission Requirement", _exemption)
+                rows_html += _inf_row(
+                    "settings", "GMP / Quality System",
+                    "GMP Exempt" if _gmp else "Quality System (21 CFR Part 820) applies"
+                )
+
+                st.markdown(
+                    f'<div class="fda-card" style="border-left:4px solid {_dot};">'
+                    # Header row
+                    f'<div style="display:flex;align-items:center;justify-content:space-between;'
+                    f'flex-wrap:wrap;gap:10px;margin-bottom:16px;">'
+                    f'<div style="font-size:15px;font-weight:700;color:#0f172a;">Regulatory Pathway Inference</div>'
+                    f'<div style="display:flex;align-items:center;gap:8px;">'
+                    f'<span style="background:{_bg};color:{_fg};font-size:13px;font-weight:700;'
+                    f'padding:4px 14px;border-radius:999px;">{_pw_label}</span>'
+                    f'<span style="background:{_conf_bg};color:{_conf_fg};font-size:12px;font-weight:700;'
+                    f'padding:3px 12px;border-radius:999px;">Confidence: {_conf}</span>'
+                    f'<span style="font-size:11px;color:#94a3b8;">via {_method_label}</span>'
+                    f'</div></div>'
+                    # Info rows
+                    f'<div style="display:flex;flex-wrap:wrap;gap:0;">{rows_html}</div>'
+                    # Risk factors
+                    f'<div style="margin:12px 0 8px;">'
+                    f'<div class="ic-title" style="margin-bottom:8px;">Risk Profile</div>'
+                    f'<div style="line-height:1.8;">{rf_html}</div>'
+                    f'</div>'
+                    # Reasoning
+                    + (
+                        f'<div style="margin-top:12px;padding-top:12px;border-top:1px solid #f1f5f9;">'
+                        f'<div class="ic-title" style="margin-bottom:6px;">FDA Reasoning</div>'
+                        f'<p style="font-size:13px;color:#334155;line-height:1.65;margin:0;">{_fda_logic or _reasoning}</p>'
+                        f'</div>'
+                        if (_fda_logic or _reasoning) else ""
+                    )
+                    + f'</div>',
+                    unsafe_allow_html=True,
+                )
+
             # ── Section 1: Evidence Strength ───────────────────────────────────
             strength = evidence.get("evidence_strength", "LOW")
             facts    = evidence.get("supporting_facts", [])
@@ -1384,11 +1518,16 @@ elif page == "Pathway Predictor":
             )
             st.markdown(
                 f'<div class="fda-card">'
-                f'<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">'
+                f'<div style="display:flex;align-items:center;justify-content:space-between;'
+                f'flex-wrap:wrap;gap:10px;margin-bottom:14px;">'
+                f'<div style="display:flex;align-items:center;gap:12px;">'
                 f'<div style="font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;'
                 f'letter-spacing:.05em;">Evidence Strength</div>'
                 f'<span style="background:{bg};color:{fg};font-size:13px;font-weight:700;'
                 f'padding:3px 14px;border-radius:999px;">{strength}</span></div>'
+                f'<span style="font-size:11px;color:#94a3b8;font-style:italic;">'
+                f'Aligned with inference confidence above</span>'
+                f'</div>'
                 f'{facts_html}'
                 f'</div>',
                 unsafe_allow_html=True,
@@ -2686,3 +2825,170 @@ elif page == "Model Performance":
                 mime="text/markdown",
                 width='stretch',
             )
+
+# ══════════════════════════════════════════════════════════════════════════════
+# PAGE: ABOUT
+# ══════════════════════════════════════════════════════════════════════════════
+elif page == "About":
+    st.markdown(
+        '<h1 style="font-size:26px;font-weight:700;color:#0f172a;margin-bottom:4px;">About FDA Pathway Advisor</h1>'
+        '<p style="color:#64748b;font-size:15px;margin-bottom:32px;">Regulatory intelligence for medical device submissions.</p>',
+        unsafe_allow_html=True,
+    )
+
+    # ── Mission card ──────────────────────────────────────────────────────────
+    st.markdown(
+        '<div class="fda-card">'
+        '<div class="ic-title">Our Mission</div>'
+        '<p style="font-size:15px;color:#334155;line-height:1.75;margin:0;">'
+        'FDA Pathway Advisor helps medical device companies, regulatory consultants, and '
+        'researchers quickly identify the most appropriate FDA submission pathway — 510(k), '
+        'PMA, or De Novo — for their device. By combining machine learning models trained on '
+        'over 200,000 FDA submissions with real-time regulatory intelligence, we reduce '
+        'submission risk and shorten time-to-market.'
+        '</p>'
+        '</div>',
+        unsafe_allow_html=True,
+    )
+
+    # ── Feature grid ──────────────────────────────────────────────────────────
+    st.markdown('<div class="ic-title" style="margin:24px 0 12px;">Key Capabilities</div>', unsafe_allow_html=True)
+    f1, f2, f3 = st.columns(3, gap="medium")
+    _features = [
+        ("analytics", "ML Pathway Prediction",
+         "Random Forest & Gradient Boosting models trained on 200 k+ historical FDA submissions with 3-class classification."),
+        ("manage_search", "Regulatory Evidence Layer",
+         "Real-time openFDA lookups for device classification, predicate devices, and 510(k) clearance history."),
+        ("checklist", "Preparation Checklists",
+         "Auto-generated, pathway-specific submission checklists covering required sections, typical timelines, and common pitfalls."),
+        ("description", "Device Classification Browser",
+         "Search and filter the complete FDA product code database with advisory committee and regulation number filters."),
+        ("bar_chart", "EDA Dashboard",
+         "Interactive exploratory data analysis across specialty, device class, pathway, and submission year dimensions."),
+        ("model_training", "Model Performance Metrics",
+         "Transparent accuracy, F1, and confusion-matrix reporting for both underlying models side-by-side."),
+    ]
+    for col, (icon, title, desc) in zip([f1, f2, f3, f1, f2, f3], _features):
+        with col:
+            st.markdown(
+                f'<div class="fda-card" style="min-height:160px;">'
+                f'<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">'
+                f'<div class="iw"><span class="material-icons-round">{icon}</span></div>'
+                f'<span style="font-size:14px;font-weight:600;color:#0f172a;">{title}</span>'
+                f'</div>'
+                f'<p style="font-size:13px;color:#64748b;line-height:1.6;margin:0;">{desc}</p>'
+                f'</div>',
+                unsafe_allow_html=True,
+            )
+
+    # ── Technology stack ───────────────────────────────────────────────────────
+    st.markdown('<div class="ic-title" style="margin:24px 0 12px;">Technology Stack</div>', unsafe_allow_html=True)
+    tc1, tc2 = st.columns(2, gap="large")
+    with tc1:
+        st.markdown(
+            '<div class="fda-card">'
+            '<div class="ic-title">AI &amp; ML</div>'
+            '<ul style="font-size:14px;color:#334155;line-height:2;margin:0;padding-left:18px;">'
+            '<li>scikit-learn — Random Forest &amp; Gradient Boosting</li>'
+            '<li>TF-IDF cosine similarity for semantic device matching</li>'
+            '<li>CrewAI multi-agent orchestration</li>'
+            '<li>Claude (Anthropic) &amp; OpenAI LLM integration</li>'
+            '</ul>'
+            '</div>',
+            unsafe_allow_html=True,
+        )
+    with tc2:
+        st.markdown(
+            '<div class="fda-card">'
+            '<div class="ic-title">Data &amp; Infrastructure</div>'
+            '<ul style="font-size:14px;color:#334155;line-height:2;margin:0;padding-left:18px;">'
+            '<li>openFDA API — device classification &amp; 510(k) database</li>'
+            '<li>200,000+ curated FDA submission records</li>'
+            '<li>21 CFR Parts 807, 814, 820, 860 reference mapping</li>'
+            '<li>Streamlit — interactive web application</li>'
+            '</ul>'
+            '</div>',
+            unsafe_allow_html=True,
+        )
+
+    # ── Disclaimer ────────────────────────────────────────────────────────────
+    st.markdown(
+        '<div class="fda-card" style="border-left:4px solid #F59E0B;background:#fffbeb;">'
+        '<div style="display:flex;align-items:flex-start;gap:10px;">'
+        '<span class="material-icons-round" style="color:#F59E0B;margin-top:2px;">warning</span>'
+        '<div>'
+        '<div style="font-size:13px;font-weight:700;color:#92400e;margin-bottom:4px;">Disclaimer</div>'
+        '<p style="font-size:13px;color:#78350f;line-height:1.6;margin:0;">'
+        'This tool provides educational and decision-support information only. It is not a '
+        'substitute for professional regulatory advice. Always consult a qualified regulatory '
+        'affairs specialist and refer to current FDA guidance documents before making submission '
+        'decisions. FDA requirements are subject to change.'
+        '</p>'
+        '</div>'
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True,
+    )
+
+# ══════════════════════════════════════════════════════════════════════════════
+# PAGE: CONTACT
+# ══════════════════════════════════════════════════════════════════════════════
+elif page == "Contact":
+    st.markdown(
+        '<h1 style="font-size:26px;font-weight:700;color:#0f172a;margin-bottom:4px;">Contact Us</h1>'
+        '<p style="color:#64748b;font-size:15px;margin-bottom:32px;">Get in touch with the FDA Pathway Advisor team.</p>',
+        unsafe_allow_html=True,
+    )
+
+    cc1, cc2 = st.columns([3, 2], gap="large")
+
+    with cc1:
+        st.markdown('<div class="fda-card">', unsafe_allow_html=True)
+        st.markdown('<div class="ic-title">Send a Message</div>', unsafe_allow_html=True)
+        contact_name = st.text_input("Your Name", placeholder="Jane Smith")
+        contact_email = st.text_input("Email Address", placeholder="jane@company.com")
+        contact_subject = st.selectbox(
+            "Subject",
+            ["General Inquiry", "Bug Report", "Feature Request", "Partnership", "Press / Media", "Other"],
+        )
+        contact_message = st.text_area("Message", placeholder="Describe your question or feedback...", height=150)
+        if st.button("Send Message", type="primary", use_container_width=True):
+            if not contact_name.strip() or not contact_email.strip() or not contact_message.strip():
+                st.warning("Please fill in your name, email, and message before sending.")
+            else:
+                st.success(
+                    f"Thank you, {contact_name.split()[0]}! Your message has been received. "
+                    "We will get back to you within 2 business days."
+                )
+        st.markdown('</div>', unsafe_allow_html=True)
+
+    with cc2:
+        st.markdown(
+            '<div class="fda-card">'
+            '<div class="ic-title">Contact Information</div>'
+            '<div class="ir"><div class="iw"><span class="material-icons-round">email</span></div>'
+            '<div><div class="it-lbl">Email</div><div class="it-val">support@regulaai.com</div></div></div>'
+            '<div class="ir"><div class="iw"><span class="material-icons-round">schedule</span></div>'
+            '<div><div class="it-lbl">Response Time</div><div class="it-val">Within 2 business days</div></div></div>'
+            '<div class="ir"><div class="iw"><span class="material-icons-round">language</span></div>'
+            '<div><div class="it-lbl">Website</div><div class="it-val">regulaai.com</div></div></div>'
+            '<div class="ir"><div class="iw"><span class="material-icons-round">location_on</span></div>'
+            '<div><div class="it-lbl">Jurisdiction</div><div class="it-val">United States (FDA)</div></div></div>'
+            '</div>',
+            unsafe_allow_html=True,
+        )
+        st.markdown(
+            '<div class="fda-card" style="margin-top:0;">'
+            '<div class="ic-title">Quick Links</div>'
+            '<ul style="font-size:14px;line-height:2.2;margin:0;padding-left:18px;color:#334155;">'
+            '<li><a href="https://www.fda.gov/medical-devices" target="_blank" '
+            'style="color:#002046;text-decoration:none;">FDA Medical Devices</a></li>'
+            '<li><a href="https://www.fda.gov/medical-devices/device-advice-comprehensive-regulatory-assistance'
+            '/guidance-documents-medical-devices-and-radiation-emitting-products" '
+            'target="_blank" style="color:#002046;text-decoration:none;">FDA Guidance Documents</a></li>'
+            '<li><a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm" '
+            'target="_blank" style="color:#002046;text-decoration:none;">510(k) Database</a></li>'
+            '</ul>'
+            '</div>',
+            unsafe_allow_html=True,
+        )

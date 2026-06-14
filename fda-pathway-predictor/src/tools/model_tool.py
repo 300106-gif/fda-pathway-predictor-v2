@@ -15,10 +15,22 @@ from datetime import datetime
 logger = logging.getLogger(__name__)
 
 FEATURE_COLS = [
-    "device_class","device_class_unknown","advisory_committee_freq","advisory_committee_encoded",
-    "medical_specialty_freq","medical_specialty_encoded","is_us","country_freq",
-    "decision_year","decision_month","month_sin","month_cos","review_days","has_review_days",
-    "clearance_type_encoded","third_party","product_code_freq","applicant_freq","applicant_submission_count",
+    # Device identity — legitimate signals present before submission decision
+    "device_class", "device_class_unknown",
+    "advisory_committee_freq", "advisory_committee_encoded",
+    "medical_specialty_freq", "medical_specialty_encoded",
+    "product_code_freq",
+    # Applicant / geography — legitimate signals
+    "is_us", "country_freq",
+    "applicant_freq", "applicant_submission_count",
+    # Temporal — submission volume trends over time
+    "decision_year", "decision_month", "month_sin", "month_cos",
+    # EXCLUDED — these are submission-type specific and leak the pathway label:
+    #   clearance_type_encoded : Traditional/Special/Abbreviated are 510(k)-only terms;
+    #                            PMAs/De Novos have UNKNOWN → perfect separation.
+    #   third_party            : Third-party review only exists for 510(k).
+    #   review_days            : Computed from date_received, which PMAs rarely have.
+    #   has_review_days        : Equivalent to flagging PMA/De Novo = False.
 ]
 
 def train_and_evaluate(input_path="artifacts/features.csv", output_dir="artifacts", test_size=0.2, random_state=42):
