@@ -642,17 +642,13 @@ if page == "Device Classification":
                 except Exception as e:
                     st.error(f"Download failed: {e}")
 
-    # ── Search bar ────────────────────────────────────────────────────────────
-    with st.form("dc_search_form", enter_to_submit=True):
-        search_col, btn_col = st.columns([5, 1])
-        with search_col:
-            query = st.text_input(
-                "Search device name, product code, or keyword",
-                placeholder="e.g. tag, label, pacemaker, QMX, glucose…",
-                label_visibility="collapsed",
-            )
-        with btn_col:
-            search_clicked = st.form_submit_button("Search", type="primary", use_container_width=True)
+    # ── Search bar — plain text_input, Enter triggers rerun automatically ─────
+    query = st.text_input(
+        "Search device name, product code, or keyword",
+        placeholder="e.g. label, pacemaker, QMX, glucose monitor… — press Enter to search",
+        label_visibility="collapsed",
+        key="dc_query_input",
+    )
 
     adv_col1, adv_col2, adv_col3 = st.columns(3)
     with adv_col1:
@@ -662,28 +658,27 @@ if page == "Device Classification":
     with adv_col3:
         per_page = st.selectbox("Results per page", [10, 25, 50], index=0)
 
-    # ── Local search ──────────────────────────────────────────────────────────
-    if search_clicked:
+    # ── Auto-search whenever query or filters change ───────────────────────────
+    _search_key = (query.strip(), filter_class, filter_specialty.strip())
+    if query.strip() and _search_key != st.session_state.get("dc_last_search"):
+        st.session_state["dc_last_search"] = _search_key
         df_search = foiclass_df.copy()
         q = query.strip()
 
-        if q:
-            # Product code exact match only when user types ALL CAPS 3-char code (e.g. QMX)
-            if len(q) == 3 and q.isupper():
-                df_search = df_search[df_search["productcode"].str.upper() == q]
-            else:
-                # OR search: any word must match; rank by how many words matched
-                words = [w.strip() for w in q.split() if w.strip()]
-                if words:
-                    scores = pd.Series(0, index=df_search.index)
-                    for w in words:
-                        scores += (
-                            df_search["devicename"].str.contains(w, case=False, na=False) |
-                            df_search["definition"].str.contains(w, case=False, na=False)
-                        ).astype(int)
-                    df_search = df_search[scores > 0].copy()
-                    df_search["_score"] = scores[df_search.index]
-                    df_search = df_search.sort_values("_score", ascending=False).drop(columns=["_score"])
+        if len(q) == 3 and q.isupper():
+            df_search = df_search[df_search["productcode"].str.upper() == q]
+        else:
+            words = [w.strip() for w in q.split() if w.strip()]
+            if words:
+                scores = pd.Series(0, index=df_search.index)
+                for w in words:
+                    scores += (
+                        df_search["devicename"].str.contains(w, case=False, na=False) |
+                        df_search["definition"].str.contains(w, case=False, na=False)
+                    ).astype(int)
+                df_search = df_search[scores > 0].copy()
+                df_search["_score"] = scores[df_search.index]
+                df_search = df_search.sort_values("_score", ascending=False).drop(columns=["_score"])
 
         if filter_class != "All":
             cls_num = {"Class I": "1", "Class II": "2", "Class III": "3"}[filter_class]
@@ -696,146 +691,150 @@ if page == "Device Classification":
 
         st.session_state["dc_results"] = df_search.to_dict("records")
         st.session_state["dc_page"] = 0
+        st.session_state.pop("dc_sel_row", None)
 
     # ── Results ───────────────────────────────────────────────────────────────
+    def _s(v, fallback="—"):
+        if v is None: return fallback
+        try:
+            if isinstance(v, float) and math.isnan(v): return fallback
+        except Exception: pass
+        return str(v).strip() or fallback
+
+    def _pathway_hint(cls, sub_id):
+        if sub_id in ("", "4", "7"): return "510(k) Exempt"
+        if sub_id == "2": return "PMA"
+        if sub_id == "6": return "De Novo"
+        if cls == "1": return "510(k) Exempt"
+        if cls == "3": return "PMA"
+        return "510(k)"
+
     results = st.session_state.get("dc_results", [])
 
-    if results is not None and len(results) == 0 and "dc_results" in st.session_state:
-        st.info("No matching devices found. Try broader search terms.")
+    if not query.strip():
+        pass  # show landing cards below
+    elif len(results) == 0 and "dc_results" in st.session_state:
+        st.info("No matching devices found. Try broader search terms or fewer words.")
     elif results:
         pg = st.session_state.get("dc_page", 0)
         start = pg * per_page
         page_results = results[start: start + per_page]
 
         st.markdown(
-            f'<div style="font-size:13px;color:#44474e;margin-bottom:12px;">'
-            f'Showing <b>{start+1}–{min(start+per_page, len(results))}</b> of <b>{len(results)}</b> results'
-            f'</div>',
-            unsafe_allow_html=True
+            f'<div style="font-size:13px;color:#44474e;margin:8px 0 12px;">'
+            f'<b>{len(results)}</b> device type{"s" if len(results)!=1 else ""} found'
+            f' — showing {start+1}–{min(start+per_page, len(results))}'
+            f' &nbsp;·&nbsp; <i>Click a row to select, then predict its pathway</i></div>',
+            unsafe_allow_html=True,
         )
 
-        CLASS_COLORS = {
-            "1": ("#d1fae5", "#065f46", "Class I",   "Low Risk"),
-            "2": ("#fef3c7", "#92400e", "Class II",  "Moderate Risk"),
-            "3": ("#fee2e2", "#991b1b", "Class III", "High Risk"),
-        }
-        PATHWAY_MAP = {
-            "1": "510(k) / Exempt",
-            "2": "510(k)",
-            "3": "PMA",
-        }
+        # Build the display table
+        CLASS_LABELS = {"1": "Class I — Low Risk", "2": "Class II — Moderate", "3": "Class III — High Risk"}
+        FLAG_COLS = {"implant_flag": "Implant", "life_sustain_support_flag": "Life-Sustain",
+                     "gmpexemptflag": "GMP Exempt", "thirdpartyflag": "3rd-Party Review"}
 
-        import html as _html
-        for _ri, rec in enumerate(page_results):
-            # Normalize all fields — guard against NaN (float) coming from CSV
-            def _s(v, fallback="—"):
-                if v is None: return fallback
-                try:
-                    import math
-                    if isinstance(v, float) and math.isnan(v): return fallback
-                except Exception: pass
-                return str(v).strip() or fallback
-
-            cls    = _s(rec.get("deviceclass"), "?")
-            # submission_type_id may be stored as float (e.g. 4.0) — normalise to int-string
+        table_rows = []
+        for rec in page_results:
+            cls = _s(rec.get("deviceclass"), "?")
             _raw_sub = rec.get("submission_type_id")
             try:
-                import math
                 sub_id = "" if (_raw_sub is None or (isinstance(_raw_sub, float) and math.isnan(_raw_sub))) \
                          else str(int(float(_raw_sub)))
             except Exception:
                 sub_id = ""
+            flags = ", ".join(lbl for col, lbl in FLAG_COLS.items() if _s(rec.get(col), "N") == "Y")
+            table_rows.append({
+                "Device Name":  _s(rec.get("devicename"), "").title(),
+                "Code":         _s(rec.get("productcode")),
+                "Class":        CLASS_LABELS.get(cls, f"Class {cls}"),
+                "Pathway":      _pathway_hint(cls, sub_id),
+                "Regulation":   _s(rec.get("regulationnumber")),
+                "Specialty":    _s(rec.get("medicalspecialty")),
+                "Flags":        flags or "—",
+            })
 
-            bg, fg, cls_label, risk = CLASS_COLORS.get(cls, ("#f1f5f9","#334155","Unknown",""))
-            # Determine accurate pathway hint from submission_type_id
-            if sub_id in ("", "4", "7"):
-                pathway_hint = "510(k) Exempt"
-            elif sub_id == "2":
-                pathway_hint = "PMA"
-            elif sub_id == "6":
-                pathway_hint = "De Novo"
-            elif cls == "1":
-                pathway_hint = "510(k) Exempt"
-            elif cls == "3":
-                pathway_hint = "PMA"
-            else:
-                pathway_hint = "510(k)"
+        df_page = pd.DataFrame(table_rows)
+        event = st.dataframe(
+            df_page,
+            selection_mode="single-row",
+            on_select="rerun",
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Device Name": st.column_config.TextColumn("Device Name", width="large"),
+                "Code":        st.column_config.TextColumn("Code",        width=70),
+                "Class":       st.column_config.TextColumn("Class",       width=180),
+                "Pathway":     st.column_config.TextColumn("Pathway",     width=130),
+                "Regulation":  st.column_config.TextColumn("Regulation",  width=100),
+                "Specialty":   st.column_config.TextColumn("Specialty",   width=90),
+                "Flags":       st.column_config.TextColumn("Flags",       width=180),
+            },
+        )
 
-            prod_code  = _s(rec.get("productcode"))
-            dev_name   = _s(rec.get("devicename")).title()
-            specialty  = _s(rec.get("medicalspecialty"))
-            reg_num    = _s(rec.get("regulationnumber"))
-            definition = _s(rec.get("definition"), fallback="")
-            implant    = _s(rec.get("implant_flag"), "N")
-            life_sus   = _s(rec.get("life_sustain_support_flag"), "N")
-            gmp_ex     = _s(rec.get("gmpexemptflag"), "N")
-            tp_flag    = _s(rec.get("thirdpartyflag"), "N")
+        sel_rows = event.selection.rows
+        if sel_rows:
+            pick = page_results[sel_rows[0]]
+            pick_name = _s(pick.get("devicename"), "").title()
+            pick_pc   = _s(pick.get("productcode"), "")
+            pick_cls  = _s(pick.get("deviceclass"), "")
+            _raw_sub  = pick.get("submission_type_id")
+            try:
+                pick_sub = "" if (_raw_sub is None or (isinstance(_raw_sub, float) and math.isnan(_raw_sub))) \
+                           else str(int(float(_raw_sub)))
+            except Exception:
+                pick_sub = ""
+            pick_path = _pathway_hint(pick_cls, pick_sub)
 
-            flag_html = ""
-            if implant == "Y":
-                flag_html += '<span style="background:#ede9fe;color:#5b21b6;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;margin-right:4px;">Implant</span>'
-            if life_sus == "Y":
-                flag_html += '<span style="background:#fee2e2;color:#991b1b;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;margin-right:4px;">Life-Sustaining</span>'
-            if gmp_ex == "Y":
-                flag_html += '<span style="background:#d1fae5;color:#065f46;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;margin-right:4px;">GMP Exempt</span>'
-            if tp_flag == "Y":
-                flag_html += '<span style="background:#dbeafe;color:#1e40af;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;margin-right:4px;">Third-Party</span>'
-
-            def_snippet = _html.escape((definition[:200] + "…") if len(definition) > 200 else definition)
-            dev_name_safe = _html.escape(dev_name)
-            prod_code_safe = _html.escape(prod_code)
-            reg_num_safe = _html.escape(reg_num)
-            specialty_safe = _html.escape(specialty)
-
-            with st.container():
-                st.markdown(f"""
-<div style="border:1px solid #e2e8f0;border-radius:8px;padding:16px 20px;
-            margin-bottom:4px;background:#fff;
-            box-shadow:0 1px 4px rgba(0,0,0,.04);">
-  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-    <div style="flex:1;min-width:200px;">
-      <div style="font-size:15px;font-weight:700;color:#0b1c30;margin-bottom:2px;">{dev_name_safe}</div>
-      <div style="font-size:12px;color:#44474e;">
-        <b>Product Code:</b> {prod_code_safe} &nbsp;|&nbsp;
-        <b>Regulation:</b> {reg_num_safe} &nbsp;|&nbsp;
-        <b>Specialty:</b> {specialty_safe}
-      </div>
-      {f'<div style="font-size:12px;color:#64748b;margin-top:6px;">{def_snippet}</div>' if def_snippet else ''}
-      <div style="margin-top:8px;">{flag_html}</div>
-    </div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;min-width:120px;">
-      <span style="background:{bg};color:{fg};font-size:12px;font-weight:700;
-                   padding:3px 12px;border-radius:999px;white-space:nowrap;">
-        {cls_label} — {risk}
-      </span>
-      <span style="font-size:11px;color:#64748b;">Typical pathway: <b>{pathway_hint}</b></span>
-    </div>
-  </div>
-</div>
-""", unsafe_allow_html=True)
-
-                use_col, _ = st.columns([2, 8])
-                with use_col:
-                    if st.button(f"Use Class {cls} in Predictor", key=f"use_{_ri}_{prod_code}_{cls}"):
-                        st.session_state["prefill_class"] = int(cls) if cls.isdigit() else 2
-                        st.session_state["_nav_target"] = "Pathway Predictor"
-                        st.rerun()
+            st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
+            pred_col, info_col = st.columns([3, 7])
+            with pred_col:
+                if st.button(
+                    f"Predict Pathway →",
+                    type="primary",
+                    use_container_width=True,
+                    key="dc_predict_btn",
+                ):
+                    st.session_state["inp_dn"] = pick_name
+                    st.session_state["inp_dn_last"] = pick_name
+                    st.session_state.pop("inp_dn_foi_match", None)
+                    if pick_pc and pick_pc != "—":
+                        st.session_state["inp_pc"] = pick_pc
+                    if pick_cls in ("1", "2", "3"):
+                        st.session_state["prefill_class"] = int(pick_cls)
+                    st.session_state["inp_dn_foi_match"] = pick
+                    st.session_state["_nav_target"] = "Pathway Predictor"
+                    st.rerun()
+            with info_col:
+                st.markdown(
+                    f'<div style="padding:8px 14px;background:#f0f9ff;border:1px solid #bae6fd;'
+                    f'border-radius:8px;font-size:13px;color:#0369a1;line-height:1.6;">'
+                    f'<b>{pick_name}</b> &nbsp;·&nbsp; Code: <b>{pick_pc}</b>'
+                    f' &nbsp;·&nbsp; {CLASS_LABELS.get(pick_cls,"")}'
+                    f' &nbsp;·&nbsp; Typical pathway: <b>{pick_path}</b></div>',
+                    unsafe_allow_html=True,
+                )
 
         # Pagination
         n_pages = math.ceil(len(results) / per_page)
         if n_pages > 1:
+            st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
             pcols = st.columns([1, 3, 1])
             with pcols[0]:
                 if pg > 0 and st.button("← Prev"):
-                    st.session_state["dc_page"] = pg - 1; st.rerun()
+                    st.session_state["dc_page"] = pg - 1
+                    st.session_state.pop("dc_sel_row", None)
+                    st.rerun()
             with pcols[1]:
                 st.markdown(
-                    f'<div style="text-align:center;font-size:13px;color:#44474e;padding-top:8px;">Page {pg+1} of {n_pages}</div>',
-                    unsafe_allow_html=True
+                    f'<div style="text-align:center;font-size:13px;color:#44474e;padding-top:8px;">'
+                    f'Page {pg+1} of {n_pages}</div>',
+                    unsafe_allow_html=True,
                 )
             with pcols[2]:
                 if pg < n_pages - 1 and st.button("Next →"):
-                    st.session_state["dc_page"] = pg + 1; st.rerun()
+                    st.session_state["dc_page"] = pg + 1
+                    st.session_state.pop("dc_sel_row", None)
+                    st.rerun()
 
     else:
         # Landing state — show quick-access class cards
