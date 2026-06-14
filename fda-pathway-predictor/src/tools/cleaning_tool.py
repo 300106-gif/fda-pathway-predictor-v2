@@ -6,12 +6,87 @@ import logging
 from pathlib import Path
 logger = logging.getLogger(__name__)
 
+# submission_type_id values that mean 510(k) exempt in the foiclass database
+_EXEMPT_SUB_TYPES = {"", "4", "7"}
+
+def _load_foiclass(foiclass_path):
+    """Load foiclass CSV; return (flags_lookup, raw_df)."""
+    p = Path(foiclass_path)
+    if not p.exists():
+        logger.warning(f"foiclass not found at {p}; skipping flag enrichment")
+        return {}, pd.DataFrame()
+    foi = pd.read_csv(p, dtype=str).fillna("")
+    foi.columns = [c.strip().lower() for c in foi.columns]
+    flags = {}
+    for _, row in foi.iterrows():
+        pc = str(row.get("productcode", "")).upper().strip()
+        if pc:
+            flags[pc] = {
+                "implant_flag":     1 if row.get("implant_flag", "") == "Y" else 0,
+                "life_sustain_flag": 1 if row.get("life_sustain_support_flag", "") == "Y" else 0,
+                "gmp_exempt":       1 if row.get("gmpexemptflag", "") == "Y" else 0,
+            }
+    return flags, foi
+
+def _build_exempt_records(foi_df):
+    """Create one synthetic training row per exempt product-code entry in foiclass."""
+    exempt = foi_df[foi_df["submission_type_id"].isin(_EXEMPT_SUB_TYPES)].copy()
+    logger.info(f"Exempt product codes in foiclass: {len(exempt)}")
+    rows = []
+    years = list(range(2015, 2025))
+    for i, (_, row) in enumerate(exempt.iterrows()):
+        pc  = str(row.get("productcode", "")).upper().strip()
+        cls = str(row.get("deviceclass", "1")).strip()
+        cls = cls if cls in ("1", "2", "3") else "1"
+        spec = str(row.get("medicalspecialty", "")).upper().strip() or "UNKNOWN"
+        yr   = years[i % len(years)]
+        mo   = (i % 12) + 1
+        rows.append({
+            "submission_id":                f"EXEMPT_{pc}_{i}",
+            "pathway":                      "510k_exempt",
+            "device_name":                  str(row.get("devicename", "")).strip(),
+            "product_code":                 pc,
+            "advisory_committee":           spec,
+            "advisory_committee_description": "",
+            "decision_code":                "EXEMPT",
+            "decision_date":                f"{yr}-{mo:02d}-01",
+            "applicant":                    "Exempt Device Manufacturer",
+            "country_code":                 "US",
+            "state":                        "",
+            "city":                         "",
+            "device_class":                 cls,
+            "medical_specialty":            spec,
+            "medical_specialty_description": "",
+            "regulation_number":            str(row.get("regulationnumber", "")).strip(),
+            "gmp_exempt_flag":              str(row.get("gmpexemptflag", "N")).strip(),
+            "submission_type_id":           str(row.get("submission_type_id", "")).strip(),
+            "implant_flag":                 str(row.get("implant_flag", "N")).strip(),
+            "life_sustain_flag":            str(row.get("life_sustain_support_flag", "N")).strip(),
+        })
+    return pd.DataFrame(rows)
+
 def clean_data(input_path="artifacts/raw_data.csv", output_dir="artifacts"):
     output_dir = Path(output_dir); output_dir.mkdir(exist_ok=True)
     logger.info(f"Loading raw data from {input_path}")
-    df = pd.read_csv(input_path)
+    df = pd.read_csv(input_path, low_memory=False)
     initial = df.shape[0]
     logger.info(f"Raw data: {initial} rows")
+
+    # ── Load foiclass for flag enrichment + exempt records ─────────────────
+    foiclass_path = Path(output_dir) / "foiclass.csv"
+    foi_flags, foi_df = _load_foiclass(foiclass_path)
+
+    # Enrich existing records with device-level flags from foiclass
+    pc_upper = df["product_code"].fillna("").str.upper().str.strip()
+    df["implant_flag"]     = pc_upper.map(lambda p: "Y" if foi_flags.get(p, {}).get("implant_flag", 0) else "N")
+    df["life_sustain_flag"] = pc_upper.map(lambda p: "Y" if foi_flags.get(p, {}).get("life_sustain_flag", 0) else "N")
+    # Prefer raw gmp_exempt_flag when present, otherwise fall back to foiclass lookup
+    if "gmp_exempt_flag" not in df.columns:
+        df["gmp_exempt_flag"] = "N"
+    df["gmp_exempt_flag"] = df["gmp_exempt_flag"].where(
+        df["gmp_exempt_flag"].isin(["Y", "N"]),
+        other=pc_upper.map(lambda p: "Y" if foi_flags.get(p, {}).get("gmp_exempt", 0) else "N"),
+    )
 
     df = df.drop_duplicates(subset=["submission_id"], keep="first")
     logger.info(f"After dedup: {len(df)} (removed {initial - len(df)})")
@@ -122,6 +197,27 @@ def clean_data(input_path="artifacts/raw_data.csv", output_dir="artifacts"):
     df = df.drop(columns=[c for c in drop_cols if c in df.columns], errors="ignore")
     df = df.sort_values("decision_date").reset_index(drop=True)
 
+    # ── Append 510k_exempt synthetic records from foiclass ─────────────────
+    if not foi_df.empty:
+        exempt_df = _build_exempt_records(foi_df)
+        # Apply same date parsing & year/month extraction
+        exempt_df["decision_date"] = pd.to_datetime(exempt_df["decision_date"], errors="coerce")
+        exempt_df["decision_year"]  = exempt_df["decision_date"].dt.year
+        exempt_df["decision_month"] = exempt_df["decision_date"].dt.month
+        exempt_df["review_days"]    = np.nan
+        exempt_df["device_class"]   = pd.to_numeric(exempt_df["device_class"], errors="coerce").fillna(1).astype(int)
+        exempt_df["device_class_unknown"] = 0
+        exempt_df["is_us"]          = 1
+        exempt_df["country_code"]   = "US"
+        exempt_df["decision_code"]  = "EXEMPT"
+        # Align columns to main df
+        for col in df.columns:
+            if col not in exempt_df.columns:
+                exempt_df[col] = np.nan
+        exempt_df = exempt_df[df.columns]
+        df = pd.concat([df, exempt_df], ignore_index=True)
+        logger.info(f"After adding 510k_exempt records: {len(df)} total rows")
+
     logger.info(f"Clean data: {df.shape}")
     df.to_csv(output_dir / "clean_data.csv", index=False)
 
@@ -140,6 +236,7 @@ def _gen_contract(df):
         "constraints": {
             "no_nulls_in": ["submission_id","pathway","device_class","advisory_committee"],
             "class_distribution": df["pathway"].value_counts().to_dict(),
+            "pathway_classes": ["510k", "510k_exempt", "De_Novo", "PMA"],
             "date_range": {"min": str(df["decision_date"].min()), "max": str(df["decision_date"].max())},
         },
         "recommended_features": ["device_class","advisory_committee","medical_specialty","is_us","country_code","decision_year","decision_month","review_days","clearance_type","third_party_flag"],

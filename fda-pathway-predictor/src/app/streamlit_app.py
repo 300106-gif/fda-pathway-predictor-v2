@@ -274,7 +274,7 @@ def load_contract():
     return json.load(open(p)) if p.exists() else {}
 
 # ── Constants ──────────────────────────────────────────────────────────────────
-COLORS = {"510k": "#378ADD", "PMA": "#D85A30", "De_Novo": "#1D9E75"}
+COLORS = {"510k": "#378ADD", "PMA": "#D85A30", "De_Novo": "#1D9E75", "510k_exempt": "#059669"}
 COUNTRY_MAP = {
     "Not Specified": None, "United States": "US", "Germany": "DE", "Japan": "JP", "United Kingdom": "GB",
     "France": "FR", "Israel": "IL", "Canada": "CA", "Switzerland": "CH",
@@ -292,6 +292,12 @@ FEAT_LABELS = {
     "device_class_unknown": "Unknown Class",
 }
 PATHWAY_INFO = {
+    "510k_exempt": {
+        "full": "510(k) Exempt — No Premarket Submission Required",
+        "desc": "Low-risk Class I or certain Class II devices may be marketed without submitting a 510(k). General Controls and, where applicable, GMP/QSR still apply.",
+        "review": "None", "trials": "Not required", "fee": "None (registration fees only)",
+        "icon_review": "check_circle", "icon_trials": "verified", "icon_fee": "savings",
+    },
     "510k": {
         "full": "510(k) — Premarket Notification",
         "desc": "Demonstrates substantial equivalence to a legally marketed predicate device.",
@@ -312,6 +318,44 @@ PATHWAY_INFO = {
     },
 }
 CHECKLISTS = {
+    "510k_exempt": [
+        {
+            "title": "Confirm Exemption Status",
+            "content": "Verify your device's product code is listed as 510(k) exempt in FDA's classification database (21 CFR Parts 862–892).",
+            "tip": "Use FDA's Product Classification database at accessdata.fda.gov and check the 'Submission Type' — blank or 'Exempt' confirms no 510(k) is required.",
+            "done": True,
+        },
+        {
+            "title": "Register Establishment & List Device",
+            "content": "All device manufacturers must register their establishment with FDA and list their devices annually, even if exempt from 510(k).",
+            "tip": "Use FDA Unified Registration and Listing System (FURLS). Registration must be renewed by December 31 each year. Fee applies (~$7,000/year for FY2025).",
+            "done": False,
+        },
+        {
+            "title": "Comply with General Controls",
+            "content": "Even exempt devices must comply with General Controls: proper labeling (21 CFR Part 801), banned device regulations, and medical device reporting (21 CFR Part 803).",
+            "tip": "Label must include device name, manufacturer name/address, and adequate directions for use. For Rx devices, follow 21 CFR 801.109.",
+            "done": False,
+        },
+        {
+            "title": "Assess GMP / Quality System Regulation",
+            "content": "Unless specifically GMP-exempt (check gmpexemptflag in FDA classification), you must comply with 21 CFR Part 820 Quality System Regulation.",
+            "tip": "Most Class I devices with only General Controls are GMP-exempt, but those with Special Controls or that are life-supporting are not. Verify against 21 CFR 820.1(a)(1).",
+            "done": False,
+        },
+        {
+            "title": "Verify Limitations of Exemption",
+            "content": "Check 21 CFR xxx.9 (where xxx is your Part number) for limitations — some exempt device types lose exemption if they have specific features (e.g., contain software, are sterile, or are life-supporting).",
+            "tip": "If your device exceeds these limitations, a 510(k) may still be required. When in doubt, submit a 513(g) Request for Classification Information to FDA.",
+            "done": False,
+        },
+        {
+            "title": "Post-Market Surveillance",
+            "content": "Submit Medical Device Reports (MDRs) for any adverse events. Maintain complaint handling and corrective action records.",
+            "tip": "Use FDA MedWatch (Form 3500A) for mandatory MDR reporting. Manufacturers must report within 30 days (or 5 days if remedial action was taken).",
+            "done": False,
+        },
+    ],
     "510k": [
         {
             "title": "Determine Device Classification",
@@ -958,21 +1002,6 @@ elif page == "Pathway Predictor":
                     unsafe_allow_html=True,
                 )
 
-                # Device Description — intended use / mechanism (improves inference)
-                device_description = st.text_area(
-                    "Device Description (optional — improves regulatory inference)",
-                    placeholder=(
-                        "Describe the intended use, mechanism, and any patient/fluid contact. "
-                        "e.g. 'Disposable plastic clip that attaches to IV tubing so nurses can "
-                        "visually identify which line carries which medication. Does not contact "
-                        "the patient or the fluid.'"
-                    ),
-                    height=90,
-                    key="inp_desc",
-                    help="The more detail you provide about intended use and risk profile, "
-                         "the more accurate the pathway inference will be.",
-                )
-
                 # Advisory Committee — Auto-detect or manual
                 advisory_committees = sorted(
                     k for k in encoders.get("advisory_committee", {}).keys() if k != "UNKNOWN"
@@ -1151,6 +1180,21 @@ elif page == "Pathway Predictor":
                 ms_enc = encoders.get("medical_specialty", {}).get(advisory_committee_str, 0)
             ct_enc = encoders.get("clearance_type", {}).get(clearance_type, 0)
             is_us = (1 if country_code == "US" else 0) if country_code is not None else int(_fmed("is_us"))
+            # Look up device-level risk flags from foiclass if a product code was supplied
+            _inp_pc_upper = st.session_state.get("inp_pc", "").strip().upper()
+            _foi_row = None
+            if _inp_pc_upper and not foi_df.empty:
+                _pc_match = foi_df[foi_df["productcode"].str.upper() == _inp_pc_upper]
+                if not _pc_match.empty:
+                    _foi_row = _pc_match.iloc[0]
+            def _foi_flag(col):
+                if _foi_row is not None:
+                    return 1 if str(_foi_row.get(col, "N")).upper() == "Y" else 0
+                return int(_fmed(col.replace("_support", "").replace("life_sustain_support_flag", "life_sustain_flag")))
+            _implant_feat    = _foi_flag("implant_flag")
+            _lifesus_feat    = _foi_flag("life_sustain_support_flag")
+            _gmpexempt_feat  = _foi_flag("gmpexemptflag")
+
             input_dict = {
                 "device_class": device_class, "device_class_unknown": 0 if device_class_sel != "Not Specified" else 1,
                 "advisory_committee_freq": _fmed("advisory_committee_freq"),
@@ -1164,9 +1208,12 @@ elif page == "Pathway Predictor":
                 "month_cos": np.cos(2 * np.pi * 6 / 12),
                 "review_days": _fmed("review_days"), "has_review_days": 1,
                 "clearance_type_encoded": ct_enc, "third_party": 1 if third_party else 0,
-                "product_code_freq": _fmed("product_code_freq"),
-                "applicant_freq": _fmed("applicant_freq"),
-                "applicant_submission_count": _fmed("applicant_submission_count"),
+                # product_code_freq=0 for unknown devices; use foiclass freq if code is known
+                "product_code_freq": 0,
+                # Device-level risk flags
+                "implant_flag":     _implant_feat,
+                "life_sustain_flag": _lifesus_feat,
+                "gmp_exempt":       _gmpexempt_feat,
             }
             X = pd.DataFrame([input_dict]).reindex(columns=feature_cols, fill_value=0)
             pred = model.predict(X)[0]
@@ -1216,7 +1263,7 @@ elif page == "Pathway Predictor":
         model = load_model()
 
         # ── RESULTS GRID (matches Stitch design) ───────────────────────────────
-        PATHWAY_DISPLAY = {"510k": "510(k)", "PMA": "PMA", "De_Novo": "De Novo"}
+        PATHWAY_DISPLAY = {"510k_exempt": "510(k) Exempt", "510k": "510(k)", "PMA": "PMA", "De_Novo": "De Novo"}
         pathway_display = PATHWAY_DISPLAY.get(pathway, pathway)
         confidence_level = "High" if confidence >= 75 else "Moderate" if confidence >= 50 else "Low"
 
@@ -1674,11 +1721,11 @@ elif page == "Preparation Checklist":
         unsafe_allow_html=True,
     )
     if predicted:
-        PW_DISPLAY = {"510k": "510(k)", "PMA": "PMA", "De_Novo": "De Novo"}
+        PW_DISPLAY = {"510k_exempt": "510(k) Exempt", "510k": "510(k)", "PMA": "PMA", "De_Novo": "De Novo"}
         st.markdown(
             f'<p style="color:#64748b;margin-bottom:8px;font-size:15px;">'
             f'Your predicted pathway is <strong style="color:#002046;">{PW_DISPLAY.get(predicted, predicted)}</strong>. '
-            f'All three pathways are shown below for comparison.</p>',
+            f'All four pathways are shown below for comparison.</p>',
             unsafe_allow_html=True,
         )
     else:
@@ -2112,8 +2159,11 @@ elif page == "Preparation Checklist":
             </div>
             """, unsafe_allow_html=True)
 
-    # ── Three tabs always visible ──────────────────────────────────────────────
-    tab_510k, tab_pma, tab_denovo = st.tabs(["510(k)", "PMA", "De Novo"])
+    # ── Four tabs always visible ───────────────────────────────────────────────
+    tab_exempt, tab_510k, tab_pma, tab_denovo = st.tabs(["510(k) Exempt", "510(k)", "PMA", "De Novo"])
+
+    with tab_exempt:
+        _render_pathway_tab("510k_exempt", "510(k) Exempt", "#059669")
 
     with tab_510k:
         _render_pathway_tab("510k", "510(k)", "#378ADD")

@@ -54,6 +54,19 @@ def engineer_features(input_path="artifacts/clean_data.csv", contract_path="arti
     app_counts = df["applicant"].value_counts().to_dict()
     features["applicant_submission_count"] = df["applicant"].map(app_counts)
 
+    # ── Device-level risk flags (from foiclass join in cleaning step) ──────
+    # These are strong signals for pathway — implants/life-sustaining → PMA/510k;
+    # GMP-exempt → often correlates with 510(k) exempt low-risk devices.
+    for flag_col, feat_name in [
+        ("implant_flag",      "implant_flag"),
+        ("life_sustain_flag", "life_sustain_flag"),
+        ("gmp_exempt_flag",   "gmp_exempt"),
+    ]:
+        if flag_col in df.columns:
+            features[feat_name] = (df[flag_col].fillna("N").str.upper().str.strip() == "Y").astype(int)
+        else:
+            features[feat_name] = 0
+
     le_target = LabelEncoder()
     features["pathway"] = target
     features["pathway_encoded"] = le_target.fit_transform(target)

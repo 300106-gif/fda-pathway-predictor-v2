@@ -20,17 +20,22 @@ FEATURE_COLS = [
     "advisory_committee_freq", "advisory_committee_encoded",
     "medical_specialty_freq", "medical_specialty_encoded",
     "product_code_freq",
-    # Applicant / geography — legitimate signals
+    # Geography
     "is_us", "country_freq",
-    "applicant_freq", "applicant_submission_count",
     # Temporal — submission volume trends over time
     "decision_year", "decision_month", "month_sin", "month_cos",
-    # EXCLUDED — these are submission-type specific and leak the pathway label:
-    #   clearance_type_encoded : Traditional/Special/Abbreviated are 510(k)-only terms;
-    #                            PMAs/De Novos have UNKNOWN → perfect separation.
-    #   third_party            : Third-party review only exists for 510(k).
-    #   review_days            : Computed from date_received, which PMAs rarely have.
-    #   has_review_days        : Equivalent to flagging PMA/De Novo = False.
+    # Device-level risk flags (from foiclass join) — key signals for 510(k) exempt
+    # These reflect device TYPE characteristics, not submission outcomes → no leakage
+    "implant_flag",       # implants → PMA/510k, not exempt
+    "life_sustain_flag",  # life-sustaining → higher oversight, not exempt
+    "gmp_exempt",         # GMP-exempt → often correlates with low-risk / 510k exempt
+    # EXCLUDED — submission-type-specific fields that leak the pathway label:
+    #   clearance_type_encoded  : Traditional/Special/Abbreviated are 510(k)-only terms
+    #   third_party             : Third-party review only exists for 510(k)
+    #   review_days / has_review_days : unavailable for PMA/De Novo
+    # EXCLUDED — not available at inference time + create synthetic signal in exempt records:
+    #   applicant_freq          : all synthetic exempt rows share one fake applicant
+    #   applicant_submission_count : same issue
 ]
 
 def train_and_evaluate(input_path="artifacts/features.csv", output_dir="artifacts", test_size=0.2, random_state=42):
@@ -112,7 +117,7 @@ def train_and_evaluate(input_path="artifacts/features.csv", output_dir="artifact
     eval_lines.append(f"\n## Classification Report — {best_name}\n```\n{results[best_name]['classification_report']}```\n")
     (output_dir/"evaluation_report.md").write_text("".join(eval_lines))
 
-    model_card = f"""# Model Card — FDA Pathway Predictor\n\n## Purpose\nPredicts FDA regulatory pathway (510(k), PMA, De Novo) for medical devices.\n\n## Model: {best_name}\n## Features: {len(available)}\n## Training Records: {len(df):,}\n\n## Metrics\n| Metric | Value |\n|---|---|\n| Accuracy | {results[best_name]['accuracy']:.4f} |\n| F1-macro | {results[best_name]['f1_macro']:.4f} |\n| CV F1 | {results[best_name]['cv_f1_mean']:.4f} ± {results[best_name]['cv_f1_std']:.4f} |\n\n## Limitations\n- Trained on historical data; regulatory criteria can change\n- Class imbalance (510(k) dominates)\n- Does not analyze submission narratives or clinical evidence\n- Decision support only — not regulatory advice\n\n## Ethical Considerations\n- May reflect historical biases in FDA decisions\n- Must be used by qualified regulatory professionals\n- All data is publicly available via openFDA API\n"""
+    model_card = f"""# Model Card — FDA Pathway Predictor\n\n## Purpose\nPredicts FDA regulatory pathway (510(k) Exempt, 510(k), PMA, De Novo) for medical devices.\n510(k) Exempt: low-risk Class I/II devices that may be marketed without premarket notification.\n\n## Model: {best_name}\n## Features: {len(available)}\n## Training Records: {len(df):,}\n\n## Metrics\n| Metric | Value |\n|---|---|\n| Accuracy | {results[best_name]['accuracy']:.4f} |\n| F1-macro | {results[best_name]['f1_macro']:.4f} |\n| CV F1 | {results[best_name]['cv_f1_mean']:.4f} ± {results[best_name]['cv_f1_std']:.4f} |\n\n## Limitations\n- Trained on historical data; regulatory criteria can change\n- Class imbalance (510(k) dominates)\n- Does not analyze submission narratives or clinical evidence\n- Decision support only — not regulatory advice\n\n## Ethical Considerations\n- May reflect historical biases in FDA decisions\n- Must be used by qualified regulatory professionals\n- All data is publicly available via openFDA API\n"""
     (output_dir/"model_card.md").write_text(model_card)
     logger.info("Reports saved")
     return best_model, results

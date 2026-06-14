@@ -1,18 +1,19 @@
 # Model Card — FDA Pathway Predictor
 
 ## Purpose
-Predicts FDA regulatory pathway (510(k), PMA, De Novo) for medical devices.
+Predicts FDA regulatory pathway (510(k) Exempt, 510(k), PMA, De Novo) for medical devices.
+510(k) Exempt: low-risk Class I/II devices that may be marketed without premarket notification.
 
-## Model: Random Forest
-## Features: 15
-## Training Records: 50,342
+## Model: Gradient Boosting
+## Features: 16
+## Training Records: 53,500
 
 ## Metrics
 | Metric | Value |
 |---|---|
-| Accuracy | 0.9755 |
-| F1-macro | 0.7612 |
-| CV F1 | 0.7575 ± 0.0050 |
+| Accuracy | 0.9804 |
+| F1-macro | 0.8175 |
+| CV F1 | 0.7953 ± 0.0037 |
 
 ## Limitations
 - Trained on historical data; regulatory criteria can change

@@ -4,10 +4,11 @@
   "target_variable": "pathway",
   "target_classes": [
     "510k",
+    "510k_exempt",
     "De_Novo",
     "PMA"
   ],
-  "total_records": 50342,
+  "total_records": 53500,
   "schema": {
     "submission_id": {
       "dtype": "str",
@@ -57,13 +58,20 @@
     },
     "gmp_exempt_flag": {
       "dtype": "str",
-      "null_count": 45240
+      "null_count": 0
     },
     "submission_type_id": {
-      "dtype": "float64",
+      "dtype": "object",
       "null_count": 45240,
-      "min": 1.0,
-      "max": 4.0
+      "n_unique": 6
+    },
+    "implant_flag": {
+      "dtype": "str",
+      "null_count": 0
+    },
+    "life_sustain_flag": {
+      "dtype": "str",
+      "null_count": 0
     },
     "decision_year": {
       "dtype": "int32",
@@ -79,7 +87,7 @@
     },
     "review_days": {
       "dtype": "float64",
-      "null_count": 50342,
+      "null_count": 53500,
       "min": null,
       "max": null
     },
@@ -105,9 +113,16 @@
     ],
     "class_distribution": {
       "510k": 48919,
+      "510k_exempt": 3158,
       "PMA": 1011,
       "De_Novo": 412
     },
+    "pathway_classes": [
+      "510k",
+      "510k_exempt",
+      "De_Novo",
+      "PMA"
+    ],
     "date_range": {
       "min": "2010-01-04 00:00:00",
       "max": "2025-12-31 00:00:00"
